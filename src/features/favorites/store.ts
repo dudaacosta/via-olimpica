@@ -1,5 +1,6 @@
 import { create } from "zustand";
 import { createJSONStorage, persist } from "zustand/middleware";
+import { accountStorage } from "@/features/auth/accountStorage";
 
 export const FAVORITES_STORAGE_KEY = "via-olimpica-favorites-v1";
 
@@ -7,12 +8,6 @@ export type FavoritesState = {
   favoriteOlympiadIds: string[];
   toggleFavorite: (olympiadId: string) => void;
   clearFavorites: () => void;
-};
-
-const emptyStorage = {
-  getItem: () => null,
-  setItem: () => {},
-  removeItem: () => {},
 };
 
 function sanitizeFavoriteIds(value: unknown): string[] {
@@ -33,7 +28,7 @@ export const useFavoritesStore = create<FavoritesState>()(
     }),
     {
       name: FAVORITES_STORAGE_KEY,
-      storage: createJSONStorage(() => typeof window === "undefined" ? emptyStorage : window.localStorage),
+      storage: createJSONStorage(() => accountStorage),
       partialize: (state) => ({ favoriteOlympiadIds: state.favoriteOlympiadIds }),
       merge: (persistedState, currentState) => {
         const persisted = (persistedState ?? {}) as Partial<FavoritesState>;

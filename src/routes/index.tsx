@@ -201,7 +201,7 @@ function LandingPage() {
 
           <div className="mt-9 flex w-full flex-col items-start gap-4 xl:w-max xl:flex-row">
             <Link
-              to="/quiz"
+              to="/entrar"
               className="inline-flex w-full shrink-0 items-center justify-center gap-3 whitespace-nowrap rounded-xl bg-[#0964E8] px-5 py-4 text-sm font-semibold text-white shadow-lg shadow-blue-200/60 transition hover:bg-[#0754C6] sm:w-auto sm:px-7 sm:text-base"
             >
               Criar meu plano personalizado

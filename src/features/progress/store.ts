@@ -1,5 +1,6 @@
 import { create } from "zustand";
 import { createJSONStorage, persist } from "zustand/middleware";
+import { accountStorage } from "@/features/auth/accountStorage";
 import {
   addCompletedRange,
   isRangeCompleted,
@@ -16,12 +17,6 @@ export type ProgressState = {
   uncompleteRange: (contentKey: string, startMinute: number, endMinute: number) => void;
   toggleRange: (contentKey: string, startMinute: number, endMinute: number) => void;
   clearProgress: () => void;
-};
-
-const emptyStorage = {
-  getItem: () => null,
-  setItem: () => {},
-  removeItem: () => {},
 };
 
 export const useProgressStore = create<ProgressState>()(
@@ -66,7 +61,7 @@ export const useProgressStore = create<ProgressState>()(
     }),
     {
       name: PROGRESS_STORAGE_KEY,
-      storage: createJSONStorage(() => typeof window === "undefined" ? emptyStorage : window.localStorage),
+      storage: createJSONStorage(() => accountStorage),
       partialize: (state) => ({ completedByContent: state.completedByContent }),
       merge: (persistedState, currentState) => {
         const persisted = (persistedState ?? {}) as Partial<ProgressState>;

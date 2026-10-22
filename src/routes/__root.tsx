@@ -13,9 +13,7 @@ import { useEffect, type ReactNode } from "react";
 import appCss from "../styles.css?url";
 import { reportLovableError } from "../lib/lovable-error-reporting";
 import { Toaster } from "@/components/ui/sonner";
-import { useQuizStore } from "@/features/quiz/store";
-import { useProgressStore } from "@/features/progress/store";
-import { useFavoritesStore } from "@/features/favorites/store";
+import { AuthProvider } from "@/features/auth/AuthProvider";
 
 function NotFoundComponent() {
   return (
@@ -122,16 +120,10 @@ function RootShell({ children }: { children: ReactNode }) {
 function RootComponent() {
   const { queryClient } = Route.useRouteContext();
 
-  useEffect(() => {
-    void useQuizStore.persist.rehydrate();
-    void useProgressStore.persist.rehydrate();
-    void useFavoritesStore.persist.rehydrate();
-  }, []);
-
   return (
     <QueryClientProvider client={queryClient}>
       {/* Required: nested routes render here. Removing <Outlet /> breaks all child routes. */}
-      <Outlet />
+      <AuthProvider><Outlet /></AuthProvider>
       <Toaster position="top-right" richColors />
     </QueryClientProvider>
   );

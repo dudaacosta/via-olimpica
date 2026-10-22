@@ -1,15 +1,16 @@
-import { createClient } from "@supabase/supabase-js";
+import { createClient, type SupabaseClient } from "@supabase/supabase-js";
+import { validateAuthConfig } from "@/features/auth/config";
 
-const supabaseUrl = import.meta.env.VITE_SUPABASE_URL;
-const supabaseKey = import.meta.env.VITE_SUPABASE_PUBLISHABLE_KEY;
+let client: SupabaseClient | null = null;
 
-if (!supabaseUrl || !supabaseKey) {
-  throw new Error(
-    "Supabase não configurado. Verifique o arquivo .env.local."
-  );
+export function getSupabase(): SupabaseClient | null {
+  if (typeof window === "undefined") return null;
+  if (client) return client;
+  const url = import.meta.env.VITE_SUPABASE_URL;
+  const key = import.meta.env.VITE_SUPABASE_PUBLISHABLE_KEY;
+  if (!validateAuthConfig(url, key).valid) return null;
+  client = createClient(url, key, {
+    auth: { flowType: "pkce", detectSessionInUrl: true, persistSession: true, autoRefreshToken: true },
+  });
+  return client;
 }
-
-export const supabase = createClient(
-  supabaseUrl,
-  supabaseKey
-);

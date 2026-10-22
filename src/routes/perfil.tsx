@@ -6,6 +6,7 @@ import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
 import { Button } from "@/components/ui/button";
 import { toast } from "sonner";
+import { AccountCard } from "@/features/auth/AccountCard";
 import { useQuizStore } from "@/features/quiz/store";
 import {
   DEFAULT_OLYMPIAD_ID,
@@ -93,6 +94,7 @@ function PerfilForm() {
 
   return (
     <AppShell title="Perfil" subtitle="Edite suas preferências.">
+      <AccountCard />
       <div className="bg-white border border-border rounded-3xl shadow-[var(--shadow-soft)] p-6 md:p-8 space-y-8 max-w-3xl">
         {/* Name */}
         <div className="space-y-2">

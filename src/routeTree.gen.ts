@@ -11,6 +11,7 @@
 import { Route as rootRouteImport } from './routes/__root'
 import { Route as IndexRouteImport } from './routes/index'
 import { Route as CronogramaRouteImport } from './routes/cronograma'
+import { Route as EntrarRouteImport } from './routes/entrar'
 import { Route as InicioRouteImport } from './routes/inicio'
 import { Route as ObmepDetalhesRouteImport } from './routes/obmep-detalhes'
 import { Route as OlimpiadasRouteImport } from './routes/olimpiadas'
@@ -26,6 +27,11 @@ const IndexRoute = IndexRouteImport.update({
 const CronogramaRoute = CronogramaRouteImport.update({
   id: '/cronograma',
   path: '/cronograma',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const EntrarRoute = EntrarRouteImport.update({
+  id: '/entrar',
+  path: '/entrar',
   getParentRoute: () => rootRouteImport,
 } as any)
 const InicioRoute = InicioRouteImport.update({
@@ -62,6 +68,7 @@ const QuizRoute = QuizRouteImport.update({
 export interface FileRoutesByFullPath {
   '/': typeof IndexRoute
   '/cronograma': typeof CronogramaRoute
+  '/entrar': typeof EntrarRoute
   '/inicio': typeof InicioRoute
   '/obmep-detalhes': typeof ObmepDetalhesRoute
   '/olimpiadas': typeof OlimpiadasRoute
@@ -72,6 +79,7 @@ export interface FileRoutesByFullPath {
 export interface FileRoutesByTo {
   '/': typeof IndexRoute
   '/cronograma': typeof CronogramaRoute
+  '/entrar': typeof EntrarRoute
   '/inicio': typeof InicioRoute
   '/obmep-detalhes': typeof ObmepDetalhesRoute
   '/olimpiadas': typeof OlimpiadasRoute
@@ -83,6 +91,7 @@ export interface FileRoutesById {
   __root__: typeof rootRouteImport
   '/': typeof IndexRoute
   '/cronograma': typeof CronogramaRoute
+  '/entrar': typeof EntrarRoute
   '/inicio': typeof InicioRoute
   '/obmep-detalhes': typeof ObmepDetalhesRoute
   '/olimpiadas': typeof OlimpiadasRoute
@@ -95,6 +104,7 @@ export interface FileRouteTypes {
   fullPaths:
     | '/'
     | '/cronograma'
+    | '/entrar'
     | '/inicio'
     | '/obmep-detalhes'
     | '/olimpiadas'
@@ -105,6 +115,7 @@ export interface FileRouteTypes {
   to:
     | '/'
     | '/cronograma'
+    | '/entrar'
     | '/inicio'
     | '/obmep-detalhes'
     | '/olimpiadas'
@@ -115,6 +126,7 @@ export interface FileRouteTypes {
     | '__root__'
     | '/'
     | '/cronograma'
+    | '/entrar'
     | '/inicio'
     | '/obmep-detalhes'
     | '/olimpiadas'
@@ -126,6 +138,7 @@ export interface FileRouteTypes {
 export interface RootRouteChildren {
   IndexRoute: typeof IndexRoute
   CronogramaRoute: typeof CronogramaRoute
+  EntrarRoute: typeof EntrarRoute
   InicioRoute: typeof InicioRoute
   ObmepDetalhesRoute: typeof ObmepDetalhesRoute
   OlimpiadasRoute: typeof OlimpiadasRoute
@@ -148,6 +161,13 @@ declare module '@tanstack/react-router' {
       path: '/cronograma'
       fullPath: '/cronograma'
       preLoaderRoute: typeof CronogramaRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/entrar': {
+      id: '/entrar'
+      path: '/entrar'
+      fullPath: '/entrar'
+      preLoaderRoute: typeof EntrarRouteImport
       parentRoute: typeof rootRouteImport
     }
     '/inicio': {
@@ -198,6 +218,7 @@ declare module '@tanstack/react-router' {
 const rootRouteChildren: RootRouteChildren = {
   IndexRoute: IndexRoute,
   CronogramaRoute: CronogramaRoute,
+  EntrarRoute: EntrarRoute,
   InicioRoute: InicioRoute,
   ObmepDetalhesRoute: ObmepDetalhesRoute,
   OlimpiadasRoute: OlimpiadasRoute,

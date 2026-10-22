@@ -150,10 +150,21 @@ function plan(minutes) {
     delete global.window;
   });
 
-  const rootSource = fs.readFileSync(path.join(root, 'src/routes/__root.tsx'), 'utf8');
-  await test('raiz reidrata progresso e favoritos no navegador', () => {
-    assert.match(rootSource, /useProgressStore\.persist\.rehydrate\(\)/);
-    assert.match(rootSource, /useFavoritesStore\.persist\.rehydrate\(\)/);
+  await test('inicialização da conta reidrata progresso e favoritos existentes', async () => {
+    const storage = new MemoryStorage();
+    storage.setItem('via-olimpica-progress-v1', JSON.stringify({ state: {
+      completedByContent: { conteudo: [{ startMinute: 0, endMinute: 30, completedAt: '2026-10-20T10:00:00.000Z' }] },
+    }, version: 0 }));
+    storage.setItem('via-olimpica-favorites-v1', JSON.stringify({ state: { favoriteOlympiadIds: ['oba'] }, version: 0 }));
+    global.window = { localStorage: storage };
+    try {
+      const runtime = createLoader();
+      await runtime(path.join(root, 'src/features/auth/studyAccount.ts')).switchStudyAccount(null);
+      const progress = runtime(path.join(root, 'src/features/progress/store.ts'));
+      const favorites = runtime(path.join(root, 'src/features/favorites/store.ts'));
+      assert.equal(progress.isRangeCompleted(progress.useProgressStore.getState().completedByContent.conteudo, 0, 30), true);
+      assert.deepEqual(favorites.useFavoritesStore.getState().favoriteOlympiadIds, ['oba']);
+    } finally { delete global.window; }
   });
 
   const detailsSource = fs.readFileSync(path.join(root, 'src/routes/obmep-detalhes.tsx'), 'utf8');

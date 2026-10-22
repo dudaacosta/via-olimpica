@@ -1,5 +1,6 @@
 import { create } from "zustand";
 import { persist, createJSONStorage } from "zustand/middleware";
+import { accountStorage } from "@/features/auth/accountStorage";
 import { isFutureExamDate, localDate } from "@/features/schedule/calendar";
 import {
   DEFAULT_OLYMPIAD_ID,
@@ -53,16 +54,7 @@ export const useQuizStore = create<QuizState>()(
     }),
     {
       name: "via-olimpica-quiz",
-      storage: createJSONStorage(() => {
-        if (typeof window === "undefined") {
-          return {
-            getItem: () => null,
-            setItem: () => {},
-            removeItem: () => {},
-          };
-        }
-        return window.localStorage;
-      }),
+      storage: createJSONStorage(() => accountStorage),
       merge: (persistedState, currentState) => {
         const persisted = (persistedState ?? {}) as Partial<QuizState>;
         return {
