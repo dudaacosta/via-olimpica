@@ -17,6 +17,7 @@ import {
   olympiadsForGrade,
 } from "@/features/quiz/data";
 import { normalizeDailyTimeLabel } from "@/features/schedule/time";
+import { isFutureExamDate, localDate } from "@/features/schedule/calendar";
 import {
   DropdownMenu,
   DropdownMenuTrigger,
@@ -59,6 +60,8 @@ function PerfilForm() {
   const [grade, setGrade] = useState(store.grade ?? "9ano");
   const [time, setTime] = useState(() => normalizeDailyTimeLabel(store.dailyTime));
   const [days, setDays] = useState<number>(store.weeklyDays ?? 5);
+  const [examDate, setExamDate] = useState(store.examDate ?? "");
+  const [dateError, setDateError] = useState(false);
   const availableOlympiads = useMemo(() => olympiadsForGrade(grade), [grade]);
   const [olympiad, setOlympiad] = useState<string>(
     normalizeOlympiadSelection(store.olympiad) ?? DEFAULT_OLYMPIAD_ID,
@@ -74,11 +77,17 @@ function PerfilForm() {
   const selectedOlympiad = findOlympiad(olympiad) ?? findOlympiad(DEFAULT_OLYMPIAD_ID)!;
 
   const save = () => {
+    if (!isFutureExamDate(examDate)) {
+      setDateError(true);
+      return;
+    }
+    setDateError(false);
     store.setName(name);
     store.setGrade(grade);
     store.setDailyTime(time);
     store.setWeeklyDays(days);
     store.setOlympiad(olympiad);
+    store.setExamDate(examDate);
     toast.success("Alterações salvas com sucesso!");
   };
 
@@ -178,6 +187,16 @@ function PerfilForm() {
             OBMEP, Canguru, OLITEF e OBA estão disponíveis. A inscrição nas quatro competições é realizada pela escola.
           </p>
         </Section>
+
+        <div className="space-y-2">
+          <Label htmlFor="profile-exam-date">Data da prova (incluindo o ano)</Label>
+          <Input id="profile-exam-date" type="date" min={localDate()} value={examDate}
+            onChange={(event) => { setExamDate(event.target.value); setDateError(false); }}
+            aria-invalid={dateError} aria-describedby="exam-date-help" className="h-12 rounded-xl border-2" />
+          <p id="exam-date-help" role={dateError ? "alert" : undefined} className="text-sm text-muted-foreground">
+            {dateError ? "Informe uma data futura válida para a prova." : "Use a data divulgada pela escola para a sua etapa. Seu progresso será preservado."}
+          </p>
+        </div>
 
         <Button onClick={save} className="w-full h-14 rounded-xl text-base font-semibold gap-2">
           <Save className="h-5 w-5" /> Salvar alterações

@@ -7,6 +7,7 @@ import { QuizProgress } from "@/features/quiz/components/QuizProgress";
 import { OptionCard } from "@/features/quiz/components/OptionCard";
 import { QuizCard } from "@/features/quiz/components/QuizCard";
 import { useQuizStore } from "@/features/quiz/store";
+import { formatDate, isFutureExamDate, localDate } from "@/features/schedule/calendar";
 import {
   GRADES,
   DAILY_TIME,
@@ -22,7 +23,7 @@ export const Route = createFileRoute("/quiz")({
   head: () => ({
     meta: [
       { title: "Monte seu plano — Via Olímpica" },
-      { name: "description", content: "Responda 5 perguntas e receba um plano de estudos personalizado para olimpíadas." },
+      { name: "description", content: "Responda 6 perguntas e receba um plano de estudos personalizado para olimpíadas." },
     ],
   }),
   component: QuizPage,
@@ -62,11 +63,13 @@ function QuizPage() {
     if (step === 3) return !!store.dailyTime;
     if (step === 4) return !!store.weeklyDays;
     if (step === 5) return isOlympiadAvailableId(store.olympiad);
+    if (step === 6) return isFutureExamDate(store.examDate);
     return false;
   })();
 
   const next = () => {
-    if (step < 5) setStep(step + 1);
+    if (!canContinue) return;
+    if (step < 6) setStep(step + 1);
     else setPhase("loading");
   };
   const back = () => setStep(Math.max(1, step - 1));
@@ -88,7 +91,7 @@ function QuizPage() {
         {phase === "steps" && (
           <>
             <div className="mb-10 mt-2">
-              <QuizProgress current={step} total={5} />
+              <QuizProgress current={step} total={6} />
             </div>
 
             {step === 1 && (
@@ -218,6 +221,17 @@ function QuizPage() {
                     );
                   })}
                 </div>
+                <ContinueBar canContinue={canContinue} onNext={next} />
+              </QuizCard>
+            )}
+            {step === 6 && (
+              <QuizCard title="Quando será sua prova?" subtitle="Informe a data divulgada pela sua escola para a etapa que você vai fazer.">
+                <div className="max-w-md mx-auto space-y-3">
+                  <label htmlFor="exam-date" className="text-sm font-semibold">Data da prova (incluindo o ano)</label>
+                  <Input id="exam-date" type="date" min={localDate()} value={store.examDate ?? ""}
+                    onChange={(event) => store.setExamDate(event.target.value)} className="h-14 rounded-xl border-2" />
+                  <p className="text-sm text-muted-foreground">Escolha uma data futura. O plano respeita seu tempo disponível e informa se há conteúdos que não cabem até a prova.</p>
+                </div>
                 <ContinueBar canContinue={canContinue} onNext={next} ctaLabel="Gerar meu plano" />
               </QuizCard>
             )}
@@ -274,7 +288,7 @@ function LoadingPlan({ pct }: { pct: number }) {
 }
 
 function PlanReady({ onAccess }: { onAccess: () => void }) {
-  const { name, grade, dailyTime, weeklyDays, olympiad } = useQuizStore();
+  const { name, grade, dailyTime, weeklyDays, olympiad, examDate } = useQuizStore();
   const g = findGrade(grade);
   const o = findOlympiad(olympiad);
   return (
@@ -291,6 +305,7 @@ function PlanReady({ onAccess }: { onAccess: () => void }) {
 
       <div className="mt-8 rounded-2xl border border-border bg-primary-softer p-6 space-y-3">
         <SummaryRow label="Ano escolar" value={g?.label ?? "-"} />
+        <SummaryRow label="Data da prova" value={examDate ? formatDate(examDate) : "-"} />
         <SummaryRow label="Tempo por dia" value={dailyTime ?? "-"} />
         <SummaryRow label="Dias por semana" value={weeklyDays ? `${weeklyDays} ${weeklyDays === 1 ? "dia" : "dias"}` : "-"} />
         <SummaryRow label="Olimpíada escolhida" value={o ? `${o.acronym} · ${o.subject}` : "-"} />
