@@ -23,12 +23,14 @@ Os dez testes novos em `tests/calendario.cjs` cobrem datas reais, ano bissexto, 
 
 Conferência no navegador: quiz completo com as quatro opções, data e resumo; cronograma com prazo curto; conclusão e recarga; alteração do tempo diário no perfil sem perda da conclusão. Não houve erro de console nesse fluxo.
 
-A checagem independente `tsc --noEmit` já falhava na base e continua apontando os mesmos três erros:
+Na primeira entrega, a checagem independente `tsc --noEmit` apontava três erros preexistentes:
 
 - `src/lib/api/example.functions.ts`: `inputValidator` ausente na versão instalada e parâmetro `data` implicitamente `any`.
 - `src/routes/__root.tsx`: o componente de erro espera `Error`, mas o roteador pode fornecer `unknown`.
 
-O build não executa essa checagem de tipos. Portanto, build aprovado não significa checagem de tipos aprovada.
+Esses três erros foram corrigidos na etapa seguinte: o exemplo de API usa `.validator`, conforme a versão instalada, restaurando a inferência de `data`; o componente global de erros usa o tipo `ErrorComponentProps` fornecido pelo roteador. Não foram adicionadas supressões ou relaxamentos das regras de tipos.
+
+A checagem passou sem erros. Agora também pode ser executada com `npm run typecheck`. O build não executa essa checagem automaticamente.
 
 ## Próxima fase e limites
 
