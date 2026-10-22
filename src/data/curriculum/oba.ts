@@ -1,0 +1,4048 @@
+import type { OlympiadCurriculum } from "./types";
+
+export const OBA_CURRICULUM = {
+  "olympiadId": "oba",
+  "editionYear": 2026,
+  "version": "2026.1",
+  "lastReview": "2026-10-21",
+  "levels": [
+    {
+      "id": "oba_n3",
+      "code": "Nível 3",
+      "name": "Nível 3 — Ensino Fundamental II",
+      "description": "Programa oficial para estudantes do 6º ao 9º ano do Ensino Fundamental.",
+      "grades": [
+        "6ano",
+        "7ano",
+        "8ano",
+        "9ano"
+      ],
+      "order": 1,
+      "active": true
+    },
+    {
+      "id": "oba_n4",
+      "code": "Nível 4",
+      "name": "Nível 4 — Ensino Médio",
+      "description": "Programa oficial para estudantes da 1ª à 3ª série do Ensino Médio, incluindo a base do Nível 3.",
+      "grades": [
+        "1em",
+        "2em",
+        "3em"
+      ],
+      "order": 2,
+      "active": true
+    }
+  ],
+  "areas": [
+    {
+      "id": "oba-astronomia",
+      "name": "Astronomia",
+      "description": "Terra, céu, Sistema Solar, estrelas, galáxias e Universo.",
+      "order": 1
+    },
+    {
+      "id": "oba-astronautica",
+      "name": "Astronáutica",
+      "description": "Foguetes, satélites, missões, instituições e tecnologias espaciais.",
+      "order": 2
+    },
+    {
+      "id": "oba-apoios-matematicos",
+      "name": "Apoios matemáticos",
+      "description": "Ferramentas matemáticas introduzidas conforme a necessidade dos módulos.",
+      "order": 3
+    }
+  ],
+  "contents": [
+    {
+      "id": "oba-astronomia-terra-orientacao",
+      "olympiadId": "oba",
+      "areaId": "oba-astronomia",
+      "macrotheme": "Terra, Lua e Sol",
+      "moduleId": "oba-astronomia-terra-orientacao",
+      "moduleTitle": "Astronomia Terra Orientacao",
+      "title": "Terra, atmosfera, rotação e orientação",
+      "description": "Estudo de terra, atmosfera, rotação e orientação para compreender fenômenos e resolver questões teóricas da OBA.",
+      "subtopics": [
+        "forma da Terra",
+        "atmosfera terrestre",
+        "rotação",
+        "polos",
+        "Linha do Equador",
+        "pontos cardeais",
+        "dia e noite"
+      ],
+      "learningObjectives": [
+        "Relacionar a rotação à alternância entre dia e noite.",
+        "Localizar polos, Equador e pontos cardeais em representações.",
+        "Explicar a importância geral da atmosfera."
+      ],
+      "prerequisites": [
+        "Leitura de mapas e desenhos"
+      ],
+      "theoryOutline": [
+        "Forma e camadas gerais da Terra",
+        "Rotação e eixo terrestre",
+        "Referenciais de orientação",
+        "Atmosfera e vida"
+      ],
+      "formulas": [],
+      "commonErrors": [
+        "Confundir rotação com translação.",
+        "Tratar norte e acima como sinônimos em qualquer representação."
+      ],
+      "keywords": [
+        "Terra, atmosfera, rotação e orientação",
+        "forma da Terra",
+        "atmosfera terrestre",
+        "rotação",
+        "polos"
+      ],
+      "requiresUpdate": false,
+      "reviewFrequencyMonths": null,
+      "status": "revisado",
+      "sourceTopicIds": [
+        "OBA-N3-TERRA-ORIENTACAO"
+      ],
+      "adaptations": [
+        {
+          "levelId": "oba_n3",
+          "originProgram": "oficial_nivel_atual",
+          "treatment": "novo",
+          "importance": "essencial",
+          "difficulty": 2,
+          "order": 1,
+          "theoryMinutes": 60,
+          "exerciseMinutes": 60,
+          "optionalPracticeMinutes": 0,
+          "exerciseCount": 6,
+          "exerciseTypes": [
+            "objetiva",
+            "interpretação de imagem",
+            "classificação"
+          ],
+          "languageAdaptation": "Usar linguagem visual, comparações concretas e matemática introduzida passo a passo.",
+          "masteryCriteria": "Acertar pelo menos 80% das questões introdutórias e básicas e explicar os conceitos com linguagem própria.",
+          "note": "Tempo estimado pedagogicamente pela Via Olímpica; não é carga horária oficial."
+        },
+        {
+          "levelId": "oba_n4",
+          "originProgram": "oficial_herdado",
+          "treatment": "revisao",
+          "importance": "importante",
+          "difficulty": 3,
+          "order": 1,
+          "theoryMinutes": 30,
+          "exerciseMinutes": 45,
+          "optionalPracticeMinutes": 0,
+          "exerciseCount": 6,
+          "exerciseTypes": [
+            "objetiva",
+            "interpretação de imagem",
+            "classificação"
+          ],
+          "languageAdaptation": "Usar linguagem conceitual e matemática compatível com o Ensino Médio, explicitando hipóteses e unidades.",
+          "masteryCriteria": "Acertar pelo menos 75% de uma lista básica e intermediária, interpretando corretamente fórmulas, imagens, tabelas e gráficos.",
+          "note": "Tempo estimado pedagogicamente pela Via Olímpica; não é carga horária oficial."
+        }
+      ],
+      "sources": [
+        {
+          "id": "oba-regulamento-2026",
+          "type": "regulamento",
+          "title": "Regulamento oficial da 29ª OBA — 2026",
+          "institution": "OBA / SAB",
+          "editionYear": 2026,
+          "pageSection": "Artigo 9 — base dos Níveis 1 e 2 incorporada ao Nível 3",
+          "url": "https://site.oba.org.br/regulamento-oba-e-obafog",
+          "consultedAt": "2026-10-21",
+          "official": true,
+          "evidence": "mencao_direta"
+        }
+      ]
+    },
+    {
+      "id": "oba-astronomia-lua-eclipses",
+      "olympiadId": "oba",
+      "areaId": "oba-astronomia",
+      "macrotheme": "Terra, Lua e Sol",
+      "moduleId": "oba-astronomia-lua",
+      "moduleTitle": "Astronomia Lua",
+      "title": "Lua, fases, eclipses e marés",
+      "description": "Estudo de lua, fases, eclipses e marés para compreender fenômenos e resolver questões teóricas da OBA.",
+      "subtopics": [
+        "fases da Lua",
+        "ciclo lunar e meses",
+        "eclipses solares e lunares",
+        "marés",
+        "geometria Sol–Terra–Lua"
+      ],
+      "learningObjectives": [
+        "Explicar as fases pela iluminação e posição relativa.",
+        "Distinguir eclipses solares e lunares.",
+        "Relacionar posições relativas às marés de forma introdutória."
+      ],
+      "prerequisites": [
+        "Movimentos aparentes",
+        "Leitura de diagramas"
+      ],
+      "theoryOutline": [
+        "Movimentos da Lua",
+        "Geometria das fases",
+        "Condições para eclipses",
+        "Marés"
+      ],
+      "formulas": [],
+      "commonErrors": [
+        "Afirmar que as fases são causadas pela sombra da Terra.",
+        "Confundir eclipse solar e lunar."
+      ],
+      "keywords": [
+        "Lua, fases, eclipses e marés",
+        "fases da Lua",
+        "ciclo lunar e meses",
+        "eclipses solares e lunares",
+        "marés"
+      ],
+      "requiresUpdate": false,
+      "reviewFrequencyMonths": null,
+      "status": "revisado",
+      "sourceTopicIds": [
+        "OBA-N3-LUA-ECLIPSES-MARES"
+      ],
+      "adaptations": [
+        {
+          "levelId": "oba_n3",
+          "originProgram": "oficial_nivel_atual",
+          "treatment": "novo",
+          "importance": "essencial",
+          "difficulty": 3,
+          "order": 2,
+          "theoryMinutes": 75,
+          "exerciseMinutes": 90,
+          "optionalPracticeMinutes": 0,
+          "exerciseCount": 9,
+          "exerciseTypes": [
+            "objetiva",
+            "interpretação de imagem",
+            "comparação"
+          ],
+          "languageAdaptation": "Usar linguagem visual, comparações concretas e matemática introduzida passo a passo.",
+          "masteryCriteria": "Acertar pelo menos 75% de uma lista básica e intermediária, interpretando corretamente fórmulas, imagens, tabelas e gráficos.",
+          "note": "Tempo estimado pedagogicamente pela Via Olímpica; não é carga horária oficial."
+        },
+        {
+          "levelId": "oba_n4",
+          "originProgram": "oficial_herdado",
+          "treatment": "aprofundamento",
+          "importance": "essencial",
+          "difficulty": 3,
+          "order": 2,
+          "theoryMinutes": 45,
+          "exerciseMinutes": 75,
+          "optionalPracticeMinutes": 0,
+          "exerciseCount": 8,
+          "exerciseTypes": [
+            "objetiva",
+            "interpretação de imagem",
+            "comparação"
+          ],
+          "languageAdaptation": "Usar linguagem conceitual e matemática compatível com o Ensino Médio, explicitando hipóteses e unidades.",
+          "masteryCriteria": "Acertar pelo menos 75% de uma lista básica e intermediária, interpretando corretamente fórmulas, imagens, tabelas e gráficos.",
+          "note": "Tempo estimado pedagogicamente pela Via Olímpica; não é carga horária oficial."
+        }
+      ],
+      "sources": [
+        {
+          "id": "oba-regulamento-2026",
+          "type": "regulamento",
+          "title": "Regulamento oficial da 29ª OBA — 2026",
+          "institution": "OBA / SAB",
+          "editionYear": 2026,
+          "pageSection": "Artigo 9 — programa cumulativo do Nível 3",
+          "url": "https://site.oba.org.br/regulamento-oba-e-obafog",
+          "consultedAt": "2026-10-21",
+          "official": true,
+          "evidence": "mencao_direta"
+        }
+      ]
+    },
+    {
+      "id": "oba-astronomia-estacoes-tempo",
+      "olympiadId": "oba",
+      "areaId": "oba-astronomia",
+      "macrotheme": "Terra, Lua e Sol",
+      "moduleId": "oba-astronomia-estacoes",
+      "moduleTitle": "Astronomia Estacoes",
+      "title": "Translação, estações e organização do tempo",
+      "description": "Estudo de translação, estações e organização do tempo para compreender fenômenos e resolver questões teóricas da OBA.",
+      "subtopics": [
+        "translação",
+        "duração do ano",
+        "inclinação do eixo",
+        "estações do ano",
+        "solstícios",
+        "equinócios",
+        "zonas térmicas",
+        "horário de verão"
+      ],
+      "learningObjectives": [
+        "Relacionar translação e duração do ano.",
+        "Explicar estações usando inclinação e iluminação dos hemisférios.",
+        "Distinguir solstício, equinócio e convenções de horário."
+      ],
+      "prerequisites": [
+        "Rotação da Terra",
+        "Ângulos elementares"
+      ],
+      "theoryOutline": [
+        "Translação e órbita anual",
+        "Inclinação do eixo",
+        "Iluminação dos hemisférios",
+        "Solstícios e equinócios",
+        "Zonas térmicas e convenções de horário"
+      ],
+      "formulas": [],
+      "commonErrors": [
+        "Atribuir as estações à distância Terra–Sol.",
+        "Confundir solstício com equinócio."
+      ],
+      "keywords": [
+        "Translação, estações e organização do tempo",
+        "translação",
+        "duração do ano",
+        "inclinação do eixo",
+        "estações do ano"
+      ],
+      "requiresUpdate": false,
+      "reviewFrequencyMonths": null,
+      "status": "revisado",
+      "sourceTopicIds": [
+        "OBA-N3-TRANSLACAO-ESTACOES-TEMPO"
+      ],
+      "adaptations": [
+        {
+          "levelId": "oba_n3",
+          "originProgram": "oficial_nivel_atual",
+          "treatment": "novo",
+          "importance": "essencial",
+          "difficulty": 3,
+          "order": 3,
+          "theoryMinutes": 75,
+          "exerciseMinutes": 90,
+          "optionalPracticeMinutes": 0,
+          "exerciseCount": 9,
+          "exerciseTypes": [
+            "objetiva",
+            "interpretação de imagem",
+            "comparação"
+          ],
+          "languageAdaptation": "Usar linguagem visual, comparações concretas e matemática introduzida passo a passo.",
+          "masteryCriteria": "Acertar pelo menos 75% de uma lista básica e intermediária, interpretando corretamente fórmulas, imagens, tabelas e gráficos.",
+          "note": "Tempo estimado pedagogicamente pela Via Olímpica; não é carga horária oficial."
+        },
+        {
+          "levelId": "oba_n4",
+          "originProgram": "oficial_herdado",
+          "treatment": "revisao",
+          "importance": "importante",
+          "difficulty": 3,
+          "order": 3,
+          "theoryMinutes": 40,
+          "exerciseMinutes": 70,
+          "optionalPracticeMinutes": 0,
+          "exerciseCount": 7,
+          "exerciseTypes": [
+            "objetiva",
+            "interpretação de imagem",
+            "comparação"
+          ],
+          "languageAdaptation": "Usar linguagem conceitual e matemática compatível com o Ensino Médio, explicitando hipóteses e unidades.",
+          "masteryCriteria": "Acertar pelo menos 75% de uma lista básica e intermediária, interpretando corretamente fórmulas, imagens, tabelas e gráficos.",
+          "note": "Tempo estimado pedagogicamente pela Via Olímpica; não é carga horária oficial."
+        }
+      ],
+      "sources": [
+        {
+          "id": "oba-regulamento-2026",
+          "type": "regulamento",
+          "title": "Regulamento oficial da 29ª OBA — 2026",
+          "institution": "OBA / SAB",
+          "editionYear": 2026,
+          "pageSection": "Artigo 9 — programa do Nível 3",
+          "url": "https://site.oba.org.br/regulamento-oba-e-obafog",
+          "consultedAt": "2026-10-21",
+          "official": true,
+          "evidence": "mencao_direta"
+        }
+      ]
+    },
+    {
+      "id": "oba-astronomia-coordenadas-fusos",
+      "olympiadId": "oba",
+      "areaId": "oba-astronomia",
+      "macrotheme": "Orientação, coordenadas e tempo",
+      "moduleId": "oba-astronomia-coordenadas",
+      "moduleTitle": "Astronomia Coordenadas",
+      "title": "Coordenadas geográficas, bússola, horas e fusos",
+      "description": "Estudo de coordenadas geográficas, bússola, horas e fusos para compreender fenômenos e resolver questões teóricas da OBA.",
+      "subtopics": [
+        "latitude e longitude",
+        "coordenadas geográficas",
+        "bússola",
+        "horas",
+        "fusos horários",
+        "eclíptica"
+      ],
+      "learningObjectives": [
+        "Interpretar latitude e longitude.",
+        "Usar fusos em problemas com dados fornecidos.",
+        "Distinguir eclíptica, Equador e linhas de coordenadas."
+      ],
+      "prerequisites": [
+        "Pontos cardeais",
+        "Operações com horas"
+      ],
+      "theoryOutline": [
+        "Bússola e orientação",
+        "Latitude e longitude",
+        "Organização dos fusos",
+        "Eclíptica"
+      ],
+      "formulas": [],
+      "commonErrors": [
+        "Somar ou subtrair fusos no sentido errado.",
+        "Confundir eclíptica com Linha do Equador."
+      ],
+      "keywords": [
+        "Coordenadas geográficas, bússola, horas e fusos",
+        "latitude e longitude",
+        "coordenadas geográficas",
+        "bússola",
+        "horas"
+      ],
+      "requiresUpdate": false,
+      "reviewFrequencyMonths": null,
+      "status": "revisado",
+      "sourceTopicIds": [
+        "OBA-N3-COORDENADAS-FUSOS-ECLIPTICA"
+      ],
+      "adaptations": [
+        {
+          "levelId": "oba_n3",
+          "originProgram": "oficial_nivel_atual",
+          "treatment": "novo",
+          "importance": "essencial",
+          "difficulty": 3,
+          "order": 4,
+          "theoryMinutes": 60,
+          "exerciseMinutes": 90,
+          "optionalPracticeMinutes": 0,
+          "exerciseCount": 9,
+          "exerciseTypes": [
+            "objetiva",
+            "cálculo",
+            "interpretação de mapa"
+          ],
+          "languageAdaptation": "Usar linguagem visual, comparações concretas e matemática introduzida passo a passo.",
+          "masteryCriteria": "Acertar pelo menos 75% de uma lista básica e intermediária, interpretando corretamente fórmulas, imagens, tabelas e gráficos.",
+          "note": "Tempo estimado pedagogicamente pela Via Olímpica; não é carga horária oficial."
+        },
+        {
+          "levelId": "oba_n4",
+          "originProgram": "oficial_herdado",
+          "treatment": "revisao",
+          "importance": "importante",
+          "difficulty": 4,
+          "order": 4,
+          "theoryMinutes": 30,
+          "exerciseMinutes": 70,
+          "optionalPracticeMinutes": 0,
+          "exerciseCount": 7,
+          "exerciseTypes": [
+            "objetiva",
+            "cálculo",
+            "interpretação de mapa"
+          ],
+          "languageAdaptation": "Usar linguagem conceitual e matemática compatível com o Ensino Médio, explicitando hipóteses e unidades.",
+          "masteryCriteria": "Acertar pelo menos 70% de um conjunto misto e justificar o raciocínio, as unidades e as aproximações utilizadas.",
+          "note": "Tempo estimado pedagogicamente pela Via Olímpica; não é carga horária oficial."
+        }
+      ],
+      "sources": [
+        {
+          "id": "oba-regulamento-2026",
+          "type": "regulamento",
+          "title": "Regulamento oficial da 29ª OBA — 2026",
+          "institution": "OBA / SAB",
+          "editionYear": 2026,
+          "pageSection": "Artigo 9 — base do Nível 2 e acréscimos do Nível 3",
+          "url": "https://site.oba.org.br/regulamento-oba-e-obafog",
+          "consultedAt": "2026-10-21",
+          "official": true,
+          "evidence": "mencao_direta"
+        }
+      ]
+    },
+    {
+      "id": "oba-astronomia-terra-origem-estrutura",
+      "olympiadId": "oba",
+      "areaId": "oba-astronomia",
+      "macrotheme": "Terra e ambiente",
+      "moduleId": "oba-astronomia-terra-estrutura",
+      "moduleTitle": "Astronomia Terra Estrutura",
+      "title": "Origem, estrutura e transformações da Terra",
+      "description": "Estudo de origem, estrutura e transformações da terra para compreender fenômenos e resolver questões teóricas da OBA.",
+      "subtopics": [
+        "origem da Terra",
+        "estrutura interna",
+        "alterações da superfície",
+        "fenômenos físicos e químicos"
+      ],
+      "learningObjectives": [
+        "Reconhecer as principais camadas da Terra.",
+        "Relacionar processos físicos e químicos a transformações do planeta.",
+        "Situar a Terra na formação do Sistema Solar."
+      ],
+      "prerequisites": [
+        "Sistema Solar básico"
+      ],
+      "theoryOutline": [
+        "Formação inicial",
+        "Estrutura interna",
+        "Superfície e transformações",
+        "Fenômenos físicos e químicos"
+      ],
+      "formulas": [],
+      "commonErrors": [
+        "Confundir atmosfera com estrutura interna.",
+        "Apresentar a superfície terrestre como imutável."
+      ],
+      "keywords": [
+        "Origem, estrutura e transformações da Terra",
+        "origem da Terra",
+        "estrutura interna",
+        "alterações da superfície",
+        "fenômenos físicos e químicos"
+      ],
+      "requiresUpdate": false,
+      "reviewFrequencyMonths": null,
+      "status": "revisado",
+      "sourceTopicIds": [
+        "OBA-N3-TERRA-ORIGEM-ESTRUTURA"
+      ],
+      "adaptations": [
+        {
+          "levelId": "oba_n3",
+          "originProgram": "oficial_nivel_atual",
+          "treatment": "novo",
+          "importance": "essencial",
+          "difficulty": 2,
+          "order": 5,
+          "theoryMinutes": 60,
+          "exerciseMinutes": 60,
+          "optionalPracticeMinutes": 0,
+          "exerciseCount": 6,
+          "exerciseTypes": [
+            "objetiva",
+            "classificação",
+            "interpretação de texto"
+          ],
+          "languageAdaptation": "Usar linguagem visual, comparações concretas e matemática introduzida passo a passo.",
+          "masteryCriteria": "Acertar pelo menos 80% das questões introdutórias e básicas e explicar os conceitos com linguagem própria.",
+          "note": "Tempo estimado pedagogicamente pela Via Olímpica; não é carga horária oficial."
+        },
+        {
+          "levelId": "oba_n4",
+          "originProgram": "oficial_herdado",
+          "treatment": "revisao",
+          "importance": "importante",
+          "difficulty": 3,
+          "order": 5,
+          "theoryMinutes": 30,
+          "exerciseMinutes": 45,
+          "optionalPracticeMinutes": 0,
+          "exerciseCount": 6,
+          "exerciseTypes": [
+            "objetiva",
+            "classificação",
+            "interpretação de texto"
+          ],
+          "languageAdaptation": "Usar linguagem conceitual e matemática compatível com o Ensino Médio, explicitando hipóteses e unidades.",
+          "masteryCriteria": "Acertar pelo menos 75% de uma lista básica e intermediária, interpretando corretamente fórmulas, imagens, tabelas e gráficos.",
+          "note": "Tempo estimado pedagogicamente pela Via Olímpica; não é carga horária oficial."
+        }
+      ],
+      "sources": [
+        {
+          "id": "oba-regulamento-2026",
+          "type": "regulamento",
+          "title": "Regulamento oficial da 29ª OBA — 2026",
+          "institution": "OBA / SAB",
+          "editionYear": 2026,
+          "pageSection": "Artigo 9 — base do Nível 2 incorporada ao Nível 3",
+          "url": "https://site.oba.org.br/regulamento-oba-e-obafog",
+          "consultedAt": "2026-10-21",
+          "official": true,
+          "evidence": "mencao_direta"
+        }
+      ]
+    },
+    {
+      "id": "oba-astronomia-sistema-solar",
+      "olympiadId": "oba",
+      "areaId": "oba-astronomia",
+      "macrotheme": "Sistema Solar e Universo",
+      "moduleId": "oba-astronomia-sistema-solar",
+      "moduleTitle": "Astronomia Sistema Solar",
+      "title": "Sistema Solar e corpos celestes",
+      "description": "Estudo de sistema solar e corpos celestes para compreender fenômenos e resolver questões teóricas da OBA.",
+      "subtopics": [
+        "organização e origem do Sistema Solar",
+        "Terra como planeta",
+        "planetas",
+        "satélites naturais",
+        "asteroides",
+        "cometas",
+        "meteoroides, meteoros e meteoritos"
+      ],
+      "learningObjectives": [
+        "Classificar corpos do Sistema Solar.",
+        "Comparar características usando textos, imagens e tabelas.",
+        "Diferenciar meteoroide, meteoro e meteorito."
+      ],
+      "prerequisites": [
+        "Noção básica de Sistema Solar",
+        "Leitura de tabelas"
+      ],
+      "theoryOutline": [
+        "Organização do Sistema Solar",
+        "Formação do sistema",
+        "Categorias de corpos",
+        "Terra como planeta"
+      ],
+      "formulas": [],
+      "commonErrors": [
+        "Confundir satélite natural e artificial.",
+        "Tratar asteroides e cometas como objetos idênticos."
+      ],
+      "keywords": [
+        "Sistema Solar e corpos celestes",
+        "organização e origem do Sistema Solar",
+        "Terra como planeta",
+        "planetas",
+        "satélites naturais"
+      ],
+      "requiresUpdate": false,
+      "reviewFrequencyMonths": null,
+      "status": "revisado",
+      "sourceTopicIds": [
+        "OBA-N3-SISTEMA-SOLAR-CORPOS",
+        "OBA-N4-FORMACAO-SISTEMA-SOLAR"
+      ],
+      "adaptations": [
+        {
+          "levelId": "oba_n3",
+          "originProgram": "oficial_nivel_atual",
+          "treatment": "novo",
+          "importance": "essencial",
+          "difficulty": 2,
+          "order": 6,
+          "theoryMinutes": 60,
+          "exerciseMinutes": 75,
+          "optionalPracticeMinutes": 0,
+          "exerciseCount": 8,
+          "exerciseTypes": [
+            "objetiva",
+            "classificação",
+            "interpretação de tabela",
+            "interpretação de imagem"
+          ],
+          "languageAdaptation": "Usar linguagem visual, comparações concretas e matemática introduzida passo a passo.",
+          "masteryCriteria": "Acertar pelo menos 80% das questões introdutórias e básicas e explicar os conceitos com linguagem própria.",
+          "note": "Tempo estimado pedagogicamente pela Via Olímpica; não é carga horária oficial."
+        },
+        {
+          "levelId": "oba_n4",
+          "originProgram": "oficial_herdado",
+          "treatment": "aprofundamento",
+          "importance": "essencial",
+          "difficulty": 3,
+          "order": 6,
+          "theoryMinutes": 45,
+          "exerciseMinutes": 75,
+          "optionalPracticeMinutes": 0,
+          "exerciseCount": 8,
+          "exerciseTypes": [
+            "objetiva",
+            "classificação",
+            "interpretação de tabela",
+            "interpretação de imagem"
+          ],
+          "languageAdaptation": "Usar linguagem conceitual e matemática compatível com o Ensino Médio, explicitando hipóteses e unidades.",
+          "masteryCriteria": "Acertar pelo menos 75% de uma lista básica e intermediária, interpretando corretamente fórmulas, imagens, tabelas e gráficos.",
+          "note": "Tempo estimado pedagogicamente pela Via Olímpica; não é carga horária oficial."
+        }
+      ],
+      "sources": [
+        {
+          "id": "oba-regulamento-2026",
+          "type": "regulamento",
+          "title": "Regulamento oficial da 29ª OBA — 2026",
+          "institution": "OBA / SAB",
+          "editionYear": 2026,
+          "pageSection": "Artigo 9 — Níveis 3 e 4",
+          "url": "https://site.oba.org.br/regulamento-oba-e-obafog",
+          "consultedAt": "2026-10-21",
+          "official": true,
+          "evidence": "mencao_direta"
+        }
+      ]
+    },
+    {
+      "id": "oba-astronomia-ceu-constelacoes",
+      "olympiadId": "oba",
+      "areaId": "oba-astronomia",
+      "macrotheme": "Sistema Solar e Universo",
+      "moduleId": "oba-astronomia-ceu",
+      "moduleTitle": "Astronomia Ceu",
+      "title": "Constelações e reconhecimento do céu",
+      "description": "Estudo de constelações e reconhecimento do céu para compreender fenômenos e resolver questões teóricas da OBA.",
+      "subtopics": [
+        "constelações",
+        "horizonte",
+        "movimento aparente dos astros",
+        "mapas do céu",
+        "polos celestes",
+        "estrelas circumpolares"
+      ],
+      "learningObjectives": [
+        "Reconhecer padrões e referências em mapas do céu.",
+        "Relacionar a posição do observador ao céu aparente.",
+        "Interpretar representações introdutórias do céu."
+      ],
+      "prerequisites": [
+        "Pontos cardeais",
+        "Movimento de rotação"
+      ],
+      "theoryOutline": [
+        "Céu aparente e horizonte",
+        "Constelações",
+        "Mapas do céu",
+        "Polos celestes e observador"
+      ],
+      "formulas": [],
+      "commonErrors": [
+        "Considerar constelações como agrupamentos físicos necessariamente próximos.",
+        "Ignorar a posição do observador."
+      ],
+      "keywords": [
+        "Constelações e reconhecimento do céu",
+        "constelações",
+        "horizonte",
+        "movimento aparente dos astros",
+        "mapas do céu"
+      ],
+      "requiresUpdate": false,
+      "reviewFrequencyMonths": null,
+      "status": "revisado",
+      "sourceTopicIds": [
+        "OBA-N3-CONSTELACOES-CEU",
+        "OBA-N4-RECONHECIMENTO-CEU"
+      ],
+      "adaptations": [
+        {
+          "levelId": "oba_n3",
+          "originProgram": "oficial_nivel_atual",
+          "treatment": "novo",
+          "importance": "essencial",
+          "difficulty": 2,
+          "order": 7,
+          "theoryMinutes": 60,
+          "exerciseMinutes": 75,
+          "optionalPracticeMinutes": 0,
+          "exerciseCount": 8,
+          "exerciseTypes": [
+            "objetiva",
+            "interpretação de mapa",
+            "interpretação de imagem"
+          ],
+          "languageAdaptation": "Usar linguagem visual, comparações concretas e matemática introduzida passo a passo.",
+          "masteryCriteria": "Acertar pelo menos 80% das questões introdutórias e básicas e explicar os conceitos com linguagem própria.",
+          "note": "Tempo estimado pedagogicamente pela Via Olímpica; não é carga horária oficial."
+        },
+        {
+          "levelId": "oba_n4",
+          "originProgram": "oficial_herdado",
+          "treatment": "aprofundamento",
+          "importance": "essencial",
+          "difficulty": 4,
+          "order": 7,
+          "theoryMinutes": 60,
+          "exerciseMinutes": 90,
+          "optionalPracticeMinutes": 0,
+          "exerciseCount": 9,
+          "exerciseTypes": [
+            "objetiva",
+            "interpretação de mapa",
+            "interpretação de imagem"
+          ],
+          "languageAdaptation": "Usar linguagem conceitual e matemática compatível com o Ensino Médio, explicitando hipóteses e unidades.",
+          "masteryCriteria": "Acertar pelo menos 70% de um conjunto misto e justificar o raciocínio, as unidades e as aproximações utilizadas.",
+          "note": "Tempo estimado pedagogicamente pela Via Olímpica; não é carga horária oficial."
+        }
+      ],
+      "sources": [
+        {
+          "id": "oba-regulamento-2026",
+          "type": "regulamento",
+          "title": "Regulamento oficial da 29ª OBA — 2026",
+          "institution": "OBA / SAB",
+          "editionYear": 2026,
+          "pageSection": "Artigo 9 — Níveis 3 e 4",
+          "url": "https://site.oba.org.br/regulamento-oba-e-obafog",
+          "consultedAt": "2026-10-21",
+          "official": true,
+          "evidence": "mencao_direta"
+        }
+      ]
+    },
+    {
+      "id": "oba-astronomia-estrelas-galaxias-universo",
+      "olympiadId": "oba",
+      "areaId": "oba-astronomia",
+      "macrotheme": "Sistema Solar e Universo",
+      "moduleId": "oba-astronomia-universo",
+      "moduleTitle": "Astronomia Universo",
+      "title": "Estrelas, galáxias, história e origem do Universo",
+      "description": "Estudo de estrelas, galáxias, história e origem do universo para compreender fenômenos e resolver questões teóricas da OBA.",
+      "subtopics": [
+        "estrelas",
+        "galáxias",
+        "origem do Universo",
+        "história da Astronomia",
+        "modelos explicativos"
+      ],
+      "learningObjectives": [
+        "Distinguir estrelas, galáxias e Universo.",
+        "Relacionar observações e desenvolvimento histórico de modelos.",
+        "Interpretar explicações introdutórias sobre a origem do Universo."
+      ],
+      "prerequisites": [
+        "Sistema Solar básico"
+      ],
+      "theoryOutline": [
+        "Estrelas e galáxias",
+        "Escalas do Universo",
+        "História da Astronomia",
+        "Origem do Universo"
+      ],
+      "formulas": [],
+      "commonErrors": [
+        "Confundir Sistema Solar com galáxia.",
+        "Apresentar modelos científicos como opiniões sem evidências."
+      ],
+      "keywords": [
+        "Estrelas, galáxias, história e origem do Universo",
+        "estrelas",
+        "galáxias",
+        "origem do Universo",
+        "história da Astronomia"
+      ],
+      "requiresUpdate": false,
+      "reviewFrequencyMonths": null,
+      "status": "revisado",
+      "sourceTopicIds": [
+        "OBA-N3-ESTRELAS-GALAXIAS-UNIVERSO",
+        "OBA-N4-UNIVERSO-GALAXIAS"
+      ],
+      "adaptations": [
+        {
+          "levelId": "oba_n3",
+          "originProgram": "oficial_nivel_atual",
+          "treatment": "novo",
+          "importance": "essencial",
+          "difficulty": 3,
+          "order": 8,
+          "theoryMinutes": 75,
+          "exerciseMinutes": 90,
+          "optionalPracticeMinutes": 0,
+          "exerciseCount": 9,
+          "exerciseTypes": [
+            "objetiva",
+            "interpretação de texto",
+            "comparação"
+          ],
+          "languageAdaptation": "Usar linguagem visual, comparações concretas e matemática introduzida passo a passo.",
+          "masteryCriteria": "Acertar pelo menos 75% de uma lista básica e intermediária, interpretando corretamente fórmulas, imagens, tabelas e gráficos.",
+          "note": "Tempo estimado pedagogicamente pela Via Olímpica; não é carga horária oficial."
+        },
+        {
+          "levelId": "oba_n4",
+          "originProgram": "oficial_herdado",
+          "treatment": "aprofundamento",
+          "importance": "essencial",
+          "difficulty": 4,
+          "order": 8,
+          "theoryMinutes": 75,
+          "exerciseMinutes": 105,
+          "optionalPracticeMinutes": 0,
+          "exerciseCount": 10,
+          "exerciseTypes": [
+            "objetiva",
+            "interpretação de texto",
+            "comparação"
+          ],
+          "languageAdaptation": "Usar linguagem conceitual e matemática compatível com o Ensino Médio, explicitando hipóteses e unidades.",
+          "masteryCriteria": "Acertar pelo menos 70% de um conjunto misto e justificar o raciocínio, as unidades e as aproximações utilizadas.",
+          "note": "Tempo estimado pedagogicamente pela Via Olímpica; não é carga horária oficial."
+        }
+      ],
+      "sources": [
+        {
+          "id": "oba-regulamento-2026",
+          "type": "regulamento",
+          "title": "Regulamento oficial da 29ª OBA — 2026",
+          "institution": "OBA / SAB",
+          "editionYear": 2026,
+          "pageSection": "Artigo 9 — Níveis 3 e 4",
+          "url": "https://site.oba.org.br/regulamento-oba-e-obafog",
+          "consultedAt": "2026-10-21",
+          "official": true,
+          "evidence": "mencao_direta"
+        }
+      ]
+    },
+    {
+      "id": "oba-astronomia-distancias",
+      "olympiadId": "oba",
+      "areaId": "oba-astronomia",
+      "macrotheme": "Sistema Solar e Universo",
+      "moduleId": "oba-astronomia-distancias",
+      "moduleTitle": "Astronomia Distancias",
+      "title": "Unidades e escalas de distância astronômica",
+      "description": "Estudo de unidades e escalas de distância astronômica para compreender fenômenos e resolver questões teóricas da OBA.",
+      "subtopics": [
+        "Unidade Astronômica",
+        "ano-luz",
+        "mês-luz",
+        "dia-luz",
+        "segundo-luz",
+        "escalas e comparações"
+      ],
+      "learningObjectives": [
+        "Distinguir unidades de tempo e distância.",
+        "Converter e comparar escalas com dados fornecidos.",
+        "Escolher unidade adequada para diferentes distâncias."
+      ],
+      "prerequisites": [
+        "Razões e proporções",
+        "Conversão de unidades"
+      ],
+      "theoryOutline": [
+        "Escalas do Sistema Solar",
+        "Unidade Astronômica",
+        "Unidades-luz",
+        "Comparações e conversões"
+      ],
+      "formulas": [],
+      "commonErrors": [
+        "Tratar ano-luz como unidade de tempo.",
+        "Misturar unidades sem conversão."
+      ],
+      "keywords": [
+        "Unidades e escalas de distância astronômica",
+        "Unidade Astronômica",
+        "ano-luz",
+        "mês-luz",
+        "dia-luz"
+      ],
+      "requiresUpdate": false,
+      "reviewFrequencyMonths": null,
+      "status": "revisado",
+      "sourceTopicIds": [
+        "OBA-N3-DISTANCIAS-ASTRONOMICAS"
+      ],
+      "adaptations": [
+        {
+          "levelId": "oba_n3",
+          "originProgram": "oficial_nivel_atual",
+          "treatment": "novo",
+          "importance": "essencial",
+          "difficulty": 3,
+          "order": 9,
+          "theoryMinutes": 60,
+          "exerciseMinutes": 90,
+          "optionalPracticeMinutes": 0,
+          "exerciseCount": 9,
+          "exerciseTypes": [
+            "objetiva",
+            "cálculo",
+            "comparação"
+          ],
+          "languageAdaptation": "Usar linguagem visual, comparações concretas e matemática introduzida passo a passo.",
+          "masteryCriteria": "Acertar pelo menos 75% de uma lista básica e intermediária, interpretando corretamente fórmulas, imagens, tabelas e gráficos.",
+          "note": "Tempo estimado pedagogicamente pela Via Olímpica; não é carga horária oficial."
+        },
+        {
+          "levelId": "oba_n4",
+          "originProgram": "oficial_herdado",
+          "treatment": "revisao",
+          "importance": "importante",
+          "difficulty": 3,
+          "order": 9,
+          "theoryMinutes": 30,
+          "exerciseMinutes": 70,
+          "optionalPracticeMinutes": 0,
+          "exerciseCount": 7,
+          "exerciseTypes": [
+            "objetiva",
+            "cálculo",
+            "comparação"
+          ],
+          "languageAdaptation": "Usar linguagem conceitual e matemática compatível com o Ensino Médio, explicitando hipóteses e unidades.",
+          "masteryCriteria": "Acertar pelo menos 75% de uma lista básica e intermediária, interpretando corretamente fórmulas, imagens, tabelas e gráficos.",
+          "note": "Tempo estimado pedagogicamente pela Via Olímpica; não é carga horária oficial."
+        }
+      ],
+      "sources": [
+        {
+          "id": "oba-regulamento-2026",
+          "type": "regulamento",
+          "title": "Regulamento oficial da 29ª OBA — 2026",
+          "institution": "OBA / SAB",
+          "editionYear": 2026,
+          "pageSection": "Artigo 9 — programa do Nível 3",
+          "url": "https://site.oba.org.br/regulamento-oba-e-obafog",
+          "consultedAt": "2026-10-21",
+          "official": true,
+          "evidence": "mencao_direta"
+        }
+      ]
+    },
+    {
+      "id": "oba-astronomia-gravitacao-kepler",
+      "olympiadId": "oba",
+      "areaId": "oba-astronomia",
+      "macrotheme": "Gravitação e movimentos",
+      "moduleId": "oba-astronomia-gravitacao",
+      "moduleTitle": "Astronomia Gravitacao",
+      "title": "Gravitação, peso e leis de Kepler",
+      "description": "Estudo de gravitação, peso e leis de kepler para compreender fenômenos e resolver questões teóricas da OBA.",
+      "subtopics": [
+        "força gravitacional",
+        "massa e peso",
+        "leis de Kepler",
+        "Lei da Gravitação Universal",
+        "movimento orbital",
+        "período e velocidade orbital"
+      ],
+      "learningObjectives": [
+        "Distinguir massa e peso.",
+        "Interpretar relações entre massa, distância, força e movimento.",
+        "Aplicar leis de Kepler e gravitação no nível adequado."
+      ],
+      "prerequisites": [
+        "Razões e proporções",
+        "Equações simples",
+        "Potenciação para o Nível 4"
+      ],
+      "theoryOutline": [
+        "Massa, peso e força",
+        "Órbitas e leis de Kepler",
+        "Gravitação universal",
+        "Relações entre distância, período e velocidade"
+      ],
+      "formulas": [
+        {
+          "expression": "F = G m₁m₂/r²",
+          "variables": {
+            "F": "força gravitacional",
+            "G": "constante gravitacional",
+            "m₁, m₂": "massas",
+            "r": "distância entre os centros"
+          },
+          "note": "Aplicação matemática aprofundada no Nível 4."
+        },
+        {
+          "expression": "P = m g",
+          "variables": {
+            "P": "peso",
+            "m": "massa",
+            "g": "aceleração gravitacional"
+          }
+        }
+      ],
+      "commonErrors": [
+        "Confundir massa com peso.",
+        "Usar fórmulas sem verificar unidades ou condições."
+      ],
+      "keywords": [
+        "Gravitação, peso e leis de Kepler",
+        "força gravitacional",
+        "massa e peso",
+        "leis de Kepler",
+        "Lei da Gravitação Universal"
+      ],
+      "requiresUpdate": false,
+      "reviewFrequencyMonths": null,
+      "status": "revisado",
+      "sourceTopicIds": [
+        "OBA-N3-GRAVITACAO-KEPLER",
+        "OBA-N4-GRAVITACAO-ORBITAS"
+      ],
+      "adaptations": [
+        {
+          "levelId": "oba_n3",
+          "originProgram": "oficial_nivel_atual",
+          "treatment": "novo",
+          "importance": "essencial",
+          "difficulty": 3,
+          "order": 10,
+          "theoryMinutes": 75,
+          "exerciseMinutes": 105,
+          "optionalPracticeMinutes": 0,
+          "exerciseCount": 10,
+          "exerciseTypes": [
+            "objetiva",
+            "cálculo",
+            "interpretação de gráfico"
+          ],
+          "languageAdaptation": "Usar linguagem visual, comparações concretas e matemática introduzida passo a passo.",
+          "masteryCriteria": "Acertar pelo menos 75% de uma lista básica e intermediária, interpretando corretamente fórmulas, imagens, tabelas e gráficos.",
+          "note": "O tratamento do Nível 4 inclui a Lei da Gravitação Universal. Tempo estimado pedagogicamente pela Via Olímpica; não é carga horária oficial."
+        },
+        {
+          "levelId": "oba_n4",
+          "originProgram": "oficial_herdado",
+          "treatment": "aprofundamento",
+          "importance": "essencial",
+          "difficulty": 5,
+          "order": 10,
+          "theoryMinutes": 105,
+          "exerciseMinutes": 150,
+          "optionalPracticeMinutes": 0,
+          "exerciseCount": 15,
+          "exerciseTypes": [
+            "objetiva",
+            "cálculo",
+            "interpretação de gráfico"
+          ],
+          "languageAdaptation": "Usar linguagem conceitual e matemática compatível com o Ensino Médio, explicitando hipóteses e unidades.",
+          "masteryCriteria": "Acertar pelo menos 70% de um conjunto misto e justificar o raciocínio, as unidades e as aproximações utilizadas.",
+          "note": "O tratamento do Nível 4 inclui a Lei da Gravitação Universal. Tempo estimado pedagogicamente pela Via Olímpica; não é carga horária oficial."
+        }
+      ],
+      "sources": [
+        {
+          "id": "oba-regulamento-2026",
+          "type": "regulamento",
+          "title": "Regulamento oficial da 29ª OBA — 2026",
+          "institution": "OBA / SAB",
+          "editionYear": 2026,
+          "pageSection": "Artigo 9 — Níveis 3 e 4",
+          "url": "https://site.oba.org.br/regulamento-oba-e-obafog",
+          "consultedAt": "2026-10-21",
+          "official": true,
+          "evidence": "mencao_direta"
+        }
+      ]
+    },
+    {
+      "id": "oba-astronomia-brilho-magnitudes",
+      "olympiadId": "oba",
+      "areaId": "oba-astronomia",
+      "macrotheme": "Luz e propriedades dos astros",
+      "moduleId": "oba-astronomia-luz",
+      "moduleTitle": "Astronomia Luz",
+      "title": "Brilho, fluxo, luminosidade e magnitudes",
+      "description": "Estudo de brilho, fluxo, luminosidade e magnitudes para compreender fenômenos e resolver questões teóricas da OBA.",
+      "subtopics": [
+        "brilho",
+        "fluxo de radiação",
+        "luminosidade",
+        "magnitude aparente",
+        "magnitude absoluta",
+        "distância e fluxo"
+      ],
+      "learningObjectives": [
+        "Distinguir emissão própria, luminosidade e fluxo recebido.",
+        "Comparar astros considerando distância e brilho.",
+        "Interpretar magnitudes no nível adequado."
+      ],
+      "prerequisites": [
+        "Razões e proporções",
+        "Potências",
+        "Logaritmos como apoio no Nível 4"
+      ],
+      "theoryOutline": [
+        "Luminosidade intrínseca",
+        "Fluxo recebido",
+        "Magnitude aparente",
+        "Magnitude absoluta e distância"
+      ],
+      "formulas": [],
+      "commonErrors": [
+        "Confundir luminosidade com fluxo.",
+        "Supor que maior número de magnitude significa maior brilho aparente."
+      ],
+      "keywords": [
+        "Brilho, fluxo, luminosidade e magnitudes",
+        "brilho",
+        "fluxo de radiação",
+        "luminosidade",
+        "magnitude aparente"
+      ],
+      "requiresUpdate": false,
+      "reviewFrequencyMonths": null,
+      "status": "revisado",
+      "sourceTopicIds": [
+        "OBA-N3-BRILHO-FLUXO-MAGNITUDE",
+        "OBA-N4-LUMINOSIDADE-MAGNITUDES"
+      ],
+      "adaptations": [
+        {
+          "levelId": "oba_n3",
+          "originProgram": "oficial_nivel_atual",
+          "treatment": "novo",
+          "importance": "essencial",
+          "difficulty": 4,
+          "order": 11,
+          "theoryMinutes": 75,
+          "exerciseMinutes": 105,
+          "optionalPracticeMinutes": 0,
+          "exerciseCount": 10,
+          "exerciseTypes": [
+            "objetiva",
+            "cálculo",
+            "interpretação de tabela"
+          ],
+          "languageAdaptation": "Usar linguagem visual, comparações concretas e matemática introduzida passo a passo.",
+          "masteryCriteria": "Acertar pelo menos 70% de um conjunto misto e justificar o raciocínio, as unidades e as aproximações utilizadas.",
+          "note": "Tempo estimado pedagogicamente pela Via Olímpica; não é carga horária oficial."
+        },
+        {
+          "levelId": "oba_n4",
+          "originProgram": "oficial_herdado",
+          "treatment": "aprofundamento",
+          "importance": "essencial",
+          "difficulty": 5,
+          "order": 11,
+          "theoryMinutes": 90,
+          "exerciseMinutes": 135,
+          "optionalPracticeMinutes": 0,
+          "exerciseCount": 14,
+          "exerciseTypes": [
+            "objetiva",
+            "cálculo",
+            "interpretação de tabela"
+          ],
+          "languageAdaptation": "Usar linguagem conceitual e matemática compatível com o Ensino Médio, explicitando hipóteses e unidades.",
+          "masteryCriteria": "Acertar pelo menos 70% de um conjunto misto e justificar o raciocínio, as unidades e as aproximações utilizadas.",
+          "note": "Tempo estimado pedagogicamente pela Via Olímpica; não é carga horária oficial."
+        }
+      ],
+      "sources": [
+        {
+          "id": "oba-regulamento-2026",
+          "type": "regulamento",
+          "title": "Regulamento oficial da 29ª OBA — 2026",
+          "institution": "OBA / SAB",
+          "editionYear": 2026,
+          "pageSection": "Artigo 9 — Níveis 3 e 4",
+          "url": "https://site.oba.org.br/regulamento-oba-e-obafog",
+          "consultedAt": "2026-10-21",
+          "official": true,
+          "evidence": "mencao_direta"
+        }
+      ]
+    },
+    {
+      "id": "oba-astronomia-elementos-quimicos",
+      "olympiadId": "oba",
+      "areaId": "oba-astronomia",
+      "macrotheme": "Matéria e astros",
+      "moduleId": "oba-astronomia-materia",
+      "moduleTitle": "Astronomia Materia",
+      "title": "Fenômenos físicos, químicos e origem dos elementos",
+      "description": "Estudo de fenômenos físicos, químicos e origem dos elementos para compreender fenômenos e resolver questões teóricas da OBA.",
+      "subtopics": [
+        "fenômenos físicos e químicos",
+        "elementos químicos",
+        "origem astronômica dos elementos"
+      ],
+      "learningObjectives": [
+        "Distinguir fenômenos físicos e químicos em contextos astronômicos.",
+        "Reconhecer elementos químicos como constituintes da matéria.",
+        "Relacionar a origem dos elementos a processos astronômicos de forma introdutória."
+      ],
+      "prerequisites": [
+        "Noções de matéria"
+      ],
+      "theoryOutline": [
+        "Matéria e elementos",
+        "Fenômenos físicos e químicos",
+        "Origem dos elementos no Universo"
+      ],
+      "formulas": [],
+      "commonErrors": [
+        "Confundir elemento químico com substância.",
+        "Tratar toda transformação como reação química."
+      ],
+      "keywords": [
+        "Fenômenos físicos, químicos e origem dos elementos",
+        "fenômenos físicos e químicos",
+        "elementos químicos",
+        "origem astronômica dos elementos"
+      ],
+      "requiresUpdate": false,
+      "reviewFrequencyMonths": null,
+      "status": "revisado",
+      "sourceTopicIds": [
+        "OBA-N3-ELEMENTOS-ORIGEM"
+      ],
+      "adaptations": [
+        {
+          "levelId": "oba_n3",
+          "originProgram": "oficial_nivel_atual",
+          "treatment": "novo",
+          "importance": "essencial",
+          "difficulty": 3,
+          "order": 12,
+          "theoryMinutes": 60,
+          "exerciseMinutes": 75,
+          "optionalPracticeMinutes": 0,
+          "exerciseCount": 8,
+          "exerciseTypes": [
+            "objetiva",
+            "classificação",
+            "interpretação de texto"
+          ],
+          "languageAdaptation": "Usar linguagem visual, comparações concretas e matemática introduzida passo a passo.",
+          "masteryCriteria": "Acertar pelo menos 75% de uma lista básica e intermediária, interpretando corretamente fórmulas, imagens, tabelas e gráficos.",
+          "note": "Tempo estimado pedagogicamente pela Via Olímpica; não é carga horária oficial."
+        },
+        {
+          "levelId": "oba_n4",
+          "originProgram": "oficial_herdado",
+          "treatment": "aprofundamento",
+          "importance": "essencial",
+          "difficulty": 4,
+          "order": 12,
+          "theoryMinutes": 60,
+          "exerciseMinutes": 90,
+          "optionalPracticeMinutes": 0,
+          "exerciseCount": 9,
+          "exerciseTypes": [
+            "objetiva",
+            "classificação",
+            "interpretação de texto"
+          ],
+          "languageAdaptation": "Usar linguagem conceitual e matemática compatível com o Ensino Médio, explicitando hipóteses e unidades.",
+          "masteryCriteria": "Acertar pelo menos 70% de um conjunto misto e justificar o raciocínio, as unidades e as aproximações utilizadas.",
+          "note": "Tempo estimado pedagogicamente pela Via Olímpica; não é carga horária oficial."
+        }
+      ],
+      "sources": [
+        {
+          "id": "oba-regulamento-2026",
+          "type": "regulamento",
+          "title": "Regulamento oficial da 29ª OBA — 2026",
+          "institution": "OBA / SAB",
+          "editionYear": 2026,
+          "pageSection": "Artigo 9 — programa do Nível 3",
+          "url": "https://site.oba.org.br/regulamento-oba-e-obafog",
+          "consultedAt": "2026-10-21",
+          "official": true,
+          "evidence": "mencao_direta"
+        }
+      ]
+    },
+    {
+      "id": "oba-astronomia-hubble-expansao",
+      "olympiadId": "oba",
+      "areaId": "oba-astronomia",
+      "macrotheme": "Sistema Solar e Universo",
+      "moduleId": "oba-astronomia-cosmologia",
+      "moduleTitle": "Astronomia Cosmologia",
+      "title": "Lei de Hubble e expansão do Universo",
+      "description": "Estudo de lei de hubble e expansão do universo para compreender fenômenos e resolver questões teóricas da OBA.",
+      "subtopics": [
+        "Lei de Hubble",
+        "velocidade de afastamento",
+        "distância",
+        "observações e modelos cosmológicos"
+      ],
+      "learningObjectives": [
+        "Relacionar distância e velocidade de afastamento em modelos simples.",
+        "Interpretar dados e gráficos da expansão.",
+        "Distinguir observação, relação empírica e modelo explicativo."
+      ],
+      "prerequisites": [
+        "Proporcionalidade",
+        "Leitura de gráficos",
+        "Equações lineares"
+      ],
+      "theoryOutline": [
+        "Observações de galáxias",
+        "Relação de Hubble",
+        "Interpretação de gráficos",
+        "Limites do modelo introdutório"
+      ],
+      "formulas": [
+        {
+          "expression": "v = H₀ d",
+          "variables": {
+            "v": "velocidade de afastamento",
+            "H₀": "parâmetro de Hubble",
+            "d": "distância"
+          },
+          "note": "Usar apenas com unidades e aproximações explicitadas."
+        }
+      ],
+      "commonErrors": [
+        "Interpretar a expansão como movimento a partir de um centro comum.",
+        "Usar valores sem compatibilidade de unidades."
+      ],
+      "keywords": [
+        "Lei de Hubble e expansão do Universo",
+        "Lei de Hubble",
+        "velocidade de afastamento",
+        "distância",
+        "observações e modelos cosmológicos"
+      ],
+      "requiresUpdate": false,
+      "reviewFrequencyMonths": null,
+      "status": "revisado",
+      "sourceTopicIds": [
+        "OBA-N4-LEI-HUBBLE"
+      ],
+      "adaptations": [
+        {
+          "levelId": "oba_n4",
+          "originProgram": "oficial_nivel_atual",
+          "treatment": "novo",
+          "importance": "essencial",
+          "difficulty": 4,
+          "order": 13,
+          "theoryMinutes": 75,
+          "exerciseMinutes": 120,
+          "optionalPracticeMinutes": 0,
+          "exerciseCount": 12,
+          "exerciseTypes": [
+            "objetiva",
+            "cálculo",
+            "interpretação de gráfico"
+          ],
+          "languageAdaptation": "Usar linguagem conceitual e matemática compatível com o Ensino Médio, explicitando hipóteses e unidades.",
+          "masteryCriteria": "Acertar pelo menos 70% de um conjunto misto e justificar o raciocínio, as unidades e as aproximações utilizadas.",
+          "note": "Tempo estimado pedagogicamente pela Via Olímpica; não é carga horária oficial."
+        }
+      ],
+      "sources": [
+        {
+          "id": "oba-regulamento-2026",
+          "type": "regulamento",
+          "title": "Regulamento oficial da 29ª OBA — 2026",
+          "institution": "OBA / SAB",
+          "editionYear": 2026,
+          "pageSection": "Artigo 9 — programa do Nível 4",
+          "url": "https://site.oba.org.br/regulamento-oba-e-obafog",
+          "consultedAt": "2026-10-21",
+          "official": true,
+          "evidence": "mencao_direta"
+        }
+      ]
+    },
+    {
+      "id": "oba-astronomia-ondas-espectro",
+      "olympiadId": "oba",
+      "areaId": "oba-astronomia",
+      "macrotheme": "Luz e propriedades dos astros",
+      "moduleId": "oba-astronomia-ondas",
+      "moduleTitle": "Astronomia Ondas",
+      "title": "Ondas, espectro eletromagnético e efeito Doppler",
+      "description": "Estudo de ondas, espectro eletromagnético e efeito doppler para compreender fenômenos e resolver questões teóricas da OBA.",
+      "subtopics": [
+        "ondas",
+        "comprimento de onda",
+        "frequência",
+        "velocidade de propagação",
+        "espectro eletromagnético",
+        "efeito Doppler"
+      ],
+      "learningObjectives": [
+        "Relacionar comprimento de onda, frequência e velocidade.",
+        "Identificar regiões do espectro.",
+        "Interpretar qualitativamente e quantitativamente o efeito Doppler."
+      ],
+      "prerequisites": [
+        "Proporcionalidade",
+        "Notação científica"
+      ],
+      "theoryOutline": [
+        "Grandezas de uma onda",
+        "Espectro eletromagnético",
+        "Propagação da luz",
+        "Efeito Doppler"
+      ],
+      "formulas": [
+        {
+          "expression": "v = λ f",
+          "variables": {
+            "v": "velocidade de propagação",
+            "λ": "comprimento de onda",
+            "f": "frequência"
+          }
+        }
+      ],
+      "commonErrors": [
+        "Confundir frequência com velocidade.",
+        "Aplicar a relação de onda sem uniformizar unidades."
+      ],
+      "keywords": [
+        "Ondas, espectro eletromagnético e efeito Doppler",
+        "ondas",
+        "comprimento de onda",
+        "frequência",
+        "velocidade de propagação"
+      ],
+      "requiresUpdate": false,
+      "reviewFrequencyMonths": null,
+      "status": "revisado",
+      "sourceTopicIds": [
+        "OBA-N4-ONDAS-ESPECTRO-DOPPLER"
+      ],
+      "adaptations": [
+        {
+          "levelId": "oba_n4",
+          "originProgram": "oficial_nivel_atual",
+          "treatment": "novo",
+          "importance": "essencial",
+          "difficulty": 4,
+          "order": 14,
+          "theoryMinutes": 90,
+          "exerciseMinutes": 135,
+          "optionalPracticeMinutes": 0,
+          "exerciseCount": 14,
+          "exerciseTypes": [
+            "objetiva",
+            "cálculo",
+            "interpretação de gráfico"
+          ],
+          "languageAdaptation": "Usar linguagem conceitual e matemática compatível com o Ensino Médio, explicitando hipóteses e unidades.",
+          "masteryCriteria": "Acertar pelo menos 70% de um conjunto misto e justificar o raciocínio, as unidades e as aproximações utilizadas.",
+          "note": "Tempo estimado pedagogicamente pela Via Olímpica; não é carga horária oficial."
+        }
+      ],
+      "sources": [
+        {
+          "id": "oba-regulamento-2026",
+          "type": "regulamento",
+          "title": "Regulamento oficial da 29ª OBA — 2026",
+          "institution": "OBA / SAB",
+          "editionYear": 2026,
+          "pageSection": "Artigo 9 — programa do Nível 4",
+          "url": "https://site.oba.org.br/regulamento-oba-e-obafog",
+          "consultedAt": "2026-10-21",
+          "official": true,
+          "evidence": "mencao_direta"
+        }
+      ]
+    },
+    {
+      "id": "oba-astronomia-calor",
+      "olympiadId": "oba",
+      "areaId": "oba-astronomia",
+      "macrotheme": "Fenômenos físicos dos astros",
+      "moduleId": "oba-astronomia-calor",
+      "moduleTitle": "Astronomia Calor",
+      "title": "Calor e fenômenos térmicos em Astronomia",
+      "description": "Estudo de calor e fenômenos térmicos em astronomia para compreender fenômenos e resolver questões teóricas da OBA.",
+      "subtopics": [
+        "calor",
+        "temperatura",
+        "transferência de energia",
+        "fenômenos térmicos em contextos astronômicos"
+      ],
+      "learningObjectives": [
+        "Distinguir calor e temperatura.",
+        "Interpretar transferências de energia em contextos astronômicos.",
+        "Relacionar propriedades térmicas a situações apresentadas."
+      ],
+      "prerequisites": [
+        "Energia",
+        "Proporcionalidade"
+      ],
+      "theoryOutline": [
+        "Calor e temperatura",
+        "Transferência de energia",
+        "Aplicações astronômicas"
+      ],
+      "formulas": [],
+      "commonErrors": [
+        "Usar calor e temperatura como sinônimos.",
+        "Ignorar condições do sistema."
+      ],
+      "keywords": [
+        "Calor e fenômenos térmicos em Astronomia",
+        "calor",
+        "temperatura",
+        "transferência de energia",
+        "fenômenos térmicos em contextos astronômicos"
+      ],
+      "requiresUpdate": false,
+      "reviewFrequencyMonths": null,
+      "status": "revisado",
+      "sourceTopicIds": [
+        "OBA-N4-CALOR"
+      ],
+      "adaptations": [
+        {
+          "levelId": "oba_n4",
+          "originProgram": "oficial_nivel_atual",
+          "treatment": "novo",
+          "importance": "essencial",
+          "difficulty": 3,
+          "order": 15,
+          "theoryMinutes": 60,
+          "exerciseMinutes": 90,
+          "optionalPracticeMinutes": 0,
+          "exerciseCount": 9,
+          "exerciseTypes": [
+            "objetiva",
+            "interpretação de texto",
+            "cálculo"
+          ],
+          "languageAdaptation": "Usar linguagem conceitual e matemática compatível com o Ensino Médio, explicitando hipóteses e unidades.",
+          "masteryCriteria": "Acertar pelo menos 75% de uma lista básica e intermediária, interpretando corretamente fórmulas, imagens, tabelas e gráficos.",
+          "note": "Tempo estimado pedagogicamente pela Via Olímpica; não é carga horária oficial."
+        }
+      ],
+      "sources": [
+        {
+          "id": "oba-regulamento-2026",
+          "type": "regulamento",
+          "title": "Regulamento oficial da 29ª OBA — 2026",
+          "institution": "OBA / SAB",
+          "editionYear": 2026,
+          "pageSection": "Artigo 9 — programa do Nível 4",
+          "url": "https://site.oba.org.br/regulamento-oba-e-obafog",
+          "consultedAt": "2026-10-21",
+          "official": true,
+          "evidence": "mencao_direta"
+        }
+      ]
+    },
+    {
+      "id": "oba-astronomia-magnetismo-sol",
+      "olympiadId": "oba",
+      "areaId": "oba-astronomia",
+      "macrotheme": "Fenômenos físicos dos astros",
+      "moduleId": "oba-astronomia-magnetismo",
+      "moduleTitle": "Astronomia Magnetismo",
+      "title": "Magnetismo terrestre e atividade solar",
+      "description": "Estudo de magnetismo terrestre e atividade solar para compreender fenômenos e resolver questões teóricas da OBA.",
+      "subtopics": [
+        "magnetismo",
+        "campo magnético terrestre",
+        "manchas solares",
+        "gráficos de atividade solar"
+      ],
+      "learningObjectives": [
+        "Descrever o campo magnético terrestre.",
+        "Relacionar manchas solares à atividade solar de forma introdutória.",
+        "Interpretar gráficos temporais de atividade."
+      ],
+      "prerequisites": [
+        "Leitura de gráficos",
+        "Noções de campo"
+      ],
+      "theoryOutline": [
+        "Magnetismo",
+        "Campo terrestre",
+        "Manchas solares",
+        "Leitura de séries temporais"
+      ],
+      "formulas": [],
+      "commonErrors": [
+        "Confundir polos magnéticos e geográficos.",
+        "Inferir causalidade apenas por coincidência em gráficos."
+      ],
+      "keywords": [
+        "Magnetismo terrestre e atividade solar",
+        "magnetismo",
+        "campo magnético terrestre",
+        "manchas solares",
+        "gráficos de atividade solar"
+      ],
+      "requiresUpdate": false,
+      "reviewFrequencyMonths": null,
+      "status": "revisado",
+      "sourceTopicIds": [
+        "OBA-N4-MAGNETISMO-MANCHAS"
+      ],
+      "adaptations": [
+        {
+          "levelId": "oba_n4",
+          "originProgram": "oficial_nivel_atual",
+          "treatment": "novo",
+          "importance": "essencial",
+          "difficulty": 4,
+          "order": 16,
+          "theoryMinutes": 75,
+          "exerciseMinutes": 105,
+          "optionalPracticeMinutes": 0,
+          "exerciseCount": 10,
+          "exerciseTypes": [
+            "objetiva",
+            "interpretação de gráfico",
+            "interpretação de texto"
+          ],
+          "languageAdaptation": "Usar linguagem conceitual e matemática compatível com o Ensino Médio, explicitando hipóteses e unidades.",
+          "masteryCriteria": "Acertar pelo menos 70% de um conjunto misto e justificar o raciocínio, as unidades e as aproximações utilizadas.",
+          "note": "Tempo estimado pedagogicamente pela Via Olímpica; não é carga horária oficial."
+        }
+      ],
+      "sources": [
+        {
+          "id": "oba-regulamento-2026",
+          "type": "regulamento",
+          "title": "Regulamento oficial da 29ª OBA — 2026",
+          "institution": "OBA / SAB",
+          "editionYear": 2026,
+          "pageSection": "Artigo 9 — programa do Nível 4",
+          "url": "https://site.oba.org.br/regulamento-oba-e-obafog",
+          "consultedAt": "2026-10-21",
+          "official": true,
+          "evidence": "mencao_direta"
+        }
+      ]
+    },
+    {
+      "id": "oba-astronomia-evolucao-estelar",
+      "olympiadId": "oba",
+      "areaId": "oba-astronomia",
+      "macrotheme": "Estrelas e Universo",
+      "moduleId": "oba-astronomia-evolucao",
+      "moduleTitle": "Astronomia Evolucao",
+      "title": "Evolução estelar e destinos das estrelas",
+      "description": "Estudo de evolução estelar e destinos das estrelas para compreender fenômenos e resolver questões teóricas da OBA.",
+      "subtopics": [
+        "formação e evolução das estrelas",
+        "anãs brancas",
+        "pulsares",
+        "buracos negros",
+        "massa estelar e destino"
+      ],
+      "learningObjectives": [
+        "Organizar estágios de evolução estelar.",
+        "Relacionar massa e possíveis destinos.",
+        "Distinguir anã branca, pulsar e buraco negro."
+      ],
+      "prerequisites": [
+        "Estrelas e gravitação",
+        "Energia"
+      ],
+      "theoryOutline": [
+        "Nascimento estelar",
+        "Sequência principal",
+        "Estágios finais",
+        "Destinos conforme massa"
+      ],
+      "formulas": [],
+      "commonErrors": [
+        "Apresentar uma única trajetória para todas as estrelas.",
+        "Confundir pulsar com planeta."
+      ],
+      "keywords": [
+        "Evolução estelar e destinos das estrelas",
+        "formação e evolução das estrelas",
+        "anãs brancas",
+        "pulsares",
+        "buracos negros"
+      ],
+      "requiresUpdate": false,
+      "reviewFrequencyMonths": null,
+      "status": "revisado",
+      "sourceTopicIds": [
+        "OBA-N4-EVOLUCAO-ESTELAR"
+      ],
+      "adaptations": [
+        {
+          "levelId": "oba_n4",
+          "originProgram": "oficial_nivel_atual",
+          "treatment": "novo",
+          "importance": "essencial",
+          "difficulty": 4,
+          "order": 17,
+          "theoryMinutes": 90,
+          "exerciseMinutes": 120,
+          "optionalPracticeMinutes": 0,
+          "exerciseCount": 12,
+          "exerciseTypes": [
+            "objetiva",
+            "classificação",
+            "interpretação de diagrama"
+          ],
+          "languageAdaptation": "Usar linguagem conceitual e matemática compatível com o Ensino Médio, explicitando hipóteses e unidades.",
+          "masteryCriteria": "Acertar pelo menos 70% de um conjunto misto e justificar o raciocínio, as unidades e as aproximações utilizadas.",
+          "note": "Tempo estimado pedagogicamente pela Via Olímpica; não é carga horária oficial."
+        }
+      ],
+      "sources": [
+        {
+          "id": "oba-regulamento-2026",
+          "type": "regulamento",
+          "title": "Regulamento oficial da 29ª OBA — 2026",
+          "institution": "OBA / SAB",
+          "editionYear": 2026,
+          "pageSection": "Artigo 9 — programa do Nível 4",
+          "url": "https://site.oba.org.br/regulamento-oba-e-obafog",
+          "consultedAt": "2026-10-21",
+          "official": true,
+          "evidence": "mencao_direta"
+        }
+      ]
+    },
+    {
+      "id": "oba-astronautica-missao-centenario",
+      "olympiadId": "oba",
+      "areaId": "oba-astronautica",
+      "macrotheme": "História espacial brasileira",
+      "moduleId": "oba-astronautica-missao-centenario",
+      "moduleTitle": "Astronautica Missao Centenario",
+      "title": "Missão Centenário e Marcos Pontes",
+      "description": "Estudo de missão centenário e marcos pontes para compreender fenômenos e resolver questões teóricas da OBA.",
+      "subtopics": [
+        "viagem de 2006",
+        "objetivos da missão",
+        "significado para o Brasil"
+      ],
+      "learningObjectives": [
+        "Identificar contexto e objetivos da Missão Centenário.",
+        "Relacionar a missão ao programa espacial brasileiro."
+      ],
+      "prerequisites": [
+        "Noções de história recente"
+      ],
+      "theoryOutline": [
+        "Contexto da missão",
+        "Viagem de Marcos Pontes",
+        "Objetivos e legado"
+      ],
+      "formulas": [],
+      "commonErrors": [
+        "Confundir a Missão Centenário com um programa de lançamento brasileiro independente."
+      ],
+      "keywords": [
+        "Missão Centenário e Marcos Pontes",
+        "viagem de 2006",
+        "objetivos da missão",
+        "significado para o Brasil"
+      ],
+      "requiresUpdate": false,
+      "reviewFrequencyMonths": null,
+      "status": "revisado",
+      "sourceTopicIds": [
+        "OBA-N3-MISSAO-CENTENARIO"
+      ],
+      "adaptations": [
+        {
+          "levelId": "oba_n3",
+          "originProgram": "oficial_nivel_atual",
+          "treatment": "novo",
+          "importance": "importante",
+          "difficulty": 2,
+          "order": 18,
+          "theoryMinutes": 45,
+          "exerciseMinutes": 60,
+          "optionalPracticeMinutes": 0,
+          "exerciseCount": 6,
+          "exerciseTypes": [
+            "objetiva",
+            "interpretação de texto"
+          ],
+          "languageAdaptation": "Usar linguagem visual, comparações concretas e matemática introduzida passo a passo.",
+          "masteryCriteria": "Acertar pelo menos 80% das questões introdutórias e básicas e explicar os conceitos com linguagem própria.",
+          "note": "Tempo estimado pedagogicamente pela Via Olímpica; não é carga horária oficial."
+        },
+        {
+          "levelId": "oba_n4",
+          "originProgram": "oficial_herdado",
+          "treatment": "revisao",
+          "importance": "importante",
+          "difficulty": 3,
+          "order": 18,
+          "theoryMinutes": 20,
+          "exerciseMinutes": 45,
+          "optionalPracticeMinutes": 0,
+          "exerciseCount": 6,
+          "exerciseTypes": [
+            "objetiva",
+            "interpretação de texto"
+          ],
+          "languageAdaptation": "Usar linguagem conceitual e matemática compatível com o Ensino Médio, explicitando hipóteses e unidades.",
+          "masteryCriteria": "Acertar pelo menos 75% de uma lista básica e intermediária, interpretando corretamente fórmulas, imagens, tabelas e gráficos.",
+          "note": "Tempo estimado pedagogicamente pela Via Olímpica; não é carga horária oficial."
+        }
+      ],
+      "sources": [
+        {
+          "id": "oba-regulamento-2026",
+          "type": "regulamento",
+          "title": "Regulamento oficial da 29ª OBA — 2026",
+          "institution": "OBA / SAB",
+          "editionYear": 2026,
+          "pageSection": "Artigo 9 — base dos Níveis 1 e 2 incorporada ao Nível 3",
+          "url": "https://site.oba.org.br/regulamento-oba-e-obafog",
+          "consultedAt": "2026-10-21",
+          "official": true,
+          "evidence": "mencao_direta"
+        }
+      ]
+    },
+    {
+      "id": "oba-astronautica-foguetes-satelites-sondas",
+      "olympiadId": "oba",
+      "areaId": "oba-astronautica",
+      "macrotheme": "Veículos e exploração",
+      "moduleId": "oba-astronautica-veiculos",
+      "moduleTitle": "Astronautica Veiculos",
+      "title": "Foguetes, satélites e sondas espaciais",
+      "description": "Estudo de foguetes, satélites e sondas espaciais para compreender fenômenos e resolver questões teóricas da OBA.",
+      "subtopics": [
+        "funções dos foguetes",
+        "satélites naturais e artificiais",
+        "sondas",
+        "Voyager",
+        "ação e reação",
+        "exploração do Sistema Solar"
+      ],
+      "learningObjectives": [
+        "Distinguir foguete, satélite e sonda.",
+        "Explicar a função de cada veículo.",
+        "Relacionar propulsão a ação e reação de forma adequada ao nível."
+      ],
+      "prerequisites": [
+        "Forças básicas",
+        "Sistema Solar"
+      ],
+      "theoryOutline": [
+        "Foguetes e lançamento",
+        "Satélites artificiais",
+        "Sondas e exploração",
+        "Ação e reação"
+      ],
+      "formulas": [],
+      "commonErrors": [
+        "Confundir foguete com satélite.",
+        "Afirmar que foguetes se movem empurrando o ar."
+      ],
+      "keywords": [
+        "Foguetes, satélites e sondas espaciais",
+        "funções dos foguetes",
+        "satélites naturais e artificiais",
+        "sondas",
+        "Voyager"
+      ],
+      "requiresUpdate": false,
+      "reviewFrequencyMonths": null,
+      "status": "revisado",
+      "sourceTopicIds": [
+        "OBA-N3-FOGUETES-SATELITES-SONDAS"
+      ],
+      "adaptations": [
+        {
+          "levelId": "oba_n3",
+          "originProgram": "oficial_nivel_atual",
+          "treatment": "novo",
+          "importance": "essencial",
+          "difficulty": 3,
+          "order": 19,
+          "theoryMinutes": 60,
+          "exerciseMinutes": 90,
+          "optionalPracticeMinutes": 0,
+          "exerciseCount": 9,
+          "exerciseTypes": [
+            "objetiva",
+            "classificação",
+            "interpretação de imagem"
+          ],
+          "languageAdaptation": "Usar linguagem visual, comparações concretas e matemática introduzida passo a passo.",
+          "masteryCriteria": "Acertar pelo menos 75% de uma lista básica e intermediária, interpretando corretamente fórmulas, imagens, tabelas e gráficos.",
+          "note": "Tempo estimado pedagogicamente pela Via Olímpica; não é carga horária oficial."
+        },
+        {
+          "levelId": "oba_n4",
+          "originProgram": "oficial_herdado",
+          "treatment": "aprofundamento",
+          "importance": "essencial",
+          "difficulty": 4,
+          "order": 19,
+          "theoryMinutes": 60,
+          "exerciseMinutes": 90,
+          "optionalPracticeMinutes": 0,
+          "exerciseCount": 9,
+          "exerciseTypes": [
+            "objetiva",
+            "classificação",
+            "interpretação de imagem"
+          ],
+          "languageAdaptation": "Usar linguagem conceitual e matemática compatível com o Ensino Médio, explicitando hipóteses e unidades.",
+          "masteryCriteria": "Acertar pelo menos 70% de um conjunto misto e justificar o raciocínio, as unidades e as aproximações utilizadas.",
+          "note": "Tempo estimado pedagogicamente pela Via Olímpica; não é carga horária oficial."
+        }
+      ],
+      "sources": [
+        {
+          "id": "oba-regulamento-2026",
+          "type": "regulamento",
+          "title": "Regulamento oficial da 29ª OBA — 2026",
+          "institution": "OBA / SAB",
+          "editionYear": 2026,
+          "pageSection": "Artigo 9 — base incorporada ao Nível 3",
+          "url": "https://site.oba.org.br/regulamento-oba-e-obafog",
+          "consultedAt": "2026-10-21",
+          "official": true,
+          "evidence": "mencao_direta"
+        }
+      ]
+    },
+    {
+      "id": "oba-astronautica-satelites-brasileiros",
+      "olympiadId": "oba",
+      "areaId": "oba-astronautica",
+      "macrotheme": "Programa espacial brasileiro",
+      "moduleId": "oba-astronautica-satelites-brasileiros",
+      "moduleTitle": "Astronautica Satelites Brasileiros",
+      "title": "Satélites brasileiros e suas finalidades",
+      "description": "Estudo de satélites brasileiros e suas finalidades para compreender fenômenos e resolver questões teóricas da OBA.",
+      "subtopics": [
+        "SGDC1",
+        "CBERS 4 e 4A",
+        "Amazônia 1",
+        "Carcará I e II",
+        "comunicação",
+        "observação da Terra"
+      ],
+      "learningObjectives": [
+        "Reconhecer exemplos de satélites brasileiros.",
+        "Relacionar missão e finalidade.",
+        "Interpretar informações atualizadas com fonte e data."
+      ],
+      "prerequisites": [
+        "Satélites artificiais"
+      ],
+      "theoryOutline": [
+        "Comunicação",
+        "Sensoriamento remoto",
+        "Principais projetos brasileiros",
+        "Finalidade de cada missão"
+      ],
+      "formulas": [],
+      "commonErrors": [
+        "Memorizar nomes sem compreender finalidades.",
+        "Tratar informações de missões como permanentes sem data."
+      ],
+      "keywords": [
+        "Satélites brasileiros e suas finalidades",
+        "SGDC1",
+        "CBERS 4 e 4A",
+        "Amazônia 1",
+        "Carcará I e II"
+      ],
+      "requiresUpdate": true,
+      "reviewFrequencyMonths": 12,
+      "status": "revisado",
+      "sourceTopicIds": [
+        "OBA-N3-SATELITES-BRASILEIROS"
+      ],
+      "adaptations": [
+        {
+          "levelId": "oba_n3",
+          "originProgram": "oficial_nivel_atual",
+          "treatment": "novo",
+          "importance": "importante",
+          "difficulty": 3,
+          "order": 20,
+          "theoryMinutes": 60,
+          "exerciseMinutes": 75,
+          "optionalPracticeMinutes": 0,
+          "exerciseCount": 8,
+          "exerciseTypes": [
+            "objetiva",
+            "associação",
+            "interpretação de tabela"
+          ],
+          "languageAdaptation": "Usar linguagem visual, comparações concretas e matemática introduzida passo a passo.",
+          "masteryCriteria": "Acertar pelo menos 75% de uma lista básica e intermediária, interpretando corretamente fórmulas, imagens, tabelas e gráficos.",
+          "note": "Tempo estimado pedagogicamente pela Via Olímpica; não é carga horária oficial."
+        },
+        {
+          "levelId": "oba_n4",
+          "originProgram": "oficial_herdado",
+          "treatment": "revisao",
+          "importance": "importante",
+          "difficulty": 4,
+          "order": 20,
+          "theoryMinutes": 30,
+          "exerciseMinutes": 55,
+          "optionalPracticeMinutes": 0,
+          "exerciseCount": 6,
+          "exerciseTypes": [
+            "objetiva",
+            "associação",
+            "interpretação de tabela"
+          ],
+          "languageAdaptation": "Usar linguagem conceitual e matemática compatível com o Ensino Médio, explicitando hipóteses e unidades.",
+          "masteryCriteria": "Acertar pelo menos 70% de um conjunto misto e justificar o raciocínio, as unidades e as aproximações utilizadas.",
+          "note": "Tempo estimado pedagogicamente pela Via Olímpica; não é carga horária oficial."
+        }
+      ],
+      "sources": [
+        {
+          "id": "oba-regulamento-2026",
+          "type": "regulamento",
+          "title": "Regulamento oficial da 29ª OBA — 2026",
+          "institution": "OBA / SAB",
+          "editionYear": 2026,
+          "pageSection": "Artigo 9 — programa cumulativo do Nível 3",
+          "url": "https://site.oba.org.br/regulamento-oba-e-obafog",
+          "consultedAt": "2026-10-21",
+          "official": true,
+          "evidence": "mencao_direta"
+        }
+      ]
+    },
+    {
+      "id": "oba-astronautica-satelites-usos",
+      "olympiadId": "oba",
+      "areaId": "oba-astronautica",
+      "macrotheme": "Tecnologias espaciais",
+      "moduleId": "oba-astronautica-satelites-usos",
+      "moduleTitle": "Astronautica Satelites Usos",
+      "title": "Satélites meteorológicos e sensoriamento remoto",
+      "description": "Estudo de satélites meteorológicos e sensoriamento remoto para compreender fenômenos e resolver questões teóricas da OBA.",
+      "subtopics": [
+        "previsão do tempo",
+        "sensoriamento remoto",
+        "imagens da Terra",
+        "monitoramento ambiental",
+        "finalidades de órbitas"
+      ],
+      "learningObjectives": [
+        "Explicar usos de satélites meteorológicos e de sensoriamento.",
+        "Interpretar imagens e descrições de missões.",
+        "Relacionar características gerais à finalidade."
+      ],
+      "prerequisites": [
+        "Satélites artificiais",
+        "Leitura de imagens"
+      ],
+      "theoryOutline": [
+        "Coleta de dados",
+        "Previsão do tempo",
+        "Sensoriamento remoto",
+        "Aplicações sociais e ambientais"
+      ],
+      "formulas": [],
+      "commonErrors": [
+        "Confundir sensoriamento remoto com comunicação.",
+        "Inferir que todo satélite possui a mesma órbita e função."
+      ],
+      "keywords": [
+        "Satélites meteorológicos e sensoriamento remoto",
+        "previsão do tempo",
+        "sensoriamento remoto",
+        "imagens da Terra",
+        "monitoramento ambiental"
+      ],
+      "requiresUpdate": true,
+      "reviewFrequencyMonths": 12,
+      "status": "revisado",
+      "sourceTopicIds": [
+        "OBA-N3-SATELITES-USOS",
+        "OBA-N4-SATELITES-USOS-APROFUNDAMENTO"
+      ],
+      "adaptations": [
+        {
+          "levelId": "oba_n3",
+          "originProgram": "oficial_nivel_atual",
+          "treatment": "novo",
+          "importance": "essencial",
+          "difficulty": 3,
+          "order": 21,
+          "theoryMinutes": 60,
+          "exerciseMinutes": 90,
+          "optionalPracticeMinutes": 0,
+          "exerciseCount": 9,
+          "exerciseTypes": [
+            "objetiva",
+            "interpretação de imagem",
+            "comparação"
+          ],
+          "languageAdaptation": "Usar linguagem visual, comparações concretas e matemática introduzida passo a passo.",
+          "masteryCriteria": "Acertar pelo menos 75% de uma lista básica e intermediária, interpretando corretamente fórmulas, imagens, tabelas e gráficos.",
+          "note": "Tempo estimado pedagogicamente pela Via Olímpica; não é carga horária oficial."
+        },
+        {
+          "levelId": "oba_n4",
+          "originProgram": "oficial_herdado",
+          "treatment": "aprofundamento",
+          "importance": "essencial",
+          "difficulty": 4,
+          "order": 21,
+          "theoryMinutes": 60,
+          "exerciseMinutes": 90,
+          "optionalPracticeMinutes": 0,
+          "exerciseCount": 9,
+          "exerciseTypes": [
+            "objetiva",
+            "interpretação de imagem",
+            "comparação"
+          ],
+          "languageAdaptation": "Usar linguagem conceitual e matemática compatível com o Ensino Médio, explicitando hipóteses e unidades.",
+          "masteryCriteria": "Acertar pelo menos 70% de um conjunto misto e justificar o raciocínio, as unidades e as aproximações utilizadas.",
+          "note": "Tempo estimado pedagogicamente pela Via Olímpica; não é carga horária oficial."
+        }
+      ],
+      "sources": [
+        {
+          "id": "oba-regulamento-2026",
+          "type": "regulamento",
+          "title": "Regulamento oficial da 29ª OBA — 2026",
+          "institution": "OBA / SAB",
+          "editionYear": 2026,
+          "pageSection": "Artigo 9 — Níveis 3 e 4",
+          "url": "https://site.oba.org.br/regulamento-oba-e-obafog",
+          "consultedAt": "2026-10-21",
+          "official": true,
+          "evidence": "mencao_direta"
+        }
+      ]
+    },
+    {
+      "id": "oba-astronautica-iss-telescopios",
+      "olympiadId": "oba",
+      "areaId": "oba-astronautica",
+      "macrotheme": "Presença e observação no espaço",
+      "moduleId": "oba-astronautica-observatorios",
+      "moduleTitle": "Astronautica Observatorios",
+      "title": "ISS e telescópios espaciais",
+      "description": "Estudo de iss e telescópios espaciais para compreender fenômenos e resolver questões teóricas da OBA.",
+      "subtopics": [
+        "Estação Espacial Internacional",
+        "Hubble",
+        "James Webb",
+        "outros telescópios espaciais",
+        "observação fora da atmosfera"
+      ],
+      "learningObjectives": [
+        "Distinguir estação espacial e telescópio.",
+        "Explicar vantagens gerais da observação espacial.",
+        "Relacionar instrumento, missão e tipo de dado."
+      ],
+      "prerequisites": [
+        "Atmosfera",
+        "Luz básica"
+      ],
+      "theoryOutline": [
+        "ISS",
+        "Telescópio Hubble",
+        "Telescópio James Webb",
+        "Observação espacial"
+      ],
+      "formulas": [],
+      "commonErrors": [
+        "Confundir ISS com telescópio.",
+        "Afirmar que telescópios espaciais observam apenas luz visível."
+      ],
+      "keywords": [
+        "ISS e telescópios espaciais",
+        "Estação Espacial Internacional",
+        "Hubble",
+        "James Webb",
+        "outros telescópios espaciais"
+      ],
+      "requiresUpdate": true,
+      "reviewFrequencyMonths": 12,
+      "status": "revisado",
+      "sourceTopicIds": [
+        "OBA-N3-ISS-TELESCOPIOS"
+      ],
+      "adaptations": [
+        {
+          "levelId": "oba_n3",
+          "originProgram": "oficial_nivel_atual",
+          "treatment": "novo",
+          "importance": "importante",
+          "difficulty": 3,
+          "order": 22,
+          "theoryMinutes": 60,
+          "exerciseMinutes": 75,
+          "optionalPracticeMinutes": 0,
+          "exerciseCount": 8,
+          "exerciseTypes": [
+            "objetiva",
+            "comparação",
+            "interpretação de imagem"
+          ],
+          "languageAdaptation": "Usar linguagem visual, comparações concretas e matemática introduzida passo a passo.",
+          "masteryCriteria": "Acertar pelo menos 75% de uma lista básica e intermediária, interpretando corretamente fórmulas, imagens, tabelas e gráficos.",
+          "note": "Tempo estimado pedagogicamente pela Via Olímpica; não é carga horária oficial."
+        },
+        {
+          "levelId": "oba_n4",
+          "originProgram": "oficial_herdado",
+          "treatment": "revisao",
+          "importance": "importante",
+          "difficulty": 4,
+          "order": 22,
+          "theoryMinutes": 30,
+          "exerciseMinutes": 55,
+          "optionalPracticeMinutes": 0,
+          "exerciseCount": 6,
+          "exerciseTypes": [
+            "objetiva",
+            "comparação",
+            "interpretação de imagem"
+          ],
+          "languageAdaptation": "Usar linguagem conceitual e matemática compatível com o Ensino Médio, explicitando hipóteses e unidades.",
+          "masteryCriteria": "Acertar pelo menos 70% de um conjunto misto e justificar o raciocínio, as unidades e as aproximações utilizadas.",
+          "note": "Tempo estimado pedagogicamente pela Via Olímpica; não é carga horária oficial."
+        }
+      ],
+      "sources": [
+        {
+          "id": "oba-regulamento-2026",
+          "type": "regulamento",
+          "title": "Regulamento oficial da 29ª OBA — 2026",
+          "institution": "OBA / SAB",
+          "editionYear": 2026,
+          "pageSection": "Artigo 9 — base do Nível 2 incorporada ao Nível 3",
+          "url": "https://site.oba.org.br/regulamento-oba-e-obafog",
+          "consultedAt": "2026-10-21",
+          "official": true,
+          "evidence": "mencao_direta"
+        }
+      ]
+    },
+    {
+      "id": "oba-astronautica-instituicoes-brasileiras",
+      "olympiadId": "oba",
+      "areaId": "oba-astronautica",
+      "macrotheme": "Programa espacial brasileiro",
+      "moduleId": "oba-astronautica-instituicoes",
+      "moduleTitle": "Astronautica Instituicoes",
+      "title": "Instituições espaciais brasileiras",
+      "description": "Estudo de instituições espaciais brasileiras para compreender fenômenos e resolver questões teóricas da OBA.",
+      "subtopics": [
+        "AEB",
+        "CTA e DCTA",
+        "IAE",
+        "INPE",
+        "ITA",
+        "CLA",
+        "CLBI"
+      ],
+      "learningObjectives": [
+        "Reconhecer funções gerais das instituições.",
+        "Distinguir centros de lançamento, pesquisa, formação e coordenação.",
+        "Contextualizar mudanças de nomenclatura."
+      ],
+      "prerequisites": [
+        "Programa espacial brasileiro"
+      ],
+      "theoryOutline": [
+        "Coordenação e pesquisa",
+        "Desenvolvimento aeroespacial",
+        "Centros de lançamento",
+        "Formação e tecnologia"
+      ],
+      "formulas": [],
+      "commonErrors": [
+        "Memorizar siglas sem compreender papéis.",
+        "Usar nomenclatura histórica sem contexto."
+      ],
+      "keywords": [
+        "Instituições espaciais brasileiras",
+        "AEB",
+        "CTA e DCTA",
+        "IAE",
+        "INPE"
+      ],
+      "requiresUpdate": true,
+      "reviewFrequencyMonths": 12,
+      "status": "revisado",
+      "sourceTopicIds": [
+        "OBA-N3-INSTITUICOES-BRASILEIRAS"
+      ],
+      "adaptations": [
+        {
+          "levelId": "oba_n3",
+          "originProgram": "oficial_nivel_atual",
+          "treatment": "novo",
+          "importance": "importante",
+          "difficulty": 3,
+          "order": 23,
+          "theoryMinutes": 60,
+          "exerciseMinutes": 75,
+          "optionalPracticeMinutes": 0,
+          "exerciseCount": 8,
+          "exerciseTypes": [
+            "objetiva",
+            "associação",
+            "interpretação de texto"
+          ],
+          "languageAdaptation": "Usar linguagem visual, comparações concretas e matemática introduzida passo a passo.",
+          "masteryCriteria": "Acertar pelo menos 75% de uma lista básica e intermediária, interpretando corretamente fórmulas, imagens, tabelas e gráficos.",
+          "note": "Tempo estimado pedagogicamente pela Via Olímpica; não é carga horária oficial."
+        },
+        {
+          "levelId": "oba_n4",
+          "originProgram": "oficial_herdado",
+          "treatment": "revisao",
+          "importance": "importante",
+          "difficulty": 4,
+          "order": 23,
+          "theoryMinutes": 30,
+          "exerciseMinutes": 55,
+          "optionalPracticeMinutes": 0,
+          "exerciseCount": 6,
+          "exerciseTypes": [
+            "objetiva",
+            "associação",
+            "interpretação de texto"
+          ],
+          "languageAdaptation": "Usar linguagem conceitual e matemática compatível com o Ensino Médio, explicitando hipóteses e unidades.",
+          "masteryCriteria": "Acertar pelo menos 70% de um conjunto misto e justificar o raciocínio, as unidades e as aproximações utilizadas.",
+          "note": "Tempo estimado pedagogicamente pela Via Olímpica; não é carga horária oficial."
+        }
+      ],
+      "sources": [
+        {
+          "id": "oba-regulamento-2026",
+          "type": "regulamento",
+          "title": "Regulamento oficial da 29ª OBA — 2026",
+          "institution": "OBA / SAB",
+          "editionYear": 2026,
+          "pageSection": "Artigo 9 — programa cumulativo do Nível 3",
+          "url": "https://site.oba.org.br/regulamento-oba-e-obafog",
+          "consultedAt": "2026-10-21",
+          "official": true,
+          "evidence": "mencao_direta"
+        }
+      ]
+    },
+    {
+      "id": "oba-astronautica-conquista-espaco",
+      "olympiadId": "oba",
+      "areaId": "oba-astronautica",
+      "macrotheme": "Missões e exploração",
+      "moduleId": "oba-astronautica-conquista",
+      "moduleTitle": "Astronautica Conquista",
+      "title": "Conquista do espaço, Lua e exploração de Marte",
+      "description": "Estudo de conquista do espaço, lua e exploração de marte para compreender fenômenos e resolver questões teóricas da OBA.",
+      "subtopics": [
+        "história da conquista espacial",
+        "chegada humana à Lua",
+        "exploração de Marte",
+        "missões robóticas e humanas"
+      ],
+      "learningObjectives": [
+        "Organizar eventos gerais da exploração espacial.",
+        "Distinguir exploração robótica e humana.",
+        "Relacionar objetivo, veículo e destino de uma missão."
+      ],
+      "prerequisites": [
+        "Sistema Solar",
+        "Noções de história"
+      ],
+      "theoryOutline": [
+        "Primeiros marcos",
+        "Exploração lunar",
+        "Exploração de Marte",
+        "Missões robóticas e humanas"
+      ],
+      "formulas": [],
+      "commonErrors": [
+        "Confundir cronologia ou objetivo das missões.",
+        "Tratar exemplos atuais sem fonte e data."
+      ],
+      "keywords": [
+        "Conquista do espaço, Lua e exploração de Marte",
+        "história da conquista espacial",
+        "chegada humana à Lua",
+        "exploração de Marte",
+        "missões robóticas e humanas"
+      ],
+      "requiresUpdate": true,
+      "reviewFrequencyMonths": 12,
+      "status": "revisado",
+      "sourceTopicIds": [
+        "OBA-N3-CONQUISTA-LUA-MARTE"
+      ],
+      "adaptations": [
+        {
+          "levelId": "oba_n3",
+          "originProgram": "oficial_nivel_atual",
+          "treatment": "novo",
+          "importance": "essencial",
+          "difficulty": 3,
+          "order": 24,
+          "theoryMinutes": 75,
+          "exerciseMinutes": 90,
+          "optionalPracticeMinutes": 0,
+          "exerciseCount": 9,
+          "exerciseTypes": [
+            "objetiva",
+            "interpretação de texto",
+            "linha do tempo"
+          ],
+          "languageAdaptation": "Usar linguagem visual, comparações concretas e matemática introduzida passo a passo.",
+          "masteryCriteria": "Acertar pelo menos 75% de uma lista básica e intermediária, interpretando corretamente fórmulas, imagens, tabelas e gráficos.",
+          "note": "Tempo estimado pedagogicamente pela Via Olímpica; não é carga horária oficial."
+        },
+        {
+          "levelId": "oba_n4",
+          "originProgram": "oficial_herdado",
+          "treatment": "aprofundamento",
+          "importance": "essencial",
+          "difficulty": 4,
+          "order": 24,
+          "theoryMinutes": 60,
+          "exerciseMinutes": 90,
+          "optionalPracticeMinutes": 0,
+          "exerciseCount": 9,
+          "exerciseTypes": [
+            "objetiva",
+            "interpretação de texto",
+            "linha do tempo"
+          ],
+          "languageAdaptation": "Usar linguagem conceitual e matemática compatível com o Ensino Médio, explicitando hipóteses e unidades.",
+          "masteryCriteria": "Acertar pelo menos 70% de um conjunto misto e justificar o raciocínio, as unidades e as aproximações utilizadas.",
+          "note": "Tempo estimado pedagogicamente pela Via Olímpica; não é carga horária oficial."
+        }
+      ],
+      "sources": [
+        {
+          "id": "oba-regulamento-2026",
+          "type": "regulamento",
+          "title": "Regulamento oficial da 29ª OBA — 2026",
+          "institution": "OBA / SAB",
+          "editionYear": 2026,
+          "pageSection": "Artigo 9 — programa do Nível 3",
+          "url": "https://site.oba.org.br/regulamento-oba-e-obafog",
+          "consultedAt": "2026-10-21",
+          "official": true,
+          "evidence": "mencao_direta"
+        }
+      ]
+    },
+    {
+      "id": "oba-astronautica-programa-brasileiro",
+      "olympiadId": "oba",
+      "areaId": "oba-astronautica",
+      "macrotheme": "Programa espacial brasileiro",
+      "moduleId": "oba-astronautica-programa-brasileiro",
+      "moduleTitle": "Astronautica Programa Brasileiro",
+      "title": "Programa espacial brasileiro: razões e impactos",
+      "description": "Estudo de programa espacial brasileiro: razões e impactos para compreender fenômenos e resolver questões teóricas da OBA.",
+      "subtopics": [
+        "autonomia tecnológica",
+        "ciência e inovação",
+        "comunicações",
+        "monitoramento ambiental",
+        "benefícios sociais"
+      ],
+      "learningObjectives": [
+        "Explicar razões para um programa espacial nacional.",
+        "Relacionar atividades espaciais a ciência, tecnologia e sociedade.",
+        "Analisar aplicações sem reduzir o programa a lançamentos."
+      ],
+      "prerequisites": [
+        "Satélites e instituições brasileiras"
+      ],
+      "theoryOutline": [
+        "Objetivos estratégicos",
+        "Aplicações científicas",
+        "Impactos tecnológicos e sociais"
+      ],
+      "formulas": [],
+      "commonErrors": [
+        "Resumir programa espacial à viagem tripulada.",
+        "Ignorar aplicações civis."
+      ],
+      "keywords": [
+        "Programa espacial brasileiro: razões e impactos",
+        "autonomia tecnológica",
+        "ciência e inovação",
+        "comunicações",
+        "monitoramento ambiental"
+      ],
+      "requiresUpdate": true,
+      "reviewFrequencyMonths": 12,
+      "status": "revisado",
+      "sourceTopicIds": [
+        "OBA-N3-PROGRAMA-ESPACIAL-BRASILEIRO"
+      ],
+      "adaptations": [
+        {
+          "levelId": "oba_n3",
+          "originProgram": "oficial_nivel_atual",
+          "treatment": "novo",
+          "importance": "importante",
+          "difficulty": 3,
+          "order": 25,
+          "theoryMinutes": 60,
+          "exerciseMinutes": 90,
+          "optionalPracticeMinutes": 0,
+          "exerciseCount": 9,
+          "exerciseTypes": [
+            "objetiva",
+            "interpretação de texto",
+            "argumentação"
+          ],
+          "languageAdaptation": "Usar linguagem visual, comparações concretas e matemática introduzida passo a passo.",
+          "masteryCriteria": "Acertar pelo menos 75% de uma lista básica e intermediária, interpretando corretamente fórmulas, imagens, tabelas e gráficos.",
+          "note": "Tempo estimado pedagogicamente pela Via Olímpica; não é carga horária oficial."
+        },
+        {
+          "levelId": "oba_n4",
+          "originProgram": "oficial_herdado",
+          "treatment": "revisao",
+          "importance": "importante",
+          "difficulty": 4,
+          "order": 25,
+          "theoryMinutes": 30,
+          "exerciseMinutes": 70,
+          "optionalPracticeMinutes": 0,
+          "exerciseCount": 7,
+          "exerciseTypes": [
+            "objetiva",
+            "interpretação de texto",
+            "argumentação"
+          ],
+          "languageAdaptation": "Usar linguagem conceitual e matemática compatível com o Ensino Médio, explicitando hipóteses e unidades.",
+          "masteryCriteria": "Acertar pelo menos 70% de um conjunto misto e justificar o raciocínio, as unidades e as aproximações utilizadas.",
+          "note": "Tempo estimado pedagogicamente pela Via Olímpica; não é carga horária oficial."
+        }
+      ],
+      "sources": [
+        {
+          "id": "oba-regulamento-2026",
+          "type": "regulamento",
+          "title": "Regulamento oficial da 29ª OBA — 2026",
+          "institution": "OBA / SAB",
+          "editionYear": 2026,
+          "pageSection": "Artigo 9 — programa do Nível 3",
+          "url": "https://site.oba.org.br/regulamento-oba-e-obafog",
+          "consultedAt": "2026-10-21",
+          "official": true,
+          "evidence": "mencao_direta"
+        }
+      ]
+    },
+    {
+      "id": "oba-astronautica-ambiente-corpo",
+      "olympiadId": "oba",
+      "areaId": "oba-astronautica",
+      "macrotheme": "Ambiente terrestre e espacial",
+      "moduleId": "oba-astronautica-ambiente",
+      "moduleTitle": "Astronautica Ambiente",
+      "title": "Atmosfera, efeito estufa, ozônio e corpo humano no espaço",
+      "description": "Estudo de atmosfera, efeito estufa, ozônio e corpo humano no espaço para compreender fenômenos e resolver questões teóricas da OBA.",
+      "subtopics": [
+        "atmosfera e vida",
+        "efeito estufa",
+        "camada de ozônio",
+        "microgravidade e corpo humano",
+        "ambiente espacial"
+      ],
+      "learningObjectives": [
+        "Explicar a importância da atmosfera.",
+        "Distinguir efeito estufa e redução do ozônio.",
+        "Reconhecer desafios do corpo humano no espaço."
+      ],
+      "prerequisites": [
+        "Atmosfera terrestre",
+        "Corpo humano básico"
+      ],
+      "theoryOutline": [
+        "Atmosfera e vida",
+        "Efeito estufa",
+        "Camada de ozônio",
+        "Adaptação humana ao espaço"
+      ],
+      "formulas": [],
+      "commonErrors": [
+        "Confundir efeito estufa e buraco na camada de ozônio.",
+        "Afirmar que não há gravidade em órbita."
+      ],
+      "keywords": [
+        "Atmosfera, efeito estufa, ozônio e corpo humano no espaço",
+        "atmosfera e vida",
+        "efeito estufa",
+        "camada de ozônio",
+        "microgravidade e corpo humano"
+      ],
+      "requiresUpdate": false,
+      "reviewFrequencyMonths": null,
+      "status": "revisado",
+      "sourceTopicIds": [
+        "OBA-N3-AMBIENTE-CORPO-ESPACO"
+      ],
+      "adaptations": [
+        {
+          "levelId": "oba_n3",
+          "originProgram": "oficial_nivel_atual",
+          "treatment": "novo",
+          "importance": "essencial",
+          "difficulty": 3,
+          "order": 26,
+          "theoryMinutes": 60,
+          "exerciseMinutes": 90,
+          "optionalPracticeMinutes": 0,
+          "exerciseCount": 9,
+          "exerciseTypes": [
+            "objetiva",
+            "interpretação de texto",
+            "comparação"
+          ],
+          "languageAdaptation": "Usar linguagem visual, comparações concretas e matemática introduzida passo a passo.",
+          "masteryCriteria": "Acertar pelo menos 75% de uma lista básica e intermediária, interpretando corretamente fórmulas, imagens, tabelas e gráficos.",
+          "note": "Tempo estimado pedagogicamente pela Via Olímpica; não é carga horária oficial."
+        },
+        {
+          "levelId": "oba_n4",
+          "originProgram": "oficial_herdado",
+          "treatment": "aprofundamento",
+          "importance": "essencial",
+          "difficulty": 4,
+          "order": 26,
+          "theoryMinutes": 60,
+          "exerciseMinutes": 90,
+          "optionalPracticeMinutes": 0,
+          "exerciseCount": 9,
+          "exerciseTypes": [
+            "objetiva",
+            "interpretação de texto",
+            "comparação"
+          ],
+          "languageAdaptation": "Usar linguagem conceitual e matemática compatível com o Ensino Médio, explicitando hipóteses e unidades.",
+          "masteryCriteria": "Acertar pelo menos 70% de um conjunto misto e justificar o raciocínio, as unidades e as aproximações utilizadas.",
+          "note": "Tempo estimado pedagogicamente pela Via Olímpica; não é carga horária oficial."
+        }
+      ],
+      "sources": [
+        {
+          "id": "oba-regulamento-2026",
+          "type": "regulamento",
+          "title": "Regulamento oficial da 29ª OBA — 2026",
+          "institution": "OBA / SAB",
+          "editionYear": 2026,
+          "pageSection": "Artigo 9 — programa do Nível 3",
+          "url": "https://site.oba.org.br/regulamento-oba-e-obafog",
+          "consultedAt": "2026-10-21",
+          "official": true,
+          "evidence": "mencao_direta"
+        }
+      ]
+    },
+    {
+      "id": "oba-astronautica-foguetes-historicos",
+      "olympiadId": "oba",
+      "areaId": "oba-astronautica",
+      "macrotheme": "Veículos e exploração",
+      "moduleId": "oba-astronautica-foguetes-historicos",
+      "moduleTitle": "Astronautica Foguetes Historicos",
+      "title": "Foguetes históricos e contemporâneos",
+      "description": "Estudo de foguetes históricos e contemporâneos para compreender fenômenos e resolver questões teóricas da OBA.",
+      "subtopics": [
+        "Saturno",
+        "Ariane",
+        "Soyuz",
+        "Próton",
+        "veículos de empresas privadas",
+        "SpaceX como empresa"
+      ],
+      "learningObjectives": [
+        "Associar veículos a contextos e missões.",
+        "Distinguir empresa e nome de foguete.",
+        "Usar exemplos contemporâneos com fonte e data."
+      ],
+      "prerequisites": [
+        "Foguetes e missões"
+      ],
+      "theoryOutline": [
+        "Veículos históricos",
+        "Famílias de foguetes",
+        "Empresas privadas e veículos atuais"
+      ],
+      "formulas": [],
+      "commonErrors": [
+        "Apresentar SpaceX como nome de foguete.",
+        "Memorizar listas sem entender funções."
+      ],
+      "keywords": [
+        "Foguetes históricos e contemporâneos",
+        "Saturno",
+        "Ariane",
+        "Soyuz",
+        "Próton"
+      ],
+      "requiresUpdate": true,
+      "reviewFrequencyMonths": 12,
+      "status": "revisado",
+      "sourceTopicIds": [
+        "OBA-N3-FOGUETES-HISTORICOS-ATUAIS"
+      ],
+      "adaptations": [
+        {
+          "levelId": "oba_n3",
+          "originProgram": "oficial_nivel_atual",
+          "treatment": "novo",
+          "importance": "importante",
+          "difficulty": 3,
+          "order": 27,
+          "theoryMinutes": 60,
+          "exerciseMinutes": 75,
+          "optionalPracticeMinutes": 0,
+          "exerciseCount": 8,
+          "exerciseTypes": [
+            "objetiva",
+            "associação",
+            "interpretação de texto"
+          ],
+          "languageAdaptation": "Usar linguagem visual, comparações concretas e matemática introduzida passo a passo.",
+          "masteryCriteria": "Acertar pelo menos 75% de uma lista básica e intermediária, interpretando corretamente fórmulas, imagens, tabelas e gráficos.",
+          "note": "Tempo estimado pedagogicamente pela Via Olímpica; não é carga horária oficial."
+        },
+        {
+          "levelId": "oba_n4",
+          "originProgram": "oficial_herdado",
+          "treatment": "revisao",
+          "importance": "importante",
+          "difficulty": 4,
+          "order": 27,
+          "theoryMinutes": 30,
+          "exerciseMinutes": 55,
+          "optionalPracticeMinutes": 0,
+          "exerciseCount": 6,
+          "exerciseTypes": [
+            "objetiva",
+            "associação",
+            "interpretação de texto"
+          ],
+          "languageAdaptation": "Usar linguagem conceitual e matemática compatível com o Ensino Médio, explicitando hipóteses e unidades.",
+          "masteryCriteria": "Acertar pelo menos 70% de um conjunto misto e justificar o raciocínio, as unidades e as aproximações utilizadas.",
+          "note": "Tempo estimado pedagogicamente pela Via Olímpica; não é carga horária oficial."
+        }
+      ],
+      "sources": [
+        {
+          "id": "oba-regulamento-2026",
+          "type": "regulamento",
+          "title": "Regulamento oficial da 29ª OBA — 2026",
+          "institution": "OBA / SAB",
+          "editionYear": 2026,
+          "pageSection": "Artigo 9 — programa do Nível 3",
+          "url": "https://site.oba.org.br/regulamento-oba-e-obafog",
+          "consultedAt": "2026-10-21",
+          "official": true,
+          "evidence": "mencao_direta"
+        }
+      ]
+    },
+    {
+      "id": "oba-astronautica-artemis",
+      "olympiadId": "oba",
+      "areaId": "oba-astronautica",
+      "macrotheme": "Missões e exploração",
+      "moduleId": "oba-astronautica-artemis",
+      "moduleTitle": "Astronautica Artemis",
+      "title": "Programa Artemis",
+      "description": "Estudo de programa artemis para compreender fenômenos e resolver questões teóricas da OBA.",
+      "subtopics": [
+        "objetivos",
+        "exploração lunar",
+        "missões e etapas",
+        "tecnologias",
+        "contexto internacional"
+      ],
+      "learningObjectives": [
+        "Explicar os objetivos gerais do Artemis.",
+        "Relacionar missões e tecnologias à exploração lunar.",
+        "Distinguir informação consolidada e cronograma sujeito a atualização."
+      ],
+      "prerequisites": [
+        "Exploração lunar",
+        "Foguetes e missões"
+      ],
+      "theoryOutline": [
+        "Objetivos do programa",
+        "Arquitetura geral",
+        "Missões e tecnologias",
+        "Atualizações e fontes"
+      ],
+      "formulas": [],
+      "commonErrors": [
+        "Apresentar cronogramas antigos como atuais.",
+        "Confundir programa com uma única missão."
+      ],
+      "keywords": [
+        "Programa Artemis",
+        "objetivos",
+        "exploração lunar",
+        "missões e etapas",
+        "tecnologias"
+      ],
+      "requiresUpdate": true,
+      "reviewFrequencyMonths": 12,
+      "status": "revisado",
+      "sourceTopicIds": [
+        "OBA-N3-ARTEMIS",
+        "OBA-N4-ARTEMIS-APROFUNDAMENTO"
+      ],
+      "adaptations": [
+        {
+          "levelId": "oba_n3",
+          "originProgram": "oficial_nivel_atual",
+          "treatment": "novo",
+          "importance": "essencial",
+          "difficulty": 3,
+          "order": 28,
+          "theoryMinutes": 60,
+          "exerciseMinutes": 75,
+          "optionalPracticeMinutes": 0,
+          "exerciseCount": 8,
+          "exerciseTypes": [
+            "objetiva",
+            "interpretação de texto",
+            "comparação"
+          ],
+          "languageAdaptation": "Usar linguagem visual, comparações concretas e matemática introduzida passo a passo.",
+          "masteryCriteria": "Acertar pelo menos 75% de uma lista básica e intermediária, interpretando corretamente fórmulas, imagens, tabelas e gráficos.",
+          "note": "Tempo estimado pedagogicamente pela Via Olímpica; não é carga horária oficial."
+        },
+        {
+          "levelId": "oba_n4",
+          "originProgram": "oficial_herdado",
+          "treatment": "aprofundamento",
+          "importance": "essencial",
+          "difficulty": 4,
+          "order": 28,
+          "theoryMinutes": 60,
+          "exerciseMinutes": 90,
+          "optionalPracticeMinutes": 0,
+          "exerciseCount": 9,
+          "exerciseTypes": [
+            "objetiva",
+            "interpretação de texto",
+            "comparação"
+          ],
+          "languageAdaptation": "Usar linguagem conceitual e matemática compatível com o Ensino Médio, explicitando hipóteses e unidades.",
+          "masteryCriteria": "Acertar pelo menos 70% de um conjunto misto e justificar o raciocínio, as unidades e as aproximações utilizadas.",
+          "note": "Tempo estimado pedagogicamente pela Via Olímpica; não é carga horária oficial."
+        }
+      ],
+      "sources": [
+        {
+          "id": "oba-regulamento-2026",
+          "type": "regulamento",
+          "title": "Regulamento oficial da 29ª OBA — 2026",
+          "institution": "OBA / SAB",
+          "editionYear": 2026,
+          "pageSection": "Artigo 9 — Níveis 3 e 4",
+          "url": "https://site.oba.org.br/regulamento-oba-e-obafog",
+          "consultedAt": "2026-10-21",
+          "official": true,
+          "evidence": "mencao_direta"
+        }
+      ]
+    },
+    {
+      "id": "oba-astronautica-corrida-espacial",
+      "olympiadId": "oba",
+      "areaId": "oba-astronautica",
+      "macrotheme": "História espacial",
+      "moduleId": "oba-astronautica-corrida",
+      "moduleTitle": "Astronautica Corrida",
+      "title": "Corrida Espacial e Guerra Fria",
+      "description": "Estudo de corrida espacial e guerra fria para compreender fenômenos e resolver questões teóricas da OBA.",
+      "subtopics": [
+        "Guerra Fria",
+        "competição tecnológica",
+        "marcos espaciais",
+        "política, ciência e tecnologia"
+      ],
+      "learningObjectives": [
+        "Relacionar contexto político e desenvolvimento espacial.",
+        "Organizar marcos e objetivos.",
+        "Analisar ciência e tecnologia no contexto histórico."
+      ],
+      "prerequisites": [
+        "Noções de século XX"
+      ],
+      "theoryOutline": [
+        "Contexto da Guerra Fria",
+        "Competição espacial",
+        "Marcos e consequências"
+      ],
+      "formulas": [],
+      "commonErrors": [
+        "Reduzir a Corrida Espacial a uma lista de datas.",
+        "Ignorar cooperação e desdobramentos posteriores."
+      ],
+      "keywords": [
+        "Corrida Espacial e Guerra Fria",
+        "Guerra Fria",
+        "competição tecnológica",
+        "marcos espaciais",
+        "política, ciência e tecnologia"
+      ],
+      "requiresUpdate": false,
+      "reviewFrequencyMonths": null,
+      "status": "revisado",
+      "sourceTopicIds": [
+        "OBA-N4-CORRIDA-ESPACIAL"
+      ],
+      "adaptations": [
+        {
+          "levelId": "oba_n4",
+          "originProgram": "oficial_nivel_atual",
+          "treatment": "novo",
+          "importance": "essencial",
+          "difficulty": 3,
+          "order": 29,
+          "theoryMinutes": 60,
+          "exerciseMinutes": 90,
+          "optionalPracticeMinutes": 0,
+          "exerciseCount": 9,
+          "exerciseTypes": [
+            "objetiva",
+            "interpretação de texto",
+            "linha do tempo"
+          ],
+          "languageAdaptation": "Usar linguagem conceitual e matemática compatível com o Ensino Médio, explicitando hipóteses e unidades.",
+          "masteryCriteria": "Acertar pelo menos 75% de uma lista básica e intermediária, interpretando corretamente fórmulas, imagens, tabelas e gráficos.",
+          "note": "Tempo estimado pedagogicamente pela Via Olímpica; não é carga horária oficial."
+        }
+      ],
+      "sources": [
+        {
+          "id": "oba-regulamento-2026",
+          "type": "regulamento",
+          "title": "Regulamento oficial da 29ª OBA — 2026",
+          "institution": "OBA / SAB",
+          "editionYear": 2026,
+          "pageSection": "Artigo 9 — programa do Nível 4",
+          "url": "https://site.oba.org.br/regulamento-oba-e-obafog",
+          "consultedAt": "2026-10-21",
+          "official": true,
+          "evidence": "mencao_direta"
+        }
+      ]
+    },
+    {
+      "id": "oba-astronautica-comunicacao",
+      "olympiadId": "oba",
+      "areaId": "oba-astronautica",
+      "macrotheme": "Tecnologias espaciais",
+      "moduleId": "oba-astronautica-comunicacao",
+      "moduleTitle": "Astronautica Comunicacao",
+      "title": "Comunicação de astronautas e missões espaciais",
+      "description": "Estudo de comunicação de astronautas e missões espaciais para compreender fenômenos e resolver questões teóricas da OBA.",
+      "subtopics": [
+        "ondas eletromagnéticas",
+        "transmissão e recepção",
+        "atraso de sinal",
+        "comunicação com astronautas e sondas"
+      ],
+      "learningObjectives": [
+        "Explicar fundamentos de comunicação espacial.",
+        "Relacionar distância e atraso de sinal.",
+        "Identificar limitações e meios de transmissão."
+      ],
+      "prerequisites": [
+        "Ondas e espectro",
+        "Velocidade da luz"
+      ],
+      "theoryOutline": [
+        "Sinais eletromagnéticos",
+        "Transmissão e recepção",
+        "Atraso e distância",
+        "Aplicações em missões"
+      ],
+      "formulas": [],
+      "commonErrors": [
+        "Imaginar comunicação instantânea a qualquer distância.",
+        "Confundir som no ar com ondas de rádio."
+      ],
+      "keywords": [
+        "Comunicação de astronautas e missões espaciais",
+        "ondas eletromagnéticas",
+        "transmissão e recepção",
+        "atraso de sinal",
+        "comunicação com astronautas e sondas"
+      ],
+      "requiresUpdate": false,
+      "reviewFrequencyMonths": null,
+      "status": "revisado",
+      "sourceTopicIds": [
+        "OBA-N4-COMUNICACAO-ESPACO"
+      ],
+      "adaptations": [
+        {
+          "levelId": "oba_n4",
+          "originProgram": "oficial_nivel_atual",
+          "treatment": "novo",
+          "importance": "essencial",
+          "difficulty": 4,
+          "order": 30,
+          "theoryMinutes": 75,
+          "exerciseMinutes": 105,
+          "optionalPracticeMinutes": 0,
+          "exerciseCount": 10,
+          "exerciseTypes": [
+            "objetiva",
+            "cálculo",
+            "interpretação de texto"
+          ],
+          "languageAdaptation": "Usar linguagem conceitual e matemática compatível com o Ensino Médio, explicitando hipóteses e unidades.",
+          "masteryCriteria": "Acertar pelo menos 70% de um conjunto misto e justificar o raciocínio, as unidades e as aproximações utilizadas.",
+          "note": "Tempo estimado pedagogicamente pela Via Olímpica; não é carga horária oficial."
+        }
+      ],
+      "sources": [
+        {
+          "id": "oba-regulamento-2026",
+          "type": "regulamento",
+          "title": "Regulamento oficial da 29ª OBA — 2026",
+          "institution": "OBA / SAB",
+          "editionYear": 2026,
+          "pageSection": "Artigo 9 — programa do Nível 4",
+          "url": "https://site.oba.org.br/regulamento-oba-e-obafog",
+          "consultedAt": "2026-10-21",
+          "official": true,
+          "evidence": "mencao_direta"
+        }
+      ]
+    },
+    {
+      "id": "oba-astronautica-velocidades",
+      "olympiadId": "oba",
+      "areaId": "oba-astronautica",
+      "macrotheme": "Órbitas e velocidades",
+      "moduleId": "oba-astronautica-velocidades",
+      "moduleTitle": "Astronautica Velocidades",
+      "title": "Velocidades orbitais, escape e campo gravitacional",
+      "description": "Estudo de velocidades orbitais, escape e campo gravitacional para compreender fenômenos e resolver questões teóricas da OBA.",
+      "subtopics": [
+        "velocidade de foguetes e satélites",
+        "velocidade orbital",
+        "velocidade de escape",
+        "campo gravitacional terrestre"
+      ],
+      "learningObjectives": [
+        "Comparar velocidade orbital e de escape.",
+        "Interpretar campo gravitacional.",
+        "Aplicar relações com unidades e hipóteses fornecidas."
+      ],
+      "prerequisites": [
+        "Gravitação universal",
+        "Álgebra",
+        "Potenciação e raízes"
+      ],
+      "theoryOutline": [
+        "Campo gravitacional",
+        "Velocidade orbital",
+        "Velocidade de escape",
+        "Comparações e aplicações"
+      ],
+      "formulas": [
+        {
+          "expression": "g = GM/r²",
+          "variables": {
+            "g": "campo gravitacional",
+            "G": "constante gravitacional",
+            "M": "massa do astro",
+            "r": "distância ao centro"
+          }
+        },
+        {
+          "expression": "vₑ = √(2GM/r)",
+          "variables": {
+            "vₑ": "velocidade de escape",
+            "G": "constante gravitacional",
+            "M": "massa do astro",
+            "r": "distância ao centro"
+          },
+          "note": "Usar quando as hipóteses do modelo forem fornecidas ou ensinadas."
+        }
+      ],
+      "commonErrors": [
+        "Confundir velocidade orbital e de escape.",
+        "Ignorar raio medido a partir do centro da Terra."
+      ],
+      "keywords": [
+        "Velocidades orbitais, escape e campo gravitacional",
+        "velocidade de foguetes e satélites",
+        "velocidade orbital",
+        "velocidade de escape",
+        "campo gravitacional terrestre"
+      ],
+      "requiresUpdate": false,
+      "reviewFrequencyMonths": null,
+      "status": "revisado",
+      "sourceTopicIds": [
+        "OBA-N4-VELOCIDADES-CAMPO"
+      ],
+      "adaptations": [
+        {
+          "levelId": "oba_n4",
+          "originProgram": "oficial_nivel_atual",
+          "treatment": "novo",
+          "importance": "essencial",
+          "difficulty": 5,
+          "order": 31,
+          "theoryMinutes": 105,
+          "exerciseMinutes": 150,
+          "optionalPracticeMinutes": 0,
+          "exerciseCount": 15,
+          "exerciseTypes": [
+            "objetiva",
+            "cálculo",
+            "interpretação de gráfico"
+          ],
+          "languageAdaptation": "Usar linguagem conceitual e matemática compatível com o Ensino Médio, explicitando hipóteses e unidades.",
+          "masteryCriteria": "Acertar pelo menos 70% de um conjunto misto e justificar o raciocínio, as unidades e as aproximações utilizadas.",
+          "note": "Tempo estimado pedagogicamente pela Via Olímpica; não é carga horária oficial."
+        }
+      ],
+      "sources": [
+        {
+          "id": "oba-regulamento-2026",
+          "type": "regulamento",
+          "title": "Regulamento oficial da 29ª OBA — 2026",
+          "institution": "OBA / SAB",
+          "editionYear": 2026,
+          "pageSection": "Artigo 9 — programa do Nível 4",
+          "url": "https://site.oba.org.br/regulamento-oba-e-obafog",
+          "consultedAt": "2026-10-21",
+          "official": true,
+          "evidence": "mencao_direta"
+        }
+      ]
+    },
+    {
+      "id": "oba-astronautica-orbitas-controle",
+      "olympiadId": "oba",
+      "areaId": "oba-astronautica",
+      "macrotheme": "Órbitas e velocidades",
+      "moduleId": "oba-astronautica-orbitas",
+      "moduleTitle": "Astronautica Orbitas",
+      "title": "Tipos de órbita e controle de satélites",
+      "description": "Estudo de tipos de órbita e controle de satélites para compreender fenômenos e resolver questões teóricas da OBA.",
+      "subtopics": [
+        "órbita circular",
+        "elíptica",
+        "polar",
+        "geoestacionária",
+        "inclinação orbital",
+        "manutenção e controle"
+      ],
+      "learningObjectives": [
+        "Distinguir forma, orientação e condição orbital.",
+        "Relacionar órbita e finalidade da missão.",
+        "Explicar por que categorias podem se sobrepor."
+      ],
+      "prerequisites": [
+        "Gravitação e Kepler",
+        "Geometria"
+      ],
+      "theoryOutline": [
+        "Forma e parâmetros orbitais",
+        "Órbita polar",
+        "Órbita geoestacionária",
+        "Controle e manutenção"
+      ],
+      "formulas": [],
+      "commonErrors": [
+        "Tratar circular, polar e geoestacionária como alternativas sempre excludentes.",
+        "Confundir geoestacionária com qualquer órbita geossíncrona."
+      ],
+      "keywords": [
+        "Tipos de órbita e controle de satélites",
+        "órbita circular",
+        "elíptica",
+        "polar",
+        "geoestacionária"
+      ],
+      "requiresUpdate": false,
+      "reviewFrequencyMonths": null,
+      "status": "revisado",
+      "sourceTopicIds": [
+        "OBA-N4-ORBITAS-CONTROLE"
+      ],
+      "adaptations": [
+        {
+          "levelId": "oba_n4",
+          "originProgram": "oficial_nivel_atual",
+          "treatment": "novo",
+          "importance": "essencial",
+          "difficulty": 5,
+          "order": 32,
+          "theoryMinutes": 90,
+          "exerciseMinutes": 135,
+          "optionalPracticeMinutes": 0,
+          "exerciseCount": 14,
+          "exerciseTypes": [
+            "objetiva",
+            "comparação",
+            "interpretação de diagrama"
+          ],
+          "languageAdaptation": "Usar linguagem conceitual e matemática compatível com o Ensino Médio, explicitando hipóteses e unidades.",
+          "masteryCriteria": "Acertar pelo menos 70% de um conjunto misto e justificar o raciocínio, as unidades e as aproximações utilizadas.",
+          "note": "Tempo estimado pedagogicamente pela Via Olímpica; não é carga horária oficial."
+        }
+      ],
+      "sources": [
+        {
+          "id": "oba-regulamento-2026",
+          "type": "regulamento",
+          "title": "Regulamento oficial da 29ª OBA — 2026",
+          "institution": "OBA / SAB",
+          "editionYear": 2026,
+          "pageSection": "Artigo 9 — programa do Nível 4",
+          "url": "https://site.oba.org.br/regulamento-oba-e-obafog",
+          "consultedAt": "2026-10-21",
+          "official": true,
+          "evidence": "mencao_direta"
+        }
+      ]
+    },
+    {
+      "id": "oba-astronautica-reentrada",
+      "olympiadId": "oba",
+      "areaId": "oba-astronautica",
+      "macrotheme": "Ambiente e veículos",
+      "moduleId": "oba-astronautica-reentrada",
+      "moduleTitle": "Astronautica Reentrada",
+      "title": "Entrada e reentrada na atmosfera",
+      "description": "Estudo de entrada e reentrada na atmosfera para compreender fenômenos e resolver questões teóricas da OBA.",
+      "subtopics": [
+        "aquecimento aerodinâmico",
+        "compressão do ar",
+        "arrasto",
+        "proteção térmica",
+        "trajetória de reentrada"
+      ],
+      "learningObjectives": [
+        "Explicar por que corpos aquecem na reentrada.",
+        "Relacionar velocidade, atmosfera e proteção térmica.",
+        "Interpretar fenômenos físicos sem explicações simplistas incorretas."
+      ],
+      "prerequisites": [
+        "Energia",
+        "Calor",
+        "Movimento"
+      ],
+      "theoryOutline": [
+        "Atmosfera e alta velocidade",
+        "Compressão e aquecimento",
+        "Arrasto",
+        "Proteção térmica"
+      ],
+      "formulas": [],
+      "commonErrors": [
+        "Atribuir o aquecimento apenas a atrito superficial.",
+        "Ignorar a energia cinética elevada."
+      ],
+      "keywords": [
+        "Entrada e reentrada na atmosfera",
+        "aquecimento aerodinâmico",
+        "compressão do ar",
+        "arrasto",
+        "proteção térmica"
+      ],
+      "requiresUpdate": false,
+      "reviewFrequencyMonths": null,
+      "status": "revisado",
+      "sourceTopicIds": [
+        "OBA-N4-REENTRADA"
+      ],
+      "adaptations": [
+        {
+          "levelId": "oba_n4",
+          "originProgram": "oficial_nivel_atual",
+          "treatment": "novo",
+          "importance": "essencial",
+          "difficulty": 4,
+          "order": 33,
+          "theoryMinutes": 75,
+          "exerciseMinutes": 105,
+          "optionalPracticeMinutes": 0,
+          "exerciseCount": 10,
+          "exerciseTypes": [
+            "objetiva",
+            "interpretação de texto",
+            "cálculo conceitual"
+          ],
+          "languageAdaptation": "Usar linguagem conceitual e matemática compatível com o Ensino Médio, explicitando hipóteses e unidades.",
+          "masteryCriteria": "Acertar pelo menos 70% de um conjunto misto e justificar o raciocínio, as unidades e as aproximações utilizadas.",
+          "note": "Tempo estimado pedagogicamente pela Via Olímpica; não é carga horária oficial."
+        }
+      ],
+      "sources": [
+        {
+          "id": "oba-regulamento-2026",
+          "type": "regulamento",
+          "title": "Regulamento oficial da 29ª OBA — 2026",
+          "institution": "OBA / SAB",
+          "editionYear": 2026,
+          "pageSection": "Artigo 9 — programa do Nível 4",
+          "url": "https://site.oba.org.br/regulamento-oba-e-obafog",
+          "consultedAt": "2026-10-21",
+          "official": true,
+          "evidence": "mencao_direta"
+        }
+      ]
+    },
+    {
+      "id": "oba-astronautica-propelentes",
+      "olympiadId": "oba",
+      "areaId": "oba-astronautica",
+      "macrotheme": "Propulsão",
+      "moduleId": "oba-astronautica-propelentes",
+      "moduleTitle": "Astronautica Propelentes",
+      "title": "Massa de combustível, propelentes e propulsão",
+      "description": "Estudo de massa de combustível, propelentes e propulsão para compreender fenômenos e resolver questões teóricas da OBA.",
+      "subtopics": [
+        "proporção de combustível na massa",
+        "combustível e propelente",
+        "propelentes de foguetes",
+        "propelentes de satélites",
+        "ação e reação"
+      ],
+      "learningObjectives": [
+        "Distinguir combustível e propelente.",
+        "Calcular proporções de massa.",
+        "Relacionar sistema propulsivo e missão de forma introdutória."
+      ],
+      "prerequisites": [
+        "Porcentagens",
+        "Razões",
+        "Ação e reação"
+      ],
+      "theoryOutline": [
+        "Massa de um foguete",
+        "Combustível e oxidante",
+        "Tipos gerais de propelente",
+        "Propulsão de satélites"
+      ],
+      "formulas": [],
+      "commonErrors": [
+        "Usar combustível e propelente como sinônimos em todos os sistemas.",
+        "Somar porcentagens sobre bases diferentes."
+      ],
+      "keywords": [
+        "Massa de combustível, propelentes e propulsão",
+        "proporção de combustível na massa",
+        "combustível e propelente",
+        "propelentes de foguetes",
+        "propelentes de satélites"
+      ],
+      "requiresUpdate": false,
+      "reviewFrequencyMonths": null,
+      "status": "revisado",
+      "sourceTopicIds": [
+        "OBA-N4-PROPELENTES-MASSA"
+      ],
+      "adaptations": [
+        {
+          "levelId": "oba_n4",
+          "originProgram": "oficial_nivel_atual",
+          "treatment": "novo",
+          "importance": "essencial",
+          "difficulty": 4,
+          "order": 34,
+          "theoryMinutes": 75,
+          "exerciseMinutes": 120,
+          "optionalPracticeMinutes": 0,
+          "exerciseCount": 12,
+          "exerciseTypes": [
+            "objetiva",
+            "cálculo",
+            "interpretação de tabela"
+          ],
+          "languageAdaptation": "Usar linguagem conceitual e matemática compatível com o Ensino Médio, explicitando hipóteses e unidades.",
+          "masteryCriteria": "Acertar pelo menos 70% de um conjunto misto e justificar o raciocínio, as unidades e as aproximações utilizadas.",
+          "note": "Tempo estimado pedagogicamente pela Via Olímpica; não é carga horária oficial."
+        }
+      ],
+      "sources": [
+        {
+          "id": "oba-regulamento-2026",
+          "type": "regulamento",
+          "title": "Regulamento oficial da 29ª OBA — 2026",
+          "institution": "OBA / SAB",
+          "editionYear": 2026,
+          "pageSection": "Artigo 9 — programa do Nível 4",
+          "url": "https://site.oba.org.br/regulamento-oba-e-obafog",
+          "consultedAt": "2026-10-21",
+          "official": true,
+          "evidence": "mencao_direta"
+        }
+      ]
+    },
+    {
+      "id": "oba-apoio-operacoes-proporcoes",
+      "olympiadId": "oba",
+      "areaId": "oba-apoios-matematicos",
+      "macrotheme": "Fundamentos matemáticos",
+      "moduleId": "oba-apoios-fundamentos",
+      "moduleTitle": "Apoios Fundamentos",
+      "title": "Operações, frações, razões e porcentagens",
+      "description": "Estudo de operações, frações, razões e porcentagens para compreender fenômenos e resolver questões teóricas da OBA.",
+      "subtopics": [
+        "inteiros e decimais",
+        "frações",
+        "razões e proporções",
+        "porcentagens"
+      ],
+      "learningObjectives": [
+        "Executar operações necessárias às questões.",
+        "Usar proporcionalidade e porcentagens em escalas e comparações.",
+        "Verificar plausibilidade dos resultados."
+      ],
+      "prerequisites": [
+        "Operações básicas"
+      ],
+      "theoryOutline": [
+        "Operações e ordem",
+        "Frações e decimais",
+        "Razões e proporções",
+        "Porcentagens"
+      ],
+      "formulas": [],
+      "commonErrors": [
+        "Operar porcentagens sobre base incorreta.",
+        "Misturar fração e decimal sem equivalência."
+      ],
+      "keywords": [
+        "Operações, frações, razões e porcentagens",
+        "inteiros e decimais",
+        "frações",
+        "razões e proporções",
+        "porcentagens"
+      ],
+      "requiresUpdate": false,
+      "reviewFrequencyMonths": null,
+      "status": "revisado",
+      "sourceTopicIds": [],
+      "adaptations": [
+        {
+          "levelId": "oba_n3",
+          "originProgram": "complemento_via_olimpica",
+          "treatment": "revisao",
+          "importance": "essencial",
+          "difficulty": 2,
+          "order": 35,
+          "theoryMinutes": 45,
+          "exerciseMinutes": 60,
+          "optionalPracticeMinutes": 0,
+          "exerciseCount": 6,
+          "exerciseTypes": [
+            "cálculo",
+            "interpretação de tabela"
+          ],
+          "languageAdaptation": "Usar linguagem visual, comparações concretas e matemática introduzida passo a passo.",
+          "masteryCriteria": "Acertar pelo menos 80% das questões introdutórias e básicas e explicar os conceitos com linguagem própria.",
+          "note": "Apoio introduzido quando necessário. Tempo estimado pedagogicamente pela Via Olímpica; não é carga horária oficial."
+        },
+        {
+          "levelId": "oba_n4",
+          "originProgram": "complemento_via_olimpica",
+          "treatment": "revisao",
+          "importance": "importante",
+          "difficulty": 3,
+          "order": 35,
+          "theoryMinutes": 30,
+          "exerciseMinutes": 60,
+          "optionalPracticeMinutes": 0,
+          "exerciseCount": 6,
+          "exerciseTypes": [
+            "cálculo",
+            "interpretação de tabela"
+          ],
+          "languageAdaptation": "Usar linguagem conceitual e matemática compatível com o Ensino Médio, explicitando hipóteses e unidades.",
+          "masteryCriteria": "Acertar pelo menos 75% de uma lista básica e intermediária, interpretando corretamente fórmulas, imagens, tabelas e gráficos.",
+          "note": "Apoio introduzido quando necessário. Tempo estimado pedagogicamente pela Via Olímpica; não é carga horária oficial."
+        }
+      ],
+      "sources": [
+        {
+          "id": "oba-especificacao-via-olimpica-2026",
+          "type": "material_complementar",
+          "title": "Especificação pedagógica da Via Olímpica para a OBA",
+          "institution": "Via Olímpica",
+          "editionYear": 2026,
+          "pageSection": "Apoios matemáticos da especificação",
+          "url": "",
+          "consultedAt": "2026-10-21",
+          "official": false,
+          "evidence": "desdobramento_didatico"
+        }
+      ]
+    },
+    {
+      "id": "oba-apoio-unidades-escalas",
+      "olympiadId": "oba",
+      "areaId": "oba-apoios-matematicos",
+      "macrotheme": "Fundamentos matemáticos",
+      "moduleId": "oba-apoios-unidades",
+      "moduleTitle": "Apoios Unidades",
+      "title": "Conversões de unidades, escalas e notação científica",
+      "description": "Estudo de conversões de unidades, escalas e notação científica para compreender fenômenos e resolver questões teóricas da OBA.",
+      "subtopics": [
+        "conversões",
+        "escalas",
+        "potências de dez",
+        "notação científica",
+        "ordem de grandeza"
+      ],
+      "learningObjectives": [
+        "Converter unidades corretamente.",
+        "Trabalhar com escalas astronômicas.",
+        "Expressar e comparar ordens de grandeza."
+      ],
+      "prerequisites": [
+        "Potenciação básica"
+      ],
+      "theoryOutline": [
+        "Unidades e dimensões",
+        "Fatores de conversão",
+        "Escalas",
+        "Notação científica"
+      ],
+      "formulas": [],
+      "commonErrors": [
+        "Cancelar unidades incorretamente.",
+        "Deslocar a vírgula sem ajustar o expoente."
+      ],
+      "keywords": [
+        "Conversões de unidades, escalas e notação científica",
+        "conversões",
+        "escalas",
+        "potências de dez",
+        "notação científica"
+      ],
+      "requiresUpdate": false,
+      "reviewFrequencyMonths": null,
+      "status": "revisado",
+      "sourceTopicIds": [],
+      "adaptations": [
+        {
+          "levelId": "oba_n3",
+          "originProgram": "complemento_via_olimpica",
+          "treatment": "novo",
+          "importance": "essencial",
+          "difficulty": 3,
+          "order": 36,
+          "theoryMinutes": 60,
+          "exerciseMinutes": 75,
+          "optionalPracticeMinutes": 0,
+          "exerciseCount": 8,
+          "exerciseTypes": [
+            "cálculo",
+            "comparação"
+          ],
+          "languageAdaptation": "Usar linguagem visual, comparações concretas e matemática introduzida passo a passo.",
+          "masteryCriteria": "Acertar pelo menos 75% de uma lista básica e intermediária, interpretando corretamente fórmulas, imagens, tabelas e gráficos.",
+          "note": "Apoio introduzido conforme os módulos. Tempo estimado pedagogicamente pela Via Olímpica; não é carga horária oficial."
+        },
+        {
+          "levelId": "oba_n4",
+          "originProgram": "complemento_via_olimpica",
+          "treatment": "aprofundamento",
+          "importance": "essencial",
+          "difficulty": 4,
+          "order": 36,
+          "theoryMinutes": 45,
+          "exerciseMinutes": 90,
+          "optionalPracticeMinutes": 0,
+          "exerciseCount": 9,
+          "exerciseTypes": [
+            "cálculo",
+            "comparação"
+          ],
+          "languageAdaptation": "Usar linguagem conceitual e matemática compatível com o Ensino Médio, explicitando hipóteses e unidades.",
+          "masteryCriteria": "Acertar pelo menos 70% de um conjunto misto e justificar o raciocínio, as unidades e as aproximações utilizadas.",
+          "note": "Apoio introduzido conforme os módulos. Tempo estimado pedagogicamente pela Via Olímpica; não é carga horária oficial."
+        }
+      ],
+      "sources": [
+        {
+          "id": "oba-especificacao-via-olimpica-2026",
+          "type": "material_complementar",
+          "title": "Especificação pedagógica da Via Olímpica para a OBA",
+          "institution": "Via Olímpica",
+          "editionYear": 2026,
+          "pageSection": "Apoios matemáticos da especificação",
+          "url": "",
+          "consultedAt": "2026-10-21",
+          "official": false,
+          "evidence": "desdobramento_didatico"
+        }
+      ]
+    },
+    {
+      "id": "oba-apoio-equacoes-formulas",
+      "olympiadId": "oba",
+      "areaId": "oba-apoios-matematicos",
+      "macrotheme": "Fundamentos matemáticos",
+      "moduleId": "oba-apoios-equacoes",
+      "moduleTitle": "Apoios Equacoes",
+      "title": "Equações, variáveis e interpretação de fórmulas",
+      "description": "Estudo de equações, variáveis e interpretação de fórmulas para compreender fenômenos e resolver questões teóricas da OBA.",
+      "subtopics": [
+        "equações simples",
+        "isolamento de variável",
+        "substituição",
+        "unidades",
+        "condições de uso"
+      ],
+      "learningObjectives": [
+        "Identificar variáveis e unidades.",
+        "Isolar incógnitas no nível adequado.",
+        "Interpretar resultados e condições de uso."
+      ],
+      "prerequisites": [
+        "Operações básicas"
+      ],
+      "theoryOutline": [
+        "Linguagem de fórmulas",
+        "Substituição",
+        "Isolamento",
+        "Unidades e interpretação"
+      ],
+      "formulas": [],
+      "commonErrors": [
+        "Substituir valores sem compatibilizar unidades.",
+        "Tratar fórmula como regra sem condições."
+      ],
+      "keywords": [
+        "Equações, variáveis e interpretação de fórmulas",
+        "equações simples",
+        "isolamento de variável",
+        "substituição",
+        "unidades"
+      ],
+      "requiresUpdate": false,
+      "reviewFrequencyMonths": null,
+      "status": "revisado",
+      "sourceTopicIds": [],
+      "adaptations": [
+        {
+          "levelId": "oba_n3",
+          "originProgram": "complemento_via_olimpica",
+          "treatment": "novo",
+          "importance": "essencial",
+          "difficulty": 3,
+          "order": 37,
+          "theoryMinutes": 60,
+          "exerciseMinutes": 75,
+          "optionalPracticeMinutes": 0,
+          "exerciseCount": 8,
+          "exerciseTypes": [
+            "cálculo",
+            "interpretação de fórmula"
+          ],
+          "languageAdaptation": "Usar linguagem visual, comparações concretas e matemática introduzida passo a passo.",
+          "masteryCriteria": "Acertar pelo menos 75% de uma lista básica e intermediária, interpretando corretamente fórmulas, imagens, tabelas e gráficos.",
+          "note": "Apoio introduzido conforme os módulos. Tempo estimado pedagogicamente pela Via Olímpica; não é carga horária oficial."
+        },
+        {
+          "levelId": "oba_n4",
+          "originProgram": "complemento_via_olimpica",
+          "treatment": "aprofundamento",
+          "importance": "essencial",
+          "difficulty": 4,
+          "order": 37,
+          "theoryMinutes": 60,
+          "exerciseMinutes": 105,
+          "optionalPracticeMinutes": 0,
+          "exerciseCount": 10,
+          "exerciseTypes": [
+            "cálculo",
+            "interpretação de fórmula"
+          ],
+          "languageAdaptation": "Usar linguagem conceitual e matemática compatível com o Ensino Médio, explicitando hipóteses e unidades.",
+          "masteryCriteria": "Acertar pelo menos 70% de um conjunto misto e justificar o raciocínio, as unidades e as aproximações utilizadas.",
+          "note": "Apoio introduzido conforme os módulos. Tempo estimado pedagogicamente pela Via Olímpica; não é carga horária oficial."
+        }
+      ],
+      "sources": [
+        {
+          "id": "oba-especificacao-via-olimpica-2026",
+          "type": "material_complementar",
+          "title": "Especificação pedagógica da Via Olímpica para a OBA",
+          "institution": "Via Olímpica",
+          "editionYear": 2026,
+          "pageSection": "Apoios matemáticos da especificação",
+          "url": "",
+          "consultedAt": "2026-10-21",
+          "official": false,
+          "evidence": "desdobramento_didatico"
+        }
+      ]
+    },
+    {
+      "id": "oba-apoio-angulos-graficos",
+      "olympiadId": "oba",
+      "areaId": "oba-apoios-matematicos",
+      "macrotheme": "Representações matemáticas",
+      "moduleId": "oba-apoios-representacoes",
+      "moduleTitle": "Apoios Representacoes",
+      "title": "Ângulos, tabelas, gráficos e representações",
+      "description": "Estudo de ângulos, tabelas, gráficos e representações para compreender fenômenos e resolver questões teóricas da OBA.",
+      "subtopics": [
+        "ângulos",
+        "graus e radianos",
+        "tabelas",
+        "gráficos",
+        "diagramas",
+        "tamanho angular"
+      ],
+      "learningObjectives": [
+        "Interpretar diagramas e escalas angulares.",
+        "Ler tabelas e gráficos.",
+        "Relacionar representação e fenômeno."
+      ],
+      "prerequisites": [
+        "Geometria elementar"
+      ],
+      "theoryOutline": [
+        "Medidas angulares",
+        "Tabelas",
+        "Gráficos",
+        "Diagramas e tamanho aparente"
+      ],
+      "formulas": [],
+      "commonErrors": [
+        "Confundir tamanho angular e tamanho físico.",
+        "Ignorar escalas e unidades dos eixos."
+      ],
+      "keywords": [
+        "Ângulos, tabelas, gráficos e representações",
+        "ângulos",
+        "graus e radianos",
+        "tabelas",
+        "gráficos"
+      ],
+      "requiresUpdate": false,
+      "reviewFrequencyMonths": null,
+      "status": "revisado",
+      "sourceTopicIds": [],
+      "adaptations": [
+        {
+          "levelId": "oba_n3",
+          "originProgram": "complemento_via_olimpica",
+          "treatment": "novo",
+          "importance": "importante",
+          "difficulty": 3,
+          "order": 38,
+          "theoryMinutes": 45,
+          "exerciseMinutes": 75,
+          "optionalPracticeMinutes": 0,
+          "exerciseCount": 8,
+          "exerciseTypes": [
+            "interpretação de gráfico",
+            "interpretação de imagem"
+          ],
+          "languageAdaptation": "Usar linguagem visual, comparações concretas e matemática introduzida passo a passo.",
+          "masteryCriteria": "Acertar pelo menos 75% de uma lista básica e intermediária, interpretando corretamente fórmulas, imagens, tabelas e gráficos.",
+          "note": "Apoio introduzido conforme os módulos. Tempo estimado pedagogicamente pela Via Olímpica; não é carga horária oficial."
+        },
+        {
+          "levelId": "oba_n4",
+          "originProgram": "complemento_via_olimpica",
+          "treatment": "aprofundamento",
+          "importance": "essencial",
+          "difficulty": 4,
+          "order": 38,
+          "theoryMinutes": 60,
+          "exerciseMinutes": 105,
+          "optionalPracticeMinutes": 0,
+          "exerciseCount": 10,
+          "exerciseTypes": [
+            "cálculo",
+            "interpretação de gráfico"
+          ],
+          "languageAdaptation": "Usar linguagem conceitual e matemática compatível com o Ensino Médio, explicitando hipóteses e unidades.",
+          "masteryCriteria": "Acertar pelo menos 70% de um conjunto misto e justificar o raciocínio, as unidades e as aproximações utilizadas.",
+          "note": "Inclui graus, minutos de arco e radianos quando pertinentes. Tempo estimado pedagogicamente pela Via Olímpica; não é carga horária oficial."
+        }
+      ],
+      "sources": [
+        {
+          "id": "oba-especificacao-via-olimpica-2026",
+          "type": "material_complementar",
+          "title": "Especificação pedagógica da Via Olímpica para a OBA",
+          "institution": "Via Olímpica",
+          "editionYear": 2026,
+          "pageSection": "Apoios matemáticos da especificação",
+          "url": "",
+          "consultedAt": "2026-10-21",
+          "official": false,
+          "evidence": "desdobramento_didatico"
+        }
+      ]
+    },
+    {
+      "id": "oba-apoio-algebra-trig-log",
+      "olympiadId": "oba",
+      "areaId": "oba-apoios-matematicos",
+      "macrotheme": "Apoios do Ensino Médio",
+      "moduleId": "oba-apoios-avancados",
+      "moduleTitle": "Apoios Avancados",
+      "title": "Álgebra, trigonometria e logaritmos de apoio",
+      "description": "Estudo de álgebra, trigonometria e logaritmos de apoio para compreender fenômenos e resolver questões teóricas da OBA.",
+      "subtopics": [
+        "potências e raízes",
+        "proporcionalidade inversa",
+        "quadrados e cubos",
+        "trigonometria",
+        "logaritmos",
+        "coerência dimensional"
+      ],
+      "learningObjectives": [
+        "Aplicar ferramentas do Ensino Médio quando necessárias.",
+        "Reconhecer relações diretas e inversas.",
+        "Verificar unidades e coerência do resultado."
+      ],
+      "prerequisites": [
+        "Equações e fórmulas"
+      ],
+      "theoryOutline": [
+        "Potências e raízes",
+        "Proporcionalidade",
+        "Trigonometria",
+        "Logaritmos e magnitudes",
+        "Análise dimensional"
+      ],
+      "formulas": [],
+      "commonErrors": [
+        "Aplicar logaritmos sem compreender a escala.",
+        "Usar trigonometria sem definir o triângulo ou ângulo."
+      ],
+      "keywords": [
+        "Álgebra, trigonometria e logaritmos de apoio",
+        "potências e raízes",
+        "proporcionalidade inversa",
+        "quadrados e cubos",
+        "trigonometria"
+      ],
+      "requiresUpdate": false,
+      "reviewFrequencyMonths": null,
+      "status": "revisado",
+      "sourceTopicIds": [],
+      "adaptations": [
+        {
+          "levelId": "oba_n4",
+          "originProgram": "oficial_nivel_atual",
+          "treatment": "novo",
+          "importance": "importante",
+          "difficulty": 4,
+          "order": 39,
+          "theoryMinutes": 75,
+          "exerciseMinutes": 120,
+          "optionalPracticeMinutes": 0,
+          "exerciseCount": 12,
+          "exerciseTypes": [
+            "cálculo",
+            "interpretação de fórmula"
+          ],
+          "languageAdaptation": "Usar linguagem conceitual e matemática compatível com o Ensino Médio, explicitando hipóteses e unidades.",
+          "masteryCriteria": "Acertar pelo menos 70% de um conjunto misto e justificar o raciocínio, as unidades e as aproximações utilizadas.",
+          "note": "Tempo estimado pedagogicamente pela Via Olímpica; não é carga horária oficial."
+        }
+      ],
+      "sources": [
+        {
+          "id": "oba-especificacao-via-olimpica-2026",
+          "type": "material_complementar",
+          "title": "Especificação pedagógica da Via Olímpica para a OBA",
+          "institution": "Via Olímpica",
+          "editionYear": 2026,
+          "pageSection": "Apoios adicionais para o Nível 4",
+          "url": "",
+          "consultedAt": "2026-10-21",
+          "official": false,
+          "evidence": "desdobramento_didatico"
+        }
+      ]
+    }
+  ],
+  "officialTopicIds": [
+    "OBA-N3-TERRA-ORIENTACAO",
+    "OBA-N3-LUA-ECLIPSES-MARES",
+    "OBA-N3-TRANSLACAO-ESTACOES-TEMPO",
+    "OBA-N3-COORDENADAS-FUSOS-ECLIPTICA",
+    "OBA-N3-TERRA-ORIGEM-ESTRUTURA",
+    "OBA-N3-SISTEMA-SOLAR-CORPOS",
+    "OBA-N4-FORMACAO-SISTEMA-SOLAR",
+    "OBA-N3-CONSTELACOES-CEU",
+    "OBA-N4-RECONHECIMENTO-CEU",
+    "OBA-N3-ESTRELAS-GALAXIAS-UNIVERSO",
+    "OBA-N4-UNIVERSO-GALAXIAS",
+    "OBA-N3-DISTANCIAS-ASTRONOMICAS",
+    "OBA-N3-GRAVITACAO-KEPLER",
+    "OBA-N4-GRAVITACAO-ORBITAS",
+    "OBA-N3-BRILHO-FLUXO-MAGNITUDE",
+    "OBA-N4-LUMINOSIDADE-MAGNITUDES",
+    "OBA-N3-ELEMENTOS-ORIGEM",
+    "OBA-N4-LEI-HUBBLE",
+    "OBA-N4-ONDAS-ESPECTRO-DOPPLER",
+    "OBA-N4-CALOR",
+    "OBA-N4-MAGNETISMO-MANCHAS",
+    "OBA-N4-EVOLUCAO-ESTELAR",
+    "OBA-N3-MISSAO-CENTENARIO",
+    "OBA-N3-FOGUETES-SATELITES-SONDAS",
+    "OBA-N3-SATELITES-BRASILEIROS",
+    "OBA-N3-SATELITES-USOS",
+    "OBA-N4-SATELITES-USOS-APROFUNDAMENTO",
+    "OBA-N3-ISS-TELESCOPIOS",
+    "OBA-N3-INSTITUICOES-BRASILEIRAS",
+    "OBA-N3-CONQUISTA-LUA-MARTE",
+    "OBA-N3-PROGRAMA-ESPACIAL-BRASILEIRO",
+    "OBA-N3-AMBIENTE-CORPO-ESPACO",
+    "OBA-N3-FOGUETES-HISTORICOS-ATUAIS",
+    "OBA-N3-ARTEMIS",
+    "OBA-N4-ARTEMIS-APROFUNDAMENTO",
+    "OBA-N4-CORRIDA-ESPACIAL",
+    "OBA-N4-COMUNICACAO-ESPACO",
+    "OBA-N4-VELOCIDADES-CAMPO",
+    "OBA-N4-ORBITAS-CONTROLE",
+    "OBA-N4-REENTRADA",
+    "OBA-N4-PROPELENTES-MASSA"
+  ],
+  "details": {
+    "shortDescription": "Olimpíada nacional que desenvolve conhecimentos de Astronomia e Astronáutica para estudantes da educação básica.",
+    "audience": "6º ao 9º ano do Ensino Fundamental no Nível 3 e Ensino Médio no Nível 4.",
+    "examType": "Prova teórica realizada na escola, organizada por nível oficial, com questões de Astronomia e Astronáutica.",
+    "about": "A Via Olímpica oferece preparação teórica baseada no programa cumulativo da OBA 2026, com explicações, matemática de apoio e aplicações em questões.",
+    "formatTitle": "Preparação teórica",
+    "stages": [
+      "Nível 3: programa para estudantes do 6º ao 9º ano.",
+      "Nível 4: programa para estudantes do Ensino Médio e base herdada do Nível 3.",
+      "Inscrição e aplicação organizadas pelo professor representante da escola."
+    ],
+    "preparationNote": "A plataforma organiza somente a preparação teórica da OBA. Atividades observacionais são opcionais e a OBAFOG, competição prática de foguetes, não integra este cronograma.",
+    "officialUrl": "https://site.oba.org.br/regulamento-oba-e-obafog",
+    "officialLabel": "Regulamento da OBA 2026"
+  }
+} as const satisfies OlympiadCurriculum;
