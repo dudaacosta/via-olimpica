@@ -1,5 +1,5 @@
-import { createFileRoute, Link } from "@tanstack/react-router";
-import { useEffect, useMemo, useState } from "react";
+import { createFileRoute, Link, useLocation } from "@tanstack/react-router";
+import { useEffect, useMemo, useRef, useState } from "react";
 import { Check } from "lucide-react";
 import { AppShell } from "@/features/dashboard/components/AppShell";
 import { useQuizStore } from "@/features/quiz/store";
@@ -8,7 +8,9 @@ import { generateSchedule, type ScheduleDay } from "@/features/schedule/generate
 import { formatMinutes } from "@/features/schedule/time";
 import { applyProgressToSchedule } from "@/features/progress/applyProgressToSchedule";
 import { useProgressStore } from "@/features/progress/store";
-import { dateSchedule, formatDate, localDate, scheduleDayOffset, studiedMinutesOnDate } from "@/features/schedule/calendar";
+import { formatDate, localDate } from "@/features/schedule/calendar";
+import { buildDatedSchedule } from "@/features/schedule/buildDatedSchedule";
+import { getSessionAnchor } from "@/features/schedule/sessionLinks";
 
 export const Route = createFileRoute("/cronograma")({
   head: () => ({ meta: [{ title: "Cronograma — Via Olímpica" }] }),
@@ -20,6 +22,8 @@ function CronogramaPage() {
   const completedByContent = useProgressStore((state) => state.completedByContent);
   const toggleRange = useProgressStore((state) => state.toggleRange);
   const [today, setToday] = useState<string | null>(null);
+  const hash = useLocation({ select: (location) => location.hash });
+  const focusedHash = useRef<string | null>(null);
   useEffect(() => { setToday(localDate()); }, []);
 
   const plan = useMemo(() => {
@@ -36,12 +40,7 @@ function CronogramaPage() {
     if (!plan) return { days: [], error: null };
     try {
       if (store.examDate && today) {
-        const availability = {
-          dayOffset: scheduleDayOffset(store.planStartDate ?? today, today),
-          studiedTodayMinutes: studiedMinutesOnDate(completedByContent, today),
-        };
-        const pending = generateSchedule(plan, store.weeklyDays, store.dailyTime, completedByContent, availability);
-        return { ...dateSchedule(pending, today, store.examDate, store.weeklyDays, store.dailyTime, availability), error: null };
+        return { ...buildDatedSchedule(plan, { examDate: store.examDate, weeklyDays: store.weeklyDays, dailyTime: store.dailyTime, planStartDate: store.planStartDate }, completedByContent, today), error: null };
       }
       return { days: generateSchedule(plan, store.weeklyDays, store.dailyTime), error: null };
     } catch (error) {
@@ -54,6 +53,15 @@ function CronogramaPage() {
 
   const projected = useMemo(() => applyProgressToSchedule(result.days, completedByContent), [result.days, completedByContent]);
   const days = projected.map((day, index) => ({ ...day, date: result.days[index].date, afterDeadline: result.days[index].afterDeadline }));
+  useEffect(() => {
+    if (!hash) { focusedHash.current = null; return; }
+    if (!today || focusedHash.current === hash) return;
+    const target = document.getElementById(hash);
+    if (!target) return;
+    target.scrollIntoView({ block: "center" });
+    target.focus({ preventScroll: true });
+    focusedHash.current = hash;
+  }, [today, hash, result.days]);
   const completedSessions = useMemo(() => {
     if (!plan || !store.examDate) return [];
     return applyProgressToSchedule(generateSchedule(plan, store.weeklyDays, store.dailyTime), completedByContent)
@@ -117,6 +125,7 @@ function CronogramaPage() {
                 ) : day.sessions.map((session) => (
                   <button
                     key={session.id}
+                    id={getSessionAnchor(session)}
                     type="button"
                     aria-pressed={session.completed}
                     onClick={() => toggleRange(
@@ -125,7 +134,8 @@ function CronogramaPage() {
                       session.endMinute,
                     )}
                     className={[
-                      "w-full text-left rounded-2xl p-4 flex items-center gap-4 transition",
+                      "w-full text-left rounded-2xl p-4 flex items-center gap-4 transition scroll-mt-24 target:border-primary target:bg-primary-soft/40 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary",
+                      hash === getSessionAnchor(session) ? "ring-2 ring-primary ring-offset-2" : "",
                       session.completed
                         ? "border-success bg-success-soft/30 border-2"
                         : "border-border border-2 hover:border-primary/40 hover:-translate-y-0.5",

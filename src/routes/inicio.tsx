@@ -1,8 +1,13 @@
 import { createFileRoute, Link } from "@tanstack/react-router";
-import { Clock, CalendarDays, Sparkles, ChevronRight, Target, ArrowRight } from "lucide-react";
+import { Clock, CalendarDays, Sparkles, ArrowRight } from "lucide-react";
 import { AppShell } from "@/features/dashboard/components/AppShell";
 import { useQuizStore } from "@/features/quiz/store";
 import { findOlympiad } from "@/features/quiz/data";
+import { useStudyOverview } from "@/features/dashboard/useStudyOverview";
+import { formatDate, scheduleDayOffset } from "@/features/schedule/calendar";
+import { WeeklyGoalCard } from "@/features/progress/components/WeeklyGoalCard";
+import { TodayScheduleCard } from "@/features/dashboard/components/TodayScheduleCard";
+import { ProgressSummaryCard } from "@/features/dashboard/components/ProgressSummaryCard";
 
 export const Route = createFileRoute("/inicio")({
   head: () => ({ meta: [{ title: "Início — Via Olímpica" }] }),
@@ -10,9 +15,13 @@ export const Route = createFileRoute("/inicio")({
 });
 
 function InicioPage() {
-  const { name, olympiad, dailyTime, weeklyDays } = useQuizStore();
+  const { name, olympiad, dailyTime, weeklyDays, examDate } = useQuizStore();
+  const { ready, plan, summary, schedule, today, weeklyGoal, achievement, error } = useStudyOverview();
   const o = findOlympiad(olympiad);
   const firstName = (name || "Aluno").split(" ")[0];
+  if (!ready || !today) return <AppShell title="Início"><p role="status">Carregando seu plano...</p></AppShell>;
+  if (error) return <AppShell title="Início"><p role="alert">{error}</p></AppShell>;
+  const untilExam = today && examDate ? scheduleDayOffset(today, examDate) : null;
 
   return (
     <AppShell
@@ -127,7 +136,7 @@ function InicioPage() {
 <div className="relative z-10 flex flex-col md:flex-row items-start md:items-center justify-between gap-6">
           <div className="min-w-0">
             <div className="inline-flex items-center gap-2 text-xs font-medium bg-white/15 backdrop-blur px-3 py-1 rounded-full">
-              <Sparkles className="h-3.5 w-3.5" /> {o ? "Plano ativo" : "Seu plano de estudos"}
+              <Sparkles className="h-3.5 w-3.5" /> {o && plan ? "Plano ativo" : "Seu plano de estudos"}
             </div>
             <h2 className="mt-3 text-4xl md:text-5xl font-bold tracking-tight !text-white">
               {o ? o.acronym : "Seu plano"}
@@ -149,38 +158,12 @@ function InicioPage() {
         <div className="absolute -right-16 -bottom-16 h-64 w-64 rounded-full bg-white/10 blur-2xl" />
       </div>
 
-      {/* Indicadores: sem datas ou resultados inventados. */}
-      <div className="grid grid-cols-1 md:grid-cols-2 gap-4 mb-8">
-        <IndicatorCard icon={CalendarDays} title="Próxima prova" message="Data da prova não disponível" description="A data da prova ainda não está vinculada a este painel." />
-        <IndicatorCard icon={Target} title="Meta semanal" message="Acompanhamento ainda não disponível" description="Os dias concluídos da semana ainda não estão integrados a este painel." iconClassName="bg-success-soft text-success" />
-      </div>
-
-      <div className="grid grid-cols-1 lg:grid-cols-2 gap-6">
-        <section className="bg-white border border-border rounded-3xl shadow-[var(--shadow-soft)] p-6">
-          <div className="flex flex-wrap items-center justify-between gap-3 mb-5">
-            <h3 className="text-lg font-bold">Cronograma de hoje</h3>
-            <Link to="/cronograma" className="text-sm text-primary font-medium hover:underline inline-flex items-center gap-1 py-2">
-              Ver cronograma <ChevronRight className="h-4 w-4" />
-            </Link>
-          </div>
-          <p className="font-semibold text-[var(--navy)]">As atividades de hoje ainda não estão vinculadas a este painel.</p>
-          <p className="mt-3 text-sm text-muted-foreground">Abra seu cronograma para consultar as sessões e marcar suas conclusões.</p>
-        </section>
-
-        <section className="bg-white border border-border rounded-3xl shadow-[var(--shadow-soft)] p-6">
-          <div className="flex flex-wrap items-center justify-between gap-3 mb-5">
-            <h3 className="text-lg font-bold">Meu progresso</h3>
-            <Link to="/cronograma" className="text-sm text-primary font-medium hover:underline inline-flex items-center gap-1 py-2">
-              Ver conclusões <ChevronRight className="h-4 w-4" />
-            </Link>
-          </div>
-          <p className="font-semibold text-[var(--navy)]">Resumo do progresso ainda não disponível neste painel.</p>
-          <p className="mt-3 text-sm text-muted-foreground">Consulte suas marcações no cronograma. Este painel ainda não calcula o percentual do seu plano.</p>
-          <div className="mt-6 flex items-center gap-3 rounded-2xl bg-success-soft/60 border border-success/20 p-4">
-            <Target className="h-5 w-5 text-success shrink-0" />
-            <p className="text-sm text-[var(--navy)]/80">Cada sessão concluída aproxima você da sua meta!</p>
-          </div>
-        </section>
+      <div className="grid grid-cols-1 md:grid-cols-2 gap-5">
+        <TodayScheduleCard schedule={schedule} summary={summary} hasPlan={!!plan} today={today} examDate={examDate} />
+        <WeeklyGoalCard goal={weeklyGoal} />
+        <IndicatorCard icon={CalendarDays} title="Próxima prova" message={examDate ? formatDate(examDate) : "Data não informada"}
+          description={!examDate ? "Adicione a data divulgada pela escola no perfil." : examDate < today ? "Esta data já passou. Atualize sua próxima prova no perfil." : untilExam === 0 ? "Sua prova é hoje!" : `Faltam ${untilExam} ${untilExam === 1 ? "dia" : "dias"} para a prova.`} />
+        <ProgressSummaryCard summary={summary} achievement={achievement} />
       </div>
     </AppShell>
   );
@@ -203,15 +186,18 @@ function IndicatorCard({ icon: Icon, title, message, description, iconClassName 
   iconClassName?: string;
 }) {
   return (
-    <section className="flex items-start gap-4 rounded-2xl border border-border bg-white p-5 shadow-[var(--shadow-soft)]">
-      <div className={`flex h-12 w-12 shrink-0 items-center justify-center rounded-xl ${iconClassName}`}>
-        <Icon className="h-6 w-6" />
-      </div>
-      <div className="min-w-0">
+    <section className="flex flex-col justify-between rounded-3xl border border-border bg-white p-6 shadow-[var(--shadow-soft)]">
+      <div className="flex items-center gap-3">
+        <div className={`flex h-10 w-10 shrink-0 items-center justify-center rounded-xl ${iconClassName}`}>
+          <Icon className="h-5 w-5" />
+        </div>
         <h3 className="text-sm font-semibold text-muted-foreground">{title}</h3>
-        <p className="mt-2 text-lg font-bold text-[var(--navy)]">{message}</p>
+      </div>
+      <div className="min-w-0 my-4">
+        <p className="text-3xl font-bold tracking-tight text-[var(--navy)]">{message}</p>
         <p className="mt-2 text-sm text-muted-foreground">{description}</p>
       </div>
+      <Link to="/perfil" className="inline-flex items-center gap-2 text-sm text-primary hover:underline">Revisar data no perfil <ArrowRight className="h-4 w-4" /></Link>
     </section>
   );
 }

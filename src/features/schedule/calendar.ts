@@ -33,7 +33,7 @@ export function scheduleDayOffset(anchor: string, today: string): number {
   return Math.max(0, Math.round((dateNumber(today) - dateNumber(anchor)) / DAY_MS));
 }
 
-/** Count persisted work across plans: changing olympiad must not reset today's budget. */
+/** Count work in the supplied record using local completion dates. */
 export function studiedMinutesOnDate(
   record: Record<string, CompletionInterval[]>,
   today: string,

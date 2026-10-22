@@ -1,7 +1,11 @@
-import { createFileRoute } from "@tanstack/react-router";
-import { TrendingUp, Trophy, BookOpen } from "lucide-react";
+import { createFileRoute, Link } from "@tanstack/react-router";
+import { TrendingUp, Clock, BookOpen } from "lucide-react";
 import { AppShell } from "@/features/dashboard/components/AppShell";
-import { SCHEDULE } from "@/features/dashboard/data";
+import { useStudyOverview } from "@/features/dashboard/useStudyOverview";
+import { formatMinutes } from "@/features/schedule/time";
+import { LevelCard } from "@/features/progress/components/LevelCard";
+import { LevelTrail } from "@/features/progress/components/LevelTrail";
+import { WeeklyGoalCard } from "@/features/progress/components/WeeklyGoalCard";
 
 export const Route = createFileRoute("/progresso")({
   head: () => ({ meta: [{ title: "Progresso — Via Olímpica" }] }),
@@ -9,6 +13,28 @@ export const Route = createFileRoute("/progresso")({
 });
 
 function ProgressoPage() {
+  const { ready, summary, achievement, weeklyGoal, error } = useStudyOverview();
+  if (!ready)
+    return (
+      <AppShell title="Progresso">
+        <p role="status">Carregando suas conclusões...</p>
+      </AppShell>
+    );
+  if (error)
+    return (
+      <AppShell title="Progresso">
+        <p role="alert">{error}</p>
+      </AppShell>
+    );
+  if (!summary || !achievement)
+    return (
+      <AppShell title="Progresso">
+        <p>Selecione sua olimpíada e seu ano escolar para acompanhar o progresso.</p>
+        <Link to="/perfil" className="text-primary underline">
+          Completar perfil
+        </Link>
+      </AppShell>
+    );
   return (
     <AppShell
       title={
@@ -21,46 +47,69 @@ function ProgressoPage() {
       }
       subtitle="Acompanhe sua evolução nos estudos."
     >
-      {/* XP banner */}
-      <div className="relative overflow-hidden rounded-3xl bg-gradient-to-br from-primary to-[oklch(0.45_0.2_265)] text-white p-10 text-center shadow-[var(--shadow-hero)] mb-8">
-        <div className="relative z-10">
-          <div className="h-14 w-14 mx-auto rounded-2xl bg-white/20 backdrop-blur flex items-center justify-center mb-4">
-            <Trophy className="h-6 w-6" />
-          </div>
-          <div className="text-5xl md:text-6xl font-bold !text-white tracking-tight">0 XP</div>
-          <p className="mt-3 text-white/90">Continue estudando para ganhar mais!</p>
-        </div>
-        <div className="absolute -right-16 -top-16 h-56 w-56 rounded-full bg-white/10 blur-2xl" />
-        <div className="absolute -left-16 -bottom-16 h-56 w-56 rounded-full bg-white/10 blur-2xl" />
-      </div>
+      <LevelCard
+        achievement={achievement}
+        completedContents={summary.completedContents}
+        totalContents={summary.contents.length}
+      />
+      <LevelTrail achievement={achievement} />
 
-      {/* Overall progress */}
-      <section className="bg-white border border-border rounded-3xl p-6 shadow-[var(--shadow-soft)] mb-6">
-        <div className="flex items-center justify-between mb-3">
-          <h3 className="text-lg font-bold">Progresso geral</h3>
-          <span className="text-lg font-bold text-[var(--navy)]">0%</span>
-        </div>
-        <div className="h-3 w-full bg-muted rounded-full overflow-hidden">
-          <div className="h-full bg-primary rounded-full" style={{ width: "0%" }} />
-        </div>
-        <div className="mt-2 text-sm text-muted-foreground">0 de 6 conteúdos concluídos</div>
-      </section>
+      <div className="grid grid-cols-1 md:grid-cols-2 gap-4 mb-6">
+        <section className="rounded-2xl border border-border bg-white p-5 shadow-[var(--shadow-soft)]">
+          <div className="flex items-center gap-3 mb-4">
+            <Clock className="h-5 w-5 text-primary" />
+            <h3 className="text-sm font-semibold text-muted-foreground">Seu tempo de estudo</h3>
+          </div>
+          <p className="text-xl font-bold text-[var(--navy)]">
+            {formatMinutes(summary.completedMinutes)} concluídos
+          </p>
+          <p className="mt-2 text-sm text-muted-foreground">
+            Tempo estimado dos trechos que você já marcou. Partes de conteúdos também ficam
+            registradas aqui.
+          </p>
+          <details className="mt-4 text-sm text-muted-foreground">
+            <summary className="cursor-pointer text-primary">
+              Consultar estimativa total do plano
+            </summary>
+            <p className="mt-2">
+              Carga estimada: {formatMinutes(summary.totalMinutes)} • {summary.percentage}% do tempo
+              concluído.
+            </p>
+          </details>
+          <Link to="/cronograma" className="mt-4 inline-block text-sm text-primary underline">
+            Continuar no cronograma
+          </Link>
+        </section>
+        <WeeklyGoalCard goal={weeklyGoal} />
+      </div>
 
       {/* Contents */}
       <section className="bg-white border border-border rounded-3xl p-6 shadow-[var(--shadow-soft)]">
-        <h3 className="text-lg font-bold mb-4">Conteúdos</h3>
+        <h3 className="text-lg font-bold mb-2">Seu progresso por conteúdo</h3>
+        <p className="text-sm text-muted-foreground mb-4">
+          Cada trecho estudado é preservado. O conteúdo conta como concluído quando todas as suas
+          partes estiverem completas.
+        </p>
         <ul className="divide-y divide-border">
-          {SCHEDULE.map((s) => (
-            <li key={s.topic} className="flex items-center gap-4 py-4 first:pt-0 last:pb-0">
+          {summary.contents.map((content) => (
+            <li
+              key={content.contentKey}
+              className="flex flex-wrap sm:flex-nowrap items-center gap-4 py-4 first:pt-0 last:pb-0"
+            >
               <div className="h-10 w-10 rounded-lg bg-primary-soft text-primary flex items-center justify-center shrink-0">
                 <BookOpen className="h-4 w-4" />
               </div>
               <div className="min-w-0 flex-1">
-                <div className="font-semibold text-[var(--navy)] truncate">{s.topic}</div>
-                <div className="text-sm text-muted-foreground">{s.subject}</div>
+                <div className="font-semibold text-[var(--navy)]">{content.title}</div>
+                <div className="text-sm text-muted-foreground">
+                  {content.areaName} • {formatMinutes(content.completedMinutes)} de{" "}
+                  {formatMinutes(content.totalMinutes)}
+                </div>
               </div>
-              <span className="text-xs font-semibold px-3 py-1.5 rounded-full bg-warning-soft text-[oklch(0.5_0.15_60)]">
-                Em andamento
+              <span
+                className={`text-xs font-semibold px-3 py-1.5 rounded-full shrink-0 ${content.status === "Concluído" ? "bg-success-soft text-success" : content.status === "Em andamento" ? "bg-warning-soft text-[oklch(0.5_0.15_60)]" : "bg-muted text-muted-foreground"}`}
+              >
+                {content.status}
               </span>
             </li>
           ))}
