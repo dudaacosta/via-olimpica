@@ -6,10 +6,11 @@ export type ProgressLevel = {
   foreground: string;
   accent: string;
   imageSrc: string | null;
+  imageCrop?: { x: number; width: number };
   imageAlt: string;
 };
 
-/** Add each independent illustration to public/ and set only its imageSrc here. */
+/** Display each medal from the original artwork without modifying the source image. */
 export const PROGRESS_LEVELS: readonly ProgressLevel[] = [
   {
     id: "bronze",
@@ -18,7 +19,8 @@ export const PROGRESS_LEVELS: readonly ProgressLevel[] = [
     background: "linear-gradient(120deg, #78350f, #431407)",
     foreground: "#ffffff",
     accent: "#b45309",
-    imageSrc: null,
+    imageSrc: "/medalhas-via-olimpica-transparente.png",
+    imageCrop: { x: 0, width: 430 },
     imageAlt: "Conquista do nível Bronze",
   },
   {
@@ -28,7 +30,8 @@ export const PROGRESS_LEVELS: readonly ProgressLevel[] = [
     background: "linear-gradient(120deg, #475569, #1e293b)",
     foreground: "#ffffff",
     accent: "#64748b",
-    imageSrc: null,
+    imageSrc: "/medalhas-via-olimpica-transparente.png",
+    imageCrop: { x: 430, width: 370 },
     imageAlt: "Conquista do nível Prata",
   },
   {
@@ -38,7 +41,8 @@ export const PROGRESS_LEVELS: readonly ProgressLevel[] = [
     background: "linear-gradient(120deg, #fef3c7, #fde68a)",
     foreground: "#713f12",
     accent: "#a16207",
-    imageSrc: null,
+    imageSrc: "/medalhas-via-olimpica-transparente.png",
+    imageCrop: { x: 800, width: 370 },
     imageAlt: "Conquista do nível Ouro",
   },
   {
@@ -48,7 +52,8 @@ export const PROGRESS_LEVELS: readonly ProgressLevel[] = [
     background: "linear-gradient(120deg, #0c4a6e, #082f49)",
     foreground: "#ffffff",
     accent: "#0284c7",
-    imageSrc: null,
+    imageSrc: "/medalhas-via-olimpica-transparente.png",
+    imageCrop: { x: 1170, width: 430 },
     imageAlt: "Conquista do nível Diamante",
   },
 ];

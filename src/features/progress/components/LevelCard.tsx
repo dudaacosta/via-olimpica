@@ -1,4 +1,5 @@
 import { Trophy } from "lucide-react";
+import { LevelMedal } from "./LevelMedal";
 import type { Achievement } from "../levels";
 
 export function LevelCard({
@@ -44,10 +45,9 @@ export function LevelCard({
           </p>
         </div>
         {level.imageSrc ? (
-          <img
-            src={level.imageSrc}
-            alt={level.imageAlt}
-            className="w-32 sm:w-40 md:w-48 h-auto object-contain shrink-0 self-center"
+          <LevelMedal
+            level={level}
+            className="w-36 sm:w-40 md:w-48 shrink-0 self-center drop-shadow-lg"
           />
         ) : (
           <div

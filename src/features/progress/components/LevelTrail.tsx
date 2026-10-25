@@ -1,3 +1,4 @@
+import { LevelMedal } from "./LevelMedal";
 import { PROGRESS_LEVELS, type Achievement } from "../levels";
 
 export function LevelTrail({ achievement }: { achievement: Achievement }) {
@@ -67,6 +68,9 @@ export function LevelTrail({ achievement }: { achievement: Achievement }) {
             aria-current={item.id === level.id ? "step" : undefined}
             className={`rounded-xl border px-3 py-2 ${item.id === level.id ? "border-current bg-slate-50" : "border-border"}`}
           >
+            {item.imageSrc && (
+              <LevelMedal level={item} className="mx-auto mb-3 w-16 sm:w-20 rounded-lg bg-white" />
+            )}
             <p className="text-sm font-semibold flex items-center gap-1.5">
               <span
                 aria-hidden="true"

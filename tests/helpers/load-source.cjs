@@ -6,7 +6,7 @@ const root = path.resolve(__dirname, '../..');
 const cache = new Map();
 function load(file) {
   file = path.resolve(root, file);
-  if (!path.extname(file)) file += '.ts';
+  if (!path.extname(file)) file += fs.existsSync(file + '.ts') ? '.ts' : '.tsx';
   if (cache.has(file)) return cache.get(file).exports;
   const module = { exports: {} };
   const output = ts.transpileModule(fs.readFileSync(file, 'utf8'), {

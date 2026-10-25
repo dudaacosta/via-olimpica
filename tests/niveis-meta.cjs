@@ -105,7 +105,10 @@ test('cada nível renderiza identidade própria sem imagens inexistentes', () =>
     const achievement = levels().getAchievement(done, 100);
     const html = renderToStaticMarkup(React.createElement(LevelCard, { achievement, completedContents: done, totalContents: 100 }));
     assert.ok(html.includes(`Nível ${achievement.level.name}`));
-    assert.equal(html.includes('<img'), false);
+    assert.ok(html.includes('<img'));
+    assert.ok(achievement.level.imageSrc);
+    assert.ok(require('node:fs').existsSync(require('node:path').join(__dirname, '../public', achievement.level.imageSrc)));
+    assert.ok(html.includes(achievement.level.imageAlt));
     assert.ok(html.includes(`${done} de`));
   }
 });
