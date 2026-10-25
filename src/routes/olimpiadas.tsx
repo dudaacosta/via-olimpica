@@ -32,12 +32,12 @@ function OlimpiadasPage() {
                   <span className="text-xs px-2 py-0.5 rounded-full bg-primary-soft text-primary font-medium">
                     {o.subject}
                   </span>
-                  <span className={[
-                    "text-xs px-2 py-0.5 rounded-full font-medium",
-                    available
-                      ? "bg-success-soft text-success"
-                      : "bg-muted text-muted-foreground",
-                  ].join(" ")}>
+                  <span
+                    className={[
+                      "text-xs px-2 py-0.5 rounded-full font-medium",
+                      available ? "bg-success-soft text-success" : "bg-muted text-muted-foreground",
+                    ].join(" ")}
+                  >
                     {available ? "Disponível" : "Base de estudos em preparação"}
                   </span>
                 </div>
@@ -46,12 +46,19 @@ function OlimpiadasPage() {
               </div>
               {available ? (
                 <Link to="/obmep-detalhes" search={{ id: o.id }}>
-                  <Button variant="outline" className="rounded-xl border-2 hover:border-primary hover:text-primary hover:bg-primary-softer shrink-0 gap-1.5">
+                  <Button
+                    variant="outline"
+                    className="rounded-xl border-2 hover:border-primary hover:text-primary hover:bg-primary-softer shrink-0 gap-1.5"
+                  >
                     Ver detalhes <ArrowRight className="h-4 w-4" />
                   </Button>
                 </Link>
               ) : (
-                <Button variant="secondary" className="rounded-xl opacity-70 cursor-not-allowed shrink-0" disabled>
+                <Button
+                  variant="secondary"
+                  className="rounded-xl opacity-70 cursor-not-allowed shrink-0"
+                  disabled
+                >
                   Base em preparação
                 </Button>
               )}

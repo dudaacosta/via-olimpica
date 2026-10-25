@@ -8,7 +8,13 @@ interface OptionCardProps {
   className?: string;
 }
 
-export function OptionCard({ selected, disabled = false, onClick, children, className = "" }: OptionCardProps) {
+export function OptionCard({
+  selected,
+  disabled = false,
+  onClick,
+  children,
+  className = "",
+}: OptionCardProps) {
   return (
     <button
       type="button"
@@ -24,7 +30,9 @@ export function OptionCard({ selected, disabled = false, onClick, children, clas
             : "border-border hover:border-primary/40 hover:bg-primary-softer hover:-translate-y-0.5 hover:shadow-[var(--shadow-soft)]",
         !disabled && "active:translate-y-0",
         className,
-      ].filter(Boolean).join(" ")}
+      ]
+        .filter(Boolean)
+        .join(" ")}
     >
       {children}
     </button>

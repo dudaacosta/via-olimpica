@@ -81,9 +81,16 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
       { charSet: "utf-8" },
       { name: "viewport", content: "width=device-width, initial-scale=1" },
       { title: "Via Olímpica — Seu plano de estudos para olimpíadas" },
-      { name: "description", content: "Monte um plano de estudos personalizado e prepare-se para as principais olimpíadas brasileiras." },
+      {
+        name: "description",
+        content:
+          "Monte um plano de estudos personalizado e prepare-se para as principais olimpíadas brasileiras.",
+      },
       { property: "og:title", content: "Via Olímpica" },
-      { property: "og:description", content: "Plano de estudos personalizado para olimpíadas brasileiras." },
+      {
+        property: "og:description",
+        content: "Plano de estudos personalizado para olimpíadas brasileiras.",
+      },
       { property: "og:type", content: "website" },
       { name: "twitter:card", content: "summary" },
     ],
@@ -123,7 +130,9 @@ function RootComponent() {
   return (
     <QueryClientProvider client={queryClient}>
       {/* Required: nested routes render here. Removing <Outlet /> breaks all child routes. */}
-      <AuthProvider><Outlet /></AuthProvider>
+      <AuthProvider>
+        <Outlet />
+      </AuthProvider>
       <Toaster position="top-right" richColors />
     </QueryClientProvider>
   );

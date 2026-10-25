@@ -1,6 +1,4 @@
-export type GradeId =
-  | "6ano" | "7ano" | "8ano" | "9ano"
-  | "1em" | "2em" | "3em";
+export type GradeId = "6ano" | "7ano" | "8ano" | "9ano" | "1em" | "2em" | "3em";
 
 export const GRADES: { id: GradeId; label: string; level: "ef2" | "em" }[] = [
   { id: "6ano", label: "6º ano", level: "ef2" },
@@ -45,7 +43,8 @@ export const OLYMPIADS: Olympiad[] = [
     grades: ALL,
     color: "oklch(0.58 0.21 258)",
     availability: "available",
-    registrationNote: "Inscrição realizada pela escola. Procure a coordenação ou o professor responsável.",
+    registrationNote:
+      "Inscrição realizada pela escola. Procure a coordenação ou o professor responsável.",
   },
   {
     id: "canguru",
@@ -57,7 +56,8 @@ export const OLYMPIADS: Olympiad[] = [
     grades: ALL,
     color: "oklch(0.72 0.17 50)",
     availability: "available",
-    registrationNote: "A inscrição é realizada exclusivamente pela escola. Procure a coordenação ou o professor responsável.",
+    registrationNote:
+      "A inscrição é realizada exclusivamente pela escola. Procure a coordenação ou o professor responsável.",
   },
   {
     id: "olitef",
@@ -69,7 +69,8 @@ export const OLYMPIADS: Olympiad[] = [
     grades: ALL,
     color: "oklch(0.63 0.16 145)",
     availability: "available",
-    registrationNote: "A inscrição é gratuita e realizada pela escola. Procure a coordenação ou o professor responsável.",
+    registrationNote:
+      "A inscrição é gratuita e realizada pela escola. Procure a coordenação ou o professor responsável.",
   },
   {
     id: "oba",
@@ -88,8 +89,7 @@ export const OLYMPIADS: Olympiad[] = [
 export const olympiadsForGrade = (grade: GradeId | null) =>
   grade ? OLYMPIADS.filter((olympiad) => olympiad.grades.includes(grade)) : OLYMPIADS;
 
-export const isOlympiadAvailable = (olympiad: Olympiad) =>
-  olympiad.availability === "available";
+export const isOlympiadAvailable = (olympiad: Olympiad) => olympiad.availability === "available";
 
 export const isOlympiadAvailableId = (id: string | null) =>
   OLYMPIADS.some((olympiad) => olympiad.id === id && isOlympiadAvailable(olympiad));
@@ -105,5 +105,4 @@ export const normalizeOlympiadSelection = (id: string | null) => {
 export const findOlympiad = (id: string | null) =>
   OLYMPIADS.find((olympiad) => olympiad.id === id) ?? null;
 
-export const findGrade = (id: GradeId | null) =>
-  GRADES.find((grade) => grade.id === id) ?? null;
+export const findGrade = (id: GradeId | null) => GRADES.find((grade) => grade.id === id) ?? null;

@@ -24,9 +24,7 @@ export function parseDailyTime(dailyTime: string | null | undefined): number {
 
   const validMinutes = (minutes: number): number => {
     const rounded = Math.round(minutes);
-    return Number.isSafeInteger(rounded) && rounded > 0
-      ? rounded
-      : DEFAULT_DAILY_MINUTES;
+    return Number.isSafeInteger(rounded) && rounded > 0 ? rounded : DEFAULT_DAILY_MINUTES;
   };
 
   // Verificar horas + minutos ANTES de aceitar apenas a parte das horas.
@@ -48,9 +46,9 @@ export function parseDailyTime(dailyTime: string | null | undefined): number {
 
 export function normalizeDailyTimeLabel(value: string | null): string {
   const minutes = parseDailyTime(value);
-  return DAILY_TIME_OPTIONS.find((option) => option.minutes === minutes)?.value
-    ?? value
-    ?? "1 hora";
+  return (
+    DAILY_TIME_OPTIONS.find((option) => option.minutes === minutes)?.value ?? value ?? "1 hora"
+  );
 }
 
 export function formatMinutes(minutes: number): string {

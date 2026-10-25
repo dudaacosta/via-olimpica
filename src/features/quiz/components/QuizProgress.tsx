@@ -18,9 +18,12 @@ export function QuizProgress({ current, total }: Props) {
               className={[
                 "h-10 w-10 rounded-full flex items-center justify-center text-sm font-semibold border-2 transition-all shrink-0",
                 done && "bg-success border-success text-white",
-                active && "bg-primary border-primary text-primary-foreground shadow-[0_0_0_6px_var(--primary-soft)]",
+                active &&
+                  "bg-primary border-primary text-primary-foreground shadow-[0_0_0_6px_var(--primary-soft)]",
                 !done && !active && "bg-white border-border text-muted-foreground",
-              ].filter(Boolean).join(" ")}
+              ]
+                .filter(Boolean)
+                .join(" ")}
             >
               {done ? <Check className="h-4 w-4" /> : s}
             </div>

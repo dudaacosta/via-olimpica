@@ -10,7 +10,12 @@ export function getSupabase(): SupabaseClient | null {
   const key = import.meta.env.VITE_SUPABASE_PUBLISHABLE_KEY;
   if (!validateAuthConfig(url, key).valid) return null;
   client = createClient(url, key, {
-    auth: { flowType: "pkce", detectSessionInUrl: true, persistSession: true, autoRefreshToken: true },
+    auth: {
+      flowType: "pkce",
+      detectSessionInUrl: true,
+      persistSession: true,
+      autoRefreshToken: true,
+    },
   });
   return client;
 }

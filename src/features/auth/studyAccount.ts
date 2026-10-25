@@ -9,7 +9,11 @@ export async function switchStudyAccount(id: string | null) {
   pauseStudyWrites(true);
   setStorageAccount(id);
   try {
-    for (const key of ["via-olimpica-quiz", "via-olimpica-progress-v1", "via-olimpica-favorites-v1"]) {
+    for (const key of [
+      "via-olimpica-quiz",
+      "via-olimpica-progress-v1",
+      "via-olimpica-favorites-v1",
+    ]) {
       const raw = await accountStorage.getItem(key);
       if (raw) JSON.parse(raw);
     }
@@ -21,7 +25,9 @@ export async function switchStudyAccount(id: string | null) {
     await useFavoritesStore.persist.rehydrate();
   } catch {
     // Keep writes paused on failure to avoid overwriting an unreadable record.
-    throw new Error("Não foi possível carregar seus dados. Recarregue a página para tentar novamente.");
+    throw new Error(
+      "Não foi possível carregar seus dados. Recarregue a página para tentar novamente.",
+    );
   }
   pauseStudyWrites(false);
 }

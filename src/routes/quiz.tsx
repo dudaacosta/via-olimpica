@@ -23,7 +23,10 @@ export const Route = createFileRoute("/quiz")({
   head: () => ({
     meta: [
       { title: "Monte seu plano — Via Olímpica" },
-      { name: "description", content: "Responda 6 perguntas e receba um plano de estudos personalizado para olimpíadas." },
+      {
+        name: "description",
+        content: "Responda 6 perguntas e receba um plano de estudos personalizado para olimpíadas.",
+      },
     ],
   }),
   component: QuizPage,
@@ -34,6 +37,7 @@ type Phase = "steps" | "loading" | "done";
 function QuizPage() {
   const navigate = useNavigate();
   const store = useQuizStore();
+  const complete = useQuizStore((state) => state.complete);
   const [step, setStep] = useState(1);
   const [phase, setPhase] = useState<Phase>("steps");
   const [loadingPct, setLoadingPct] = useState(0);
@@ -46,16 +50,22 @@ function QuizPage() {
     setLoadingPct(0);
     const id = setInterval(() => {
       setLoadingPct((p) => {
-        if (p >= 100) { clearInterval(id); return 100; }
+        if (p >= 100) {
+          clearInterval(id);
+          return 100;
+        }
         return p + 4;
       });
     }, 80);
     const t = setTimeout(() => {
-      store.complete();
+      complete();
       setPhase("done");
     }, 2200);
-    return () => { clearInterval(id); clearTimeout(t); };
-  }, [phase]);
+    return () => {
+      clearInterval(id);
+      clearTimeout(t);
+    };
+  }, [phase, complete]);
 
   const canContinue = (() => {
     if (step === 1) return store.name.trim().length > 1;
@@ -81,7 +91,10 @@ function QuizPage() {
       <header className="relative z-10 max-w-6xl mx-auto px-6 pt-8 pb-4 flex items-center justify-between">
         <Logo />
         {phase === "steps" && step > 1 && (
-          <button onClick={back} className="text-sm text-muted-foreground hover:text-foreground transition">
+          <button
+            onClick={back}
+            className="text-sm text-muted-foreground hover:text-foreground transition"
+          >
             ← Voltar
           </button>
         )}
@@ -105,7 +118,9 @@ function QuizPage() {
                     placeholder="Digite seu nome"
                     value={store.name}
                     onChange={(e) => store.setName(e.target.value)}
-                    onKeyDown={(e) => { if (e.key === "Enter" && canContinue) next(); }}
+                    onKeyDown={(e) => {
+                      if (e.key === "Enter" && canContinue) next();
+                    }}
                     className="h-14 rounded-xl text-base px-5 border-2 focus-visible:ring-2 focus-visible:ring-primary/30 focus-visible:border-primary"
                   />
                   <Button
@@ -166,8 +181,12 @@ function QuizPage() {
                       selected={store.weeklyDays === d}
                       onClick={() => store.setWeeklyDays(d)}
                     >
-                      <div className="text-center font-semibold text-[var(--navy)] text-lg">{d}</div>
-                      <div className="text-center text-xs text-muted-foreground mt-1">{d === 1 ? "dia" : "dias"}</div>
+                      <div className="text-center font-semibold text-[var(--navy)] text-lg">
+                        {d}
+                      </div>
+                      <div className="text-center text-xs text-muted-foreground mt-1">
+                        {d === 1 ? "dia" : "dias"}
+                      </div>
                     </OptionCard>
                   ))}
                 </div>
@@ -180,7 +199,8 @@ function QuizPage() {
                 <div className="flex items-start gap-2 text-xs text-muted-foreground bg-primary-softer border border-border rounded-xl px-4 py-3 mb-6 max-w-3xl mx-auto">
                   <Info className="h-4 w-4 text-primary shrink-0 mt-0.5" />
                   <span>
-                    OBMEP, Canguru, OLITEF e OBA já estão disponíveis. A inscrição nas quatro competições é realizada pela escola.
+                    OBMEP, Canguru, OLITEF e OBA já estão disponíveis. A inscrição nas quatro
+                    competições é realizada pela escola.
                   </span>
                 </div>
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-3 max-w-3xl mx-auto">
@@ -202,19 +222,27 @@ function QuizPage() {
                           </div>
                           <div className="min-w-0 flex-1">
                             <div className="flex items-center justify-between gap-2">
-                              <div className="font-semibold text-[var(--navy)] truncate">{o.acronym}</div>
-                              <span className={[
-                                "text-[10px] font-bold uppercase tracking-wide rounded-full px-2 py-1 whitespace-nowrap",
-                                available
-                                  ? "bg-success-soft text-success"
-                                  : "bg-muted text-muted-foreground",
-                              ].join(" ")}>
+                              <div className="font-semibold text-[var(--navy)] truncate">
+                                {o.acronym}
+                              </div>
+                              <span
+                                className={[
+                                  "text-[10px] font-bold uppercase tracking-wide rounded-full px-2 py-1 whitespace-nowrap",
+                                  available
+                                    ? "bg-success-soft text-success"
+                                    : "bg-muted text-muted-foreground",
+                                ].join(" ")}
+                              >
                                 {available ? "Disponível" : "Base em preparação"}
                               </span>
                             </div>
-                            <div className="text-sm text-muted-foreground truncate">{o.subject}</div>
+                            <div className="text-sm text-muted-foreground truncate">
+                              {o.subject}
+                            </div>
                             <div className="text-xs text-muted-foreground/80 mt-0.5">{o.range}</div>
-                            <div className="text-xs text-muted-foreground mt-2">{o.registrationNote}</div>
+                            <div className="text-xs text-muted-foreground mt-2">
+                              {o.registrationNote}
+                            </div>
                           </div>
                         </div>
                       </OptionCard>
@@ -225,12 +253,26 @@ function QuizPage() {
               </QuizCard>
             )}
             {step === 6 && (
-              <QuizCard title="Quando será sua prova?" subtitle="Informe a data divulgada pela sua escola para a etapa que você vai fazer.">
+              <QuizCard
+                title="Quando será sua prova?"
+                subtitle="Informe a data divulgada pela sua escola para a etapa que você vai fazer."
+              >
                 <div className="max-w-md mx-auto space-y-3">
-                  <label htmlFor="exam-date" className="text-sm font-semibold">Data da prova (incluindo o ano)</label>
-                  <Input id="exam-date" type="date" min={localDate()} value={store.examDate ?? ""}
-                    onChange={(event) => store.setExamDate(event.target.value)} className="h-14 rounded-xl border-2" />
-                  <p className="text-sm text-muted-foreground">Escolha uma data futura. O plano respeita seu tempo disponível e informa se há conteúdos que não cabem até a prova.</p>
+                  <label htmlFor="exam-date" className="text-sm font-semibold">
+                    Data da prova (incluindo o ano)
+                  </label>
+                  <Input
+                    id="exam-date"
+                    type="date"
+                    min={localDate()}
+                    value={store.examDate ?? ""}
+                    onChange={(event) => store.setExamDate(event.target.value)}
+                    className="h-14 rounded-xl border-2"
+                  />
+                  <p className="text-sm text-muted-foreground">
+                    Escolha uma data futura. O plano respeita seu tempo disponível e informa se há
+                    conteúdos que não cabem até a prova.
+                  </p>
                 </div>
                 <ContinueBar canContinue={canContinue} onNext={next} ctaLabel="Gerar meu plano" />
               </QuizCard>
@@ -240,19 +282,21 @@ function QuizPage() {
 
         {phase === "loading" && <LoadingPlan pct={loadingPct} />}
 
-        {phase === "done" && (
-          <PlanReady
-            onAccess={() => navigate({ to: "/inicio" })}
-          />
-        )}
+        {phase === "done" && <PlanReady onAccess={() => navigate({ to: "/inicio" })} />}
       </main>
     </div>
   );
 }
 
 function ContinueBar({
-  canContinue, onNext, ctaLabel = "Continuar",
-}: { canContinue: boolean; onNext: () => void; ctaLabel?: string }) {
+  canContinue,
+  onNext,
+  ctaLabel = "Continuar",
+}: {
+  canContinue: boolean;
+  onNext: () => void;
+  ctaLabel?: string;
+}) {
   return (
     <div className="max-w-md mx-auto mt-8">
       <Button
@@ -307,11 +351,17 @@ function PlanReady({ onAccess }: { onAccess: () => void }) {
         <SummaryRow label="Ano escolar" value={g?.label ?? "-"} />
         <SummaryRow label="Data da prova" value={examDate ? formatDate(examDate) : "-"} />
         <SummaryRow label="Tempo por dia" value={dailyTime ?? "-"} />
-        <SummaryRow label="Dias por semana" value={weeklyDays ? `${weeklyDays} ${weeklyDays === 1 ? "dia" : "dias"}` : "-"} />
+        <SummaryRow
+          label="Dias por semana"
+          value={weeklyDays ? `${weeklyDays} ${weeklyDays === 1 ? "dia" : "dias"}` : "-"}
+        />
         <SummaryRow label="Olimpíada escolhida" value={o ? `${o.acronym} · ${o.subject}` : "-"} />
       </div>
 
-      <Button onClick={onAccess} className="mt-8 w-full h-14 rounded-xl text-base font-semibold gap-2">
+      <Button
+        onClick={onAccess}
+        className="mt-8 w-full h-14 rounded-xl text-base font-semibold gap-2"
+      >
         Acessar meu plano <ArrowRight className="h-5 w-5" />
       </Button>
     </div>
@@ -337,9 +387,7 @@ export function Logo() {
       />
 
       <div className="leading-tight">
-        <div className="text-base font-bold text-[var(--navy)]">
-          Via Olímpica
-        </div>
+        <div className="text-base font-bold text-[var(--navy)]">Via Olímpica</div>
         <div className="text-[10px] uppercase tracking-widest text-muted-foreground">
           Plano de estudos
         </div>
@@ -353,10 +401,25 @@ function DecorShapes() {
     <>
       <div className="pointer-events-none absolute -top-32 -left-32 h-96 w-96 rounded-full bg-primary-soft blur-3xl opacity-70" />
       <div className="pointer-events-none absolute -bottom-32 -right-32 h-96 w-96 rounded-full bg-success-soft blur-3xl opacity-70" />
-      <svg className="pointer-events-none absolute top-12 right-12 opacity-60" width="120" height="120" viewBox="0 0 120 120" fill="none">
-        <path d="M60 8c20 14 44 26 44 52s-24 38-44 52C40 98 16 86 16 60S40 22 60 8z" fill="oklch(0.93 0.05 250)" />
+      <svg
+        className="pointer-events-none absolute top-12 right-12 opacity-60"
+        width="120"
+        height="120"
+        viewBox="0 0 120 120"
+        fill="none"
+      >
+        <path
+          d="M60 8c20 14 44 26 44 52s-24 38-44 52C40 98 16 86 16 60S40 22 60 8z"
+          fill="oklch(0.93 0.05 250)"
+        />
       </svg>
-      <svg className="pointer-events-none absolute bottom-16 left-8 opacity-60" width="100" height="100" viewBox="0 0 100 100" fill="none">
+      <svg
+        className="pointer-events-none absolute bottom-16 left-8 opacity-60"
+        width="100"
+        height="100"
+        viewBox="0 0 100 100"
+        fill="none"
+      >
         <circle cx="50" cy="50" r="42" fill="oklch(0.93 0.08 155 / 0.7)" />
       </svg>
     </>

@@ -59,9 +59,7 @@ function mapPriorityToNumber(priority: string): number {
   }
 }
 
-function mapDifficulty(
-  difficulty: string
-): "fácil" | "médio" | "difícil" {
+function mapDifficulty(difficulty: string): "fácil" | "médio" | "difícil" {
   switch (difficulty) {
     case "Básica":
       return "fácil";
@@ -74,10 +72,7 @@ function mapDifficulty(
 }
 
 function mapActivityType(activity: string): ActivityType {
-  if (
-    activity === "teoria" ||
-    activity === "teoria + exercícios"
-  ) {
+  if (activity === "teoria" || activity === "teoria + exercícios") {
     return "Estudo teórico";
   }
   if (activity === "exercícios") {

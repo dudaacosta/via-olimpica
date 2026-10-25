@@ -12,18 +12,21 @@ export type FavoritesState = {
 
 function sanitizeFavoriteIds(value: unknown): string[] {
   if (!Array.isArray(value)) return [];
-  return [...new Set(value.filter((item): item is string => typeof item === "string" && item.length > 0))];
+  return [
+    ...new Set(value.filter((item): item is string => typeof item === "string" && item.length > 0)),
+  ];
 }
 
 export const useFavoritesStore = create<FavoritesState>()(
   persist(
     (set) => ({
       favoriteOlympiadIds: [],
-      toggleFavorite: (olympiadId) => set((state) => ({
-        favoriteOlympiadIds: state.favoriteOlympiadIds.includes(olympiadId)
-          ? state.favoriteOlympiadIds.filter((id) => id !== olympiadId)
-          : [...state.favoriteOlympiadIds, olympiadId],
-      })),
+      toggleFavorite: (olympiadId) =>
+        set((state) => ({
+          favoriteOlympiadIds: state.favoriteOlympiadIds.includes(olympiadId)
+            ? state.favoriteOlympiadIds.filter((id) => id !== olympiadId)
+            : [...state.favoriteOlympiadIds, olympiadId],
+        })),
       clearFavorites: () => set({ favoriteOlympiadIds: [] }),
     }),
     {

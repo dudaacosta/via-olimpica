@@ -20,7 +20,8 @@ const OBMEP_DETAILS = {
     "Promovida pelo IMPA, a OBMEP incentiva o estudo da matemática e revela talentos em todo o país.",
   formatTitle: "Fases da competição",
   stages: ["Fase 1: Prova objetiva na escola", "Fase 2: Prova discursiva"],
-  preparationNote: "A Via Olímpica organiza os conteúdos da OBMEP conforme o ano escolar selecionado.",
+  preparationNote:
+    "A Via Olímpica organiza os conteúdos da OBMEP conforme o ano escolar selecionado.",
   officialUrl: "https://www.obmep.org.br/regulamento.htm",
   officialLabel: "Edital da OBMEP",
 };
@@ -71,9 +72,13 @@ function OlympiadDetailsPage() {
     return (
       <AppShell title="Olimpíadas" subtitle="Detalhes indisponíveis.">
         <div className="bg-white border border-border rounded-3xl shadow-[var(--shadow-soft)] p-8 text-center">
-          <p className="text-sm text-muted-foreground">Não foi possível carregar os detalhes desta olimpíada.</p>
+          <p className="text-sm text-muted-foreground">
+            Não foi possível carregar os detalhes desta olimpíada.
+          </p>
           <div className="mt-6">
-            <Link to="/olimpiadas"><Button variant="outline">Voltar para olimpíadas</Button></Link>
+            <Link to="/olimpiadas">
+              <Button variant="outline">Voltar para olimpíadas</Button>
+            </Link>
           </div>
         </div>
       </AppShell>
@@ -84,7 +89,10 @@ function OlympiadDetailsPage() {
     <AppShell title={olympiad.acronym} subtitle={olympiad.subject}>
       <div className="space-y-6">
         <div className="flex flex-col gap-4 md:flex-row md:items-center md:justify-between">
-          <Link to="/olimpiadas" className="inline-flex items-center gap-2 text-sm text-muted-foreground hover:text-foreground transition">
+          <Link
+            to="/olimpiadas"
+            className="inline-flex items-center gap-2 text-sm text-muted-foreground hover:text-foreground transition"
+          >
             <ArrowLeft className="h-4 w-4" /> Voltar
           </Link>
           <div className="flex flex-wrap gap-3">
@@ -99,7 +107,12 @@ function OlympiadDetailsPage() {
               {isFavorite ? "Salvo nos favoritos" : "Salvar nos favoritos"}
             </Button>
             <Button asChild variant="secondary" className="rounded-xl">
-              <a href={details.officialUrl} target="_blank" rel="noopener noreferrer" aria-label={`Abrir ${details.officialLabel}`}>
+              <a
+                href={details.officialUrl}
+                target="_blank"
+                rel="noopener noreferrer"
+                aria-label={`Abrir ${details.officialLabel}`}
+              >
                 <FileText className="h-4 w-4" /> {details.officialLabel}
               </a>
             </Button>
@@ -109,7 +122,10 @@ function OlympiadDetailsPage() {
         <div className="bg-white border border-border rounded-3xl shadow-[var(--shadow-soft)] p-6 space-y-6">
           <div className="flex flex-col gap-4 md:flex-row md:items-center md:justify-between">
             <div className="flex items-center gap-4">
-              <div className="h-16 w-16 rounded-full flex items-center justify-center text-white font-bold text-xl" style={{ backgroundColor: olympiad.color }}>
+              <div
+                className="h-16 w-16 rounded-full flex items-center justify-center text-white font-bold text-xl"
+                style={{ backgroundColor: olympiad.color }}
+              >
                 {olympiad.acronym.slice(0, 3)}
               </div>
               <div>
@@ -146,7 +162,12 @@ function OlympiadDetailsPage() {
           </div>
           <ul className="space-y-3">
             {details.stages.map((stage) => (
-              <li key={stage} className="rounded-2xl border border-border bg-background p-4 text-sm text-[var(--navy)]">{stage}</li>
+              <li
+                key={stage}
+                className="rounded-2xl border border-border bg-background p-4 text-sm text-[var(--navy)]"
+              >
+                {stage}
+              </li>
             ))}
           </ul>
         </section>
@@ -158,18 +179,26 @@ function OlympiadDetailsPage() {
               <div className="rounded-2xl border border-border bg-background p-4 text-sm text-muted-foreground">
                 Selecione seu ano escolar no perfil para ver os conteúdos correspondentes.
               </div>
-            ) : contents.map((content) => (
-              <div key={content.contentId} className="flex flex-col gap-3 rounded-2xl border border-border bg-background p-4 md:flex-row md:items-center md:justify-between">
-                <div className="min-w-0">
-                  <div className="font-semibold text-[var(--navy)]">{content.title}</div>
-                  <div className="mt-1 text-xs text-muted-foreground">{content.area}{content.totalMinutes ? ` • ${formatMinutes(content.totalMinutes)}` : ""}</div>
+            ) : (
+              contents.map((content) => (
+                <div
+                  key={content.contentId}
+                  className="flex flex-col gap-3 rounded-2xl border border-border bg-background p-4 md:flex-row md:items-center md:justify-between"
+                >
+                  <div className="min-w-0">
+                    <div className="font-semibold text-[var(--navy)]">{content.title}</div>
+                    <div className="mt-1 text-xs text-muted-foreground">
+                      {content.area}
+                      {content.totalMinutes ? ` • ${formatMinutes(content.totalMinutes)}` : ""}
+                    </div>
+                  </div>
+                  <div className="flex flex-wrap gap-2">
+                    {content.treatment && <Badge variant="secondary">{content.treatment}</Badge>}
+                    <Badge variant="outline">{content.difficulty}</Badge>
+                  </div>
                 </div>
-                <div className="flex flex-wrap gap-2">
-                  {content.treatment && <Badge variant="secondary">{content.treatment}</Badge>}
-                  <Badge variant="outline">{content.difficulty}</Badge>
-                </div>
-              </div>
-            ))}
+              ))
+            )}
           </div>
         </section>
       </div>

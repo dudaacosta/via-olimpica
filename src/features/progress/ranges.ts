@@ -16,7 +16,9 @@ function isValidBoundary(value: number): boolean {
 
 function assertRange(startMinute: number, endMinute: number): void {
   if (!isValidBoundary(startMinute) || !isValidBoundary(endMinute) || endMinute <= startMinute) {
-    throw new RangeError("O intervalo de progresso precisa usar minutos inteiros, não negativos e crescentes.");
+    throw new RangeError(
+      "O intervalo de progresso precisa usar minutos inteiros, não negativos e crescentes.",
+    );
   }
 }
 
@@ -26,16 +28,20 @@ export function sanitizeIntervals(value: unknown): CompletionInterval[] {
     .filter((item): item is CompletionInterval => {
       if (!item || typeof item !== "object") return false;
       const interval = item as Partial<CompletionInterval>;
-      return typeof interval.completedAt === "string"
-        && isValidBoundary(interval.startMinute as number)
-        && isValidBoundary(interval.endMinute as number)
-        && (interval.endMinute as number) > (interval.startMinute as number);
+      return (
+        typeof interval.completedAt === "string" &&
+        isValidBoundary(interval.startMinute as number) &&
+        isValidBoundary(interval.endMinute as number) &&
+        (interval.endMinute as number) > (interval.startMinute as number)
+      );
     })
     .map((item) => ({ ...item }))
     .sort((a, b) => a.startMinute - b.startMinute || a.endMinute - b.endMinute);
 }
 
-export function completionCoverage(intervals: CompletionInterval[] | undefined): Array<{ startMinute: number; endMinute: number }> {
+export function completionCoverage(
+  intervals: CompletionInterval[] | undefined,
+): Array<{ startMinute: number; endMinute: number }> {
   const result: Array<{ startMinute: number; endMinute: number }> = [];
   for (const interval of sanitizeIntervals(intervals)) {
     const previous = result[result.length - 1];
@@ -90,8 +96,9 @@ export function addCompletedRange(
       completedAt,
     }));
 
-  return [...current, ...uncovered]
-    .sort((a, b) => a.startMinute - b.startMinute || a.endMinute - b.endMinute);
+  return [...current, ...uncovered].sort(
+    (a, b) => a.startMinute - b.startMinute || a.endMinute - b.endMinute,
+  );
 }
 
 export function removeCompletedRange(

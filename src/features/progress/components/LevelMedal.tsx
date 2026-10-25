@@ -1,6 +1,12 @@
 import type { ProgressLevel } from "../levels";
 
-export function LevelMedal({ level, className = "" }: { level: ProgressLevel; className?: string }) {
+export function LevelMedal({
+  level,
+  className = "",
+}: {
+  level: ProgressLevel;
+  className?: string;
+}) {
   if (!level.imageSrc) return null;
   const crop = level.imageCrop;
   return (

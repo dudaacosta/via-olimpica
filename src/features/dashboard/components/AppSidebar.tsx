@@ -4,7 +4,6 @@ import type { ComponentType } from "react";
 
 type NavItem = { to: string; label: string; icon: ComponentType<{ className?: string }> };
 
-
 const items: NavItem[] = [
   { to: "/inicio", label: "Início", icon: House },
   { to: "/olimpiadas", label: "Olimpíadas", icon: Trophy },
@@ -13,7 +12,6 @@ const items: NavItem[] = [
   { to: "/perfil", label: "Perfil", icon: UserRound },
 ];
 
-
 export function AppSidebar() {
   const pathname = useRouterState({ select: (s) => s.location.pathname });
 
@@ -21,14 +19,18 @@ export function AppSidebar() {
     <aside className="hidden md:flex w-[272px] shrink-0 flex-col bg-sidebar border-r border-sidebar-border min-h-screen sticky top-0">
       <div className="px-4 py-8 border-b border-sidebar-border">
         <Link to="/inicio" className="flex items-center gap-2">
-<img
-  src="/logo-via-olimpica.jpeg"
-  alt="Logo Via Olímpica"
-  className="h-20 w-20 shrink-0 object-contain"
-/>
+          <img
+            src="/logo-via-olimpica.jpeg"
+            alt="Logo Via Olímpica"
+            className="h-20 w-20 shrink-0 object-contain"
+          />
           <div className="leading-tight">
-            <div className="font-bold text-[var(--navy)] text-[22px] whitespace-nowrap">Via Olímpica</div>
-            <div className="text-[10px] uppercase tracking-widest text-muted-foreground">plano de estudos</div>
+            <div className="font-bold text-[var(--navy)] text-[22px] whitespace-nowrap">
+              Via Olímpica
+            </div>
+            <div className="text-[10px] uppercase tracking-widest text-muted-foreground">
+              plano de estudos
+            </div>
           </div>
         </Link>
       </div>
@@ -52,8 +54,11 @@ export function AppSidebar() {
                 <span className="absolute left-0 top-2 bottom-2 w-1 rounded-r-full bg-primary" />
               )}
               <Icon
-  className={["h-6 w-6 stroke-[2.2]", active ? "text-primary" : "text-[#14213D]"].join(" ")}
-/>
+                className={[
+                  "h-6 w-6 stroke-[2.2]",
+                  active ? "text-primary" : "text-[#14213D]",
+                ].join(" ")}
+              />
               {it.label}
             </Link>
           );

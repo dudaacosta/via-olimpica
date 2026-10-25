@@ -10,7 +10,11 @@ import {
   validateCurriculum,
 } from "./utils";
 
-export const CURRICULA: OlympiadCurriculum[] = [CANGURU_CURRICULUM, OLITEF_CURRICULUM, OBA_CURRICULUM];
+export const CURRICULA: OlympiadCurriculum[] = [
+  CANGURU_CURRICULUM,
+  OLITEF_CURRICULUM,
+  OBA_CURRICULUM,
+];
 
 export const ADDITIONAL_OLYMPIAD_CONTENTS = CURRICULA.flatMap(buildCurriculumPlans);
 

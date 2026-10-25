@@ -48,7 +48,9 @@ function PerfilPage() {
   if (!hydrated) {
     return (
       <AppShell title="Perfil" subtitle="Edite suas preferências.">
-        <p className="text-sm text-muted-foreground" role="status">Carregando suas preferências...</p>
+        <p className="text-sm text-muted-foreground" role="status">
+          Carregando suas preferências...
+        </p>
       </AppShell>
     );
   }
@@ -129,7 +131,10 @@ function PerfilForm() {
         {/* Weekly days */}
         <Section title="Quantas vezes por semana">
           <PillGrid
-            options={DAY_OPTS.map((d) => ({ value: String(d), label: `${d} ${d === 1 ? "dia" : "dias"}` }))}
+            options={DAY_OPTS.map((d) => ({
+              value: String(d),
+              label: `${d} ${d === 1 ? "dia" : "dias"}`,
+            }))}
             value={String(days)}
             onChange={(v) => setDays(Number(v))}
             cols={6}
@@ -159,11 +164,7 @@ function PerfilForm() {
                 {availableOlympiads.map((item) => {
                   const available = isOlympiadAvailable(item);
                   return (
-                    <DropdownMenuRadioItem
-                      key={item.id}
-                      value={item.id}
-                      disabled={!available}
-                    >
+                    <DropdownMenuRadioItem key={item.id} value={item.id} disabled={!available}>
                       <div className="flex items-center gap-3 w-full">
                         <div
                           className="h-10 w-10 rounded-full flex items-center justify-center text-white font-bold text-xs"
@@ -186,17 +187,34 @@ function PerfilForm() {
             </DropdownMenuContent>
           </DropdownMenu>
           <p className="text-xs text-muted-foreground">
-            OBMEP, Canguru, OLITEF e OBA estão disponíveis. A inscrição nas quatro competições é realizada pela escola.
+            OBMEP, Canguru, OLITEF e OBA estão disponíveis. A inscrição nas quatro competições é
+            realizada pela escola.
           </p>
         </Section>
 
         <div className="space-y-2">
           <Label htmlFor="profile-exam-date">Data da prova (incluindo o ano)</Label>
-          <Input id="profile-exam-date" type="date" min={localDate()} value={examDate}
-            onChange={(event) => { setExamDate(event.target.value); setDateError(false); }}
-            aria-invalid={dateError} aria-describedby="exam-date-help" className="h-12 rounded-xl border-2" />
-          <p id="exam-date-help" role={dateError ? "alert" : undefined} className="text-sm text-muted-foreground">
-            {dateError ? "Informe uma data futura válida para a prova." : "Use a data divulgada pela escola para a sua etapa. Seu progresso será preservado."}
+          <Input
+            id="profile-exam-date"
+            type="date"
+            min={localDate()}
+            value={examDate}
+            onChange={(event) => {
+              setExamDate(event.target.value);
+              setDateError(false);
+            }}
+            aria-invalid={dateError}
+            aria-describedby="exam-date-help"
+            className="h-12 rounded-xl border-2"
+          />
+          <p
+            id="exam-date-help"
+            role={dateError ? "alert" : undefined}
+            className="text-sm text-muted-foreground"
+          >
+            {dateError
+              ? "Informe uma data futura válida para a prova."
+              : "Use a data divulgada pela escola para a sua etapa. Seu progresso será preservado."}
           </p>
         </div>
 
@@ -218,14 +236,18 @@ function Section({ title, children }: { title: string; children: React.ReactNode
 }
 
 function PillGrid({
-  options, value, onChange, cols,
+  options,
+  value,
+  onChange,
+  cols,
 }: {
   options: { value: string; label: string }[];
   value: string;
   onChange: (v: string) => void;
   cols: number;
 }) {
-  const colsClass = { 3: "md:grid-cols-3", 4: "md:grid-cols-4", 6: "md:grid-cols-6" }[cols] ?? "md:grid-cols-4";
+  const colsClass =
+    { 3: "md:grid-cols-3", 4: "md:grid-cols-4", 6: "md:grid-cols-6" }[cols] ?? "md:grid-cols-4";
   return (
     <div className={`grid grid-cols-2 sm:grid-cols-3 ${colsClass} gap-2.5`}>
       {options.map((o) => {

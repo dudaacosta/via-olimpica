@@ -13,7 +13,12 @@ export const PROGRESS_STORAGE_KEY = "via-olimpica-progress-v1";
 
 export type ProgressState = {
   completedByContent: Record<string, CompletionInterval[]>;
-  completeRange: (contentKey: string, startMinute: number, endMinute: number, completedAt?: string) => void;
+  completeRange: (
+    contentKey: string,
+    startMinute: number,
+    endMinute: number,
+    completedAt?: string,
+  ) => void;
   uncompleteRange: (contentKey: string, startMinute: number, endMinute: number) => void;
   toggleRange: (contentKey: string, startMinute: number, endMinute: number) => void;
   clearProgress: () => void;
@@ -23,40 +28,43 @@ export const useProgressStore = create<ProgressState>()(
   persist(
     (set) => ({
       completedByContent: {},
-      completeRange: (contentKey, startMinute, endMinute, completedAt) => set((state) => ({
-        completedByContent: {
-          ...state.completedByContent,
-          [contentKey]: addCompletedRange(
+      completeRange: (contentKey, startMinute, endMinute, completedAt) =>
+        set((state) => ({
+          completedByContent: {
+            ...state.completedByContent,
+            [contentKey]: addCompletedRange(
+              state.completedByContent[contentKey],
+              startMinute,
+              endMinute,
+              completedAt,
+            ),
+          },
+        })),
+      uncompleteRange: (contentKey, startMinute, endMinute) =>
+        set((state) => {
+          const nextIntervals = removeCompletedRange(
             state.completedByContent[contentKey],
             startMinute,
             endMinute,
-            completedAt,
-          ),
-        },
-      })),
-      uncompleteRange: (contentKey, startMinute, endMinute) => set((state) => {
-        const nextIntervals = removeCompletedRange(
-          state.completedByContent[contentKey],
-          startMinute,
-          endMinute,
-        );
-        const completedByContent = { ...state.completedByContent };
-        if (nextIntervals.length > 0) completedByContent[contentKey] = nextIntervals;
-        else delete completedByContent[contentKey];
-        return { completedByContent };
-      }),
-      toggleRange: (contentKey, startMinute, endMinute) => set((state) => {
-        const current = state.completedByContent[contentKey];
-        const completedByContent = { ...state.completedByContent };
-        if (isRangeCompleted(current, startMinute, endMinute)) {
-          const next = removeCompletedRange(current, startMinute, endMinute);
-          if (next.length > 0) completedByContent[contentKey] = next;
+          );
+          const completedByContent = { ...state.completedByContent };
+          if (nextIntervals.length > 0) completedByContent[contentKey] = nextIntervals;
           else delete completedByContent[contentKey];
-        } else {
-          completedByContent[contentKey] = addCompletedRange(current, startMinute, endMinute);
-        }
-        return { completedByContent };
-      }),
+          return { completedByContent };
+        }),
+      toggleRange: (contentKey, startMinute, endMinute) =>
+        set((state) => {
+          const current = state.completedByContent[contentKey];
+          const completedByContent = { ...state.completedByContent };
+          if (isRangeCompleted(current, startMinute, endMinute)) {
+            const next = removeCompletedRange(current, startMinute, endMinute);
+            if (next.length > 0) completedByContent[contentKey] = next;
+            else delete completedByContent[contentKey];
+          } else {
+            completedByContent[contentKey] = addCompletedRange(current, startMinute, endMinute);
+          }
+          return { completedByContent };
+        }),
       clearProgress: () => set({ completedByContent: {} }),
     }),
     {
